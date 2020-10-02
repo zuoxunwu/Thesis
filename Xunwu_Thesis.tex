@@ -1,0 +1,78 @@
+%% UF thesis template from https://helpdesk.ufl.edu/application-support-center/etd-technical-support/ms-word-and-latex-templates/
+%% LaTex template summer 2019
+
+\documentclass{ufdissertation}\sloppy
+
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc} % seems it is by default and not needed
+\usepackage{charter}
+
+\usepackage{ragged2e} % to make text fully justified
+
+\usepackage{tikz}%       tikz is used by almost everyone, but certainly by me for this.
+\usepackage[compat=1.1.0]{tikz-feynman}% for drawing feynman diagrams 
+\usepackage{pgfplots}%   pgfplots is tikz but better.
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption} % allowing to use subfigure inside figure
+\usepackage{topcapt} % allow \topcaption
+\usepackage{graphicx} % allow \resizebox
+
+%\usepackage{amsrefs}%   amsrefs contains the .bibtex style content for mathematician papers.
+\usepackage{amsmath}
+
+
+% Enable format for table, figure, object
+\haveTablestrue%        Uncomment this if you have tables in your thesis.
+\haveFigurestrue%       Uncomment this if you have figures in your thesis.
+\haveObjectstrue%       Uncomment this if you have Objects in your thesis. This is almost certainly not the case however.
+
+
+% Author info
+\title{A Search For The Standard Model Higgs Boson Decaying Into Two Muons In The Vector Boson Associated Production Mode At The CMS Experiment}
+
+\degreeType{Doctorate of Philosophy}%   Official name of your degree; eg "Doctorate of Philosophy".
+\major{Physics}%                    Your official Department
+\author{Xunwu Zuo}%                  Your Name
+\thesisType{Dissertation}%              Dissertation (PhD) or Thesis (Masters)
+\degreeYear{2021}%                      Intended graduation year (not the year you submit the thesis)
+\degreeMonth{May}%                   Month of graduation should be May, August, or December.
+\chair[Darin Acosta]%                   Chair and Cochair (see comment block above).
+
+%% additional sections
+%\setDedicationFile{dedicationFile}%                 Dedication Page
+%\setAcknowledgementsFile{acknowledgementsFile}%     Acknowledgements Page
+%\setAbstractFile{abstractFile}%                     Abstract Page (This should only include the abstract itself)
+\setReferenceFile{referenceFile}{amsplain}%         References. First argument is your bibtex source file
+%%                                                       the second argument is your bibtex style file.
+%\setBiographicalFile{biographyFile}%                Biography file of the Author (you).
+%
+%%%% These are NOT required, so only use them if you actually need/have them.
+
+%%\setAbbreviationsFile{abbreviations}%           Abbreviations Page
+%\setAppendixFile{appendix}%                     Appendix Content; hyperlinking might be weird.
+%\multipleAppendixtrue%                          Uncomment this if you have more than one appendix, 
+%%                                                   comment it if you have only one appendix.
+
+
+% main text
+\begin{document}
+
+\input{tex/definitions.tex}
+
+\justify % so that all text are fully justified
+\input{tex/Introduction.tex}
+\input{tex/LHC_CMS.tex}
+
+\input{tex/H2Mu_strategy.tex}
+\input{tex/H2Mu_selection.tex}
+\input{tex/H2Mu_VH.tex}
+\input{tex/H2Mu_results.tex}
+
+
+% HDQM and DQM?
+%\bibliography{referenceFile} 
+
+
+\end{document}

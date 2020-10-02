@@ -1,0 +1,105 @@
+% Some shorthand
+% turn off italics
+\newcommand {\etal}{\mbox{et al.}\xspace} %et al. - no preceding comma
+\newcommand {\ie}{\mbox{i.e.}\xspace}     %i.e.
+\newcommand {\eg}{\mbox{e.g.}\xspace}     %e.g.
+\newcommand {\etc}{\mbox{etc.}\xspace}     %etc.
+\newcommand {\vs}{\mbox{\sl vs.}\xspace}      %vs.
+
+% some units
+\newcommand{\mum}{\ensuremath{\,\mu\text{m}}\xspace}
+\newcommand{\micron}{\ensuremath{\,\mu\text{m}}\xspace}
+\newcommand{\mm}{\ensuremath{\,\text{mm}}\xspace}
+\newcommand{\cm}{\ensuremath{\,\text{cm}}\xspace}
+\newcommand{\ns}{\ensuremath{\,\text{ns}}\xspace}
+\newcommand{\mus}{\ensuremath{\,\mu\text{s}}\xspace}
+\newcommand{\TeV}{\ensuremath{\mbox{TeV}}\xspace}
+\newcommand{\GeV}{\ensuremath{\mbox{GeV}}\xspace}
+\newcommand{\pb}{\ensuremath{\mbox{pb}}\xspace}
+\newcommand{\fb}{\ensuremath{\mbox{fb}}\xspace}
+\newcommand{\invfb}{\ensuremath{\mbox{fb}^{\scriptscriptstyle -1}}\xspace}
+\newcommand{\lumi}{\ensuremath{\mathcal{L}}\xspace}
+
+% analysis tools
+\newcommand{\GEANTfour} {{\textsc{Geant4}}\xspace}
+\newcommand{\HERWIGpp}{{\textsc{HERWIG++}}\xspace}
+\newcommand{\HERWIGSeven}{{\textsc{HERWIG7}}\xspace}
+\newcommand{\MADGRAPH} {\textsc{MadGraph}\xspace}
+\newcommand{\MCATNLO} {\textsc{mc@nlo}\xspace}
+\newcommand{\POWHEG} {{\textsc{powheg}}\xspace}
+\newcommand{\PYTHIA} {{\textsc{pythia}}\xspace}
+\newcommand{\SHERPA} {{\textsc{sherpa}}\xspace}
+\newcommand{\MCFM} {{\textsc{mcfm}}\xspace}
+\newcommand{\MGvATNLO} {\MADGRAPH{}5\_a\MCATNLO}
+\newcommand{\FEWZ} {{\textsc{fewz}}\xspace}
+
+% physics variables
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
+\newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\newcommand{\MET}{\ensuremath{E_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\MHT}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
+
+% particles
+\newcommand{\Pn}{\ensuremath{\mathrm{n}}}
+\newcommand{\Pp}{\ensuremath{\mathrm{p}}}
+\newcommand{\PV}{\ensuremath{\mathrm{V}}\xspace}
+\newcommand{\PW}{\ensuremath{\mathrm{W}}\xspace}
+\newcommand{\PZ}{\ensuremath{\mathrm{Z}}\xspace}
+\newcommand{\PH}{\ensuremath{\mathrm{H}}\xspace}
+\newcommand{\Pe}{\ensuremath{\mathrm{e}}\xspace}
+\newcommand{\Pg}{\ensuremath{\mathrm{g}}\xspace}
+\newcommand{\Pq}{\ensuremath{\mathrm{q}}\xspace}
+\newcommand{\Paq}{\ensuremath{\overline{\Pq}}\xspace}
+\newcommand{\Pqb}{\ensuremath{\mathrm{b}}\xspace}
+\newcommand{\Paqb}{\ensuremath{\overline{\Pqb}}\xspace}
+\newcommand{\Pqt}{\ensuremath{\mathrm{t}}\xspace}
+\newcommand{\Paqt}{\ensuremath{\overline{\Pqt}}\xspace}
+\newcommand{\PGn}{\ensuremath{\nu}\xspace} % generic neutrino
+\newcommand{\PAGn}{\ensuremath{\overline{\nu}}\xspace} % generic neutrino
+
+
+\providecommand{\ttH}{\ensuremath{\Pqt\Paqt\PH}\xspace}
+\providecommand{\ggH}{\ensuremath{\Pg\Pg\PH}\xspace}
+\providecommand{\qqH}{\mbox{VBF}\xspace}
+\providecommand{\ZH}{\ensuremath{\PZ\PH}\xspace}
+\providecommand{\WH}{\ensuremath{\PW\PH}\xspace}
+\providecommand{\VH}{\ensuremath{\PV\PH}\xspace}
+\providecommand{\bbH}{\ensuremath{\Pqb\Paqb\PH}\xspace}
+\providecommand{\tHq}{\ensuremath{\Pqt\PH\Pq}\xspace}
+\providecommand{\tHW}{\ensuremath{\Pqt\PH\PW}\xspace}
+\providecommand{\ggZH}{\ensuremath{\Pg\Pg\PZ\PH}\xspace}
+\providecommand{\DY}{\mbox{DY}\xspace}
+\providecommand{\ggZZ}{\ensuremath{\Pg\Pg\PZ\PZ}\xspace}
+
+\newcommand{\Vjets}{\ensuremath{\PV\text{+jets}}\xspace}
+\newcommand{\Zee}{\ensuremath{\PZ(\Pe\Pe)}\xspace}
+\newcommand{\Zll}{\ensuremath{\PZ(\ell\ell)}\xspace}
+\newcommand{\Zvv}{\ensuremath{\PZ(\nu\overline{\nu})}\xspace}
+\newcommand{\Zmmjets}{\ensuremath{\PZ(\mu\mu)\text{+jets}}\xspace}
+\newcommand{\Zlljets}{\ensuremath{\PZ(\ell\ell)\text{+jets}}\xspace}
+\newcommand{\Zjets}{\ensuremath{\PZ\text{+jets}}\xspace}
+\newcommand{\DYjets}{\ensuremath{\PZ/\gamma^{*}\text{+jets}}\xspace}
+\newcommand{\tZq}{\ensuremath{\Pqt\PZ\Pq}\xspace}
+\newcommand{\tZW}{\ensuremath{\Pqt\PZ\PW}\xspace}
+
+\newcommand{\kappaz}{\ensuremath{\kappa\smash[b]{^{\PGn\PAGn}}}\xspace}
+\newcommand{\kappaV}{\ensuremath{\kappa_{\mathrm{V}}}\xspace}
+\newcommand{\kappaF}{\ensuremath{\kappa_{\mathrm{F}}}\xspace}
+\newcommand{\kappazi}{\ensuremath{\kappa_{i}\smash[b]{^{\PGn\PAGn}}}\xspace}
+
+\newcommand{\hmm}{\ensuremath{\PH \to \mu\mu}\xspace}
+\newcommand{\mmm}{\ensuremath{m_{\mu\mu}}\xspace}
+\newcommand{\mjj}{\ensuremath{m_{\mathrm{jj}}}\xspace}
+\newcommand{\brhmm}{\ensuremath{{\mathcal{B}(\PH \to \mu\mu)}}\xspace}
+\newcommand{\brhff}{\ensuremath{{\mathcal{B}(\PH \to f\overline{f})}}\xspace}
+\newcommand{\detajj}{\ensuremath{\Delta\eta_{\mathrm{jj}}}\xspace}
+\newcommand{\dphijj}{\ensuremath{\Delta\phi_{\mathrm{jj}}}\xspace}
+\newcommand{\NNPDF} {\textsc{nnpdf}\xspace}
+\newcommand{\dzeroPV}{\ensuremath{\text{d0}_{\text{PV}}}\xspace}
+\newcommand{\dzeroBS}{\ensuremath{\text{d0}_{\text{BS}}}\xspace}
+\newcommand{\dptoverptsquare}{\ensuremath{(\pt^{Roch} - \pt^{Gen})/\pt^2}\xspace}
+\newcommand{\mh}{\ensuremath{m_{\PH}}\xspace}
+
+\newcommand{\SoB}{\ensuremath{S/B}\xspace}
+
