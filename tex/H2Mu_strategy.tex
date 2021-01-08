@@ -1,4 +1,4 @@
-\chapter{Overview of the search of \texorpdfstring{\hmm}{H to muons} decay at CMS}
+\chapter{Overview of the search of \texorpdfstring{\hmm}{H to muons} decay at CMS}\label{chp:hmm_overview}
 % Need to use \textorpdfstring{} so it also shows in pdf bookmarks 
 
 In 2012, a new boson at 125 \GeV was discovered by ATLAS and CMS at the LHC~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}. 
@@ -41,7 +41,7 @@ as a sharpe peak against a smooth falling shape. Figure~\ref{fig:dimuon_mass_sha
 \end{figure}
 
 Furthermore, the Higgs boson is produced via several distinct production modes, each with some unique kinematic characteristics. 
-By applying selection criteria targeting a certain signal production mode, it is possible to select a specific part of the kinematic phasespace that is enriched with that signal, 
+By applying selection criteria targeting a certain signal production mode, it is possible to select a specific part of the kinematic phase-space that is enriched with that signal, 
 and reject many background processes that do not share the same kinematic features. 
 There are four main production modes considered in this analysis, ordered by cross section: the gluon fusion (\ggH), the vector boson fusion (\qqH or qqH), 
 the associated production with a weak vector boson (\VH), and the associated production with a pair of top quarks (\ttH). 
@@ -249,7 +249,7 @@ while the \ggH category does not ask for additional objects and collects all eve
 No dedicated category is made for the minor signal modes, since they either have very similar features as one of the main modes, 
 or have too small cross section to make a difference.
 
-With sush selections, natually, each of the selected phasespaces presents a distinct event topology and contains a distinct composition of background. 
+With sush selections, natually, each of the selected phase-spaces presents a distinct event topology and contains a distinct composition of background. 
 Therefore, the analysis is performed independently in each of the event categories, following different optimized strategies. 
 The detailed description of the analysis strategies in each event category is given in Section~\ref{sec:hmm_cat_and_strategy}.
 
@@ -260,7 +260,7 @@ which corresponds to a total integrated luminosity of 137.2\invfb.
 
 The triggers used in this analysis are the single muon triggers, which impose some loose isolation requirements and a \pt threshold on the HLT muon candidates.
 The \pt cut is 27 (24) \GeV for data collected in 2017 (2016, 2018). 
-For the muons selected in this analysis, as explained in Section~\ref{sec:obj_sel}, the efficiency of these triggers is above 95\%, 
+For the muons selected in this analysis, as explained in Chapter~\ref{chp:objects}, the efficiency of these triggers is above 95\%, 
 making the selection efficiency for the events with two muons close to 100\%.
 acceptance here or in object selection?
 
@@ -379,7 +379,7 @@ For the events without neither b-tagged jets nor additional leptons, if there ar
 composing a jet pair with $\mjj>400\GeV$ and $\detajj>2.5$, the events are tagged as the \qqH events.
 Finally, the \ggH category collects all events that are not assigned in the previous steps. 
 Most events in the \ggH category are profiled to have either no additional object, or one additional jet.
-The detailed definition of the different objects used in this categorization is given in Section~\ref{sec:obj_sel}.
+The detailed definition of the different objects used in this categorization is given in Chapter~\ref{chp:objects}.
 
 \begin{figure}[!htb]
     \centering
@@ -410,7 +410,7 @@ As a result, two different strategies to perform the analysis are considered:
     \item \textbf{MC-based template fit to the Neural Network discriminator:}
           This approach is also based on a MVA, for which a ML algorithm, Deep Neural Network (DNN), is taken.
           The DNN takes all the kinematic variables in the events \textit{includeing the \mmm}, and profiles the discrimination between the signal and the background.
-          Without making further categories, the binned template of the DNN output in the whole phasespace is used for the signal strength evaluation.
+          Without making further categories, the binned template of the DNN output in the whole phase-space is used for the signal strength evaluation.
           Since the fit happens to the DNN output rather than the \mmm distribution, the \textit{signal fit region} is further divided into two parts:
           the \textit{signal region} where $115<\mmm<135 \GeV$ and the \textit{sideband region} where $110<\mmm<115 \GeV$ or $135<\mmm<150 \GeV$.
           The data is fitted simutaneuosly in both regions with the DNN templates of the signal and the background MC. 
@@ -428,7 +428,7 @@ for example the pile-up events, the parton shower, and the production of leptons
 The modeling of these features usually involves extensive work in the validation of simulated samples, and is generally associated with large systematic uncertainties.
 In the scenarios where the MC does not model the data very well, or where the uncertainties from MC modeling are not much smaller than the statistical uncertainty in the data,
 it is more advantageous to follow the data-driven approach.
-On the other hand, if a phasespace lacks enough statistics in data but can be well described by the MC, 
+On the other hand, if a phase-space lacks enough statistics in data but can be well described by the MC, 
 it is more beneficial to perform a MC-based analysis there.
 
 The \ggH category contains the majority of the events in the \hmm analysis, and has very low \SoB. 

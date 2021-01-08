@@ -1,3 +1,1182 @@
 \chapter{search for H2Mu targeting the VH production mode}
 
-modify from the AN
+As described in Section~\ref{sec:hmm_cat_and_strategy}, the analysis in the \VH category targets the \VH production modes of the Higgs boson, 
+and is established as two independent parts, the \WH category and the \ZH category.
+This chapter provides a full description of the procedures and the results in these two categories.
+In this chapter the \VH category will sometimes be referred to as the \VH categories, 
+when we focus more on the individual specifications of the \WH and \ZH categories, rather than their common characteristics.
+
+The \VH analyses focus on the leptonic ($e$ or $\mu$) decay modes of the \PV boson (\PW or \PZ), 
+which leads to distinct final states involving extra well-reconstructed charged lepton(s) in addition to the two muons from the Higgs decay.
+By requiring these additional leptons, the main backgrounds in the generic $\mu\mu$ phase-space, the \DY and the \ttbar, are greatly suppressed,
+leading to a high \SoB in the \VH categories, and ensuring a good expected significance with only a handful of signal events.
+The other decay modes of the \PV boson are disregarded for different reasons:
+
+The \PV bosons decay to tau leptons ($\PW \to \tau+\PGn_{\tau}$, or $\PZ \to \tau\bar{\tau}$) at the same rate as they decay to electon or muons. 
+However, in CMS, the reconstruction of $\tau$ is not as efficient as electrons or muons: 
+the reconstruction of the hadronic decays of $\tau$ suffers from a sizable fake rate, 
+while the leptonic decays of $\tau$ would just appear as an electron or a muon of much lower \pt.
+Tagging the hadronic decays of taus from the \PW or \PZ decay would lead to a much lower \SoB than the $e$ or $\mu$ tags in the current \VH analyses,
+bringing negligible contribution to the overall sensitivity.
+As for the leptonic decays of $\tau$, they are not explicitly vetoed.
+If any \VH signal events containing such decays pass the selection, they are considered as part of the signal contribution.
+Although, this contribution is small, as the $e$ or $\mu$ from the $\tau$ decay would most likely fail the \pt or the vertex proximity cuts.
+
+The hadronic decays of the \PW or the \PZ boson lead to two jets in the event, making an invariant mass near the mean mass of the boson.
+Although amounting to a larger branching ratio than the leptonic decay modes, these hadronic decays turned out not as helpful in enriching the \VH events.
+A selection based on the dijet invariant mass could pick most of the \VH events, but in the meantime collecting a much larger amount of $\ggH+$jets and \qqH events, 
+as well as an immense background of $\DY+$jets and \ttbar processes.
+The \SoB from this selection is not very high, as this phase-space is dominated by $\ggH+$jets vs $\DY+$jets events.
+Up to the time of this report, no kinematic handle is found to be particularly effective in enriching the hadronic \VH signal.
+Therefore, the hadronic \VH events, are considered as minor signal contributions in the \ggH category, 
+and no dedicated \VH hadronic tag is deployed.
+
+The \PZ boson can decay to a pair of neutrinos at the branching ratio of 20\%, 
+which leave no electronic signal in the CMS detector and appear as a missing transverse momentum (\MET) in the event.
+This \MET equals to the \pt of the \PZ boson and can provide discrimination against some backgrounds.
+However, due to the complex hadronic activity in pp collisons, and the large uncertainty in the hadronic calorimetry in CMS, 
+almost all events are reconstructed with some nonzero \MET, even for events without any real \MET, like the \DY events.
+As a result, the purity of the $\ZH \to \nu\nu+\mu\mu$ signal can only be enhanced if a very tight cut on the \MET is applied.
+The signal efficiency for this cut, unfortunately, is low, since only a small fraction of the \PZ bosons in the \ZH events have high \pt.
+Furthermore, after this cut, some large irreducible backgrounds still remain, like the \ttbar and the diboson processes.
+Overall, a tag for the $\ZH \to \nu\nu+\mu\mu$ would be much less sensitive than the existing $\ZH \to \ell\ell+\mu\mu$ tag, and is not deployed.
+The $\ZH \to \nu\nu+\mu\mu$ signal events are considered as minor signal contributions in the \ggH category.
+
+After requiring additional lepton(s) in the event, the main background in the resulting \VH phase-spaces becomes the \WZ and \ZZ processes, for the \WH and \ZH categories respectively.
+For both the \WZ and the \ZZ backgrounds, if more than two muons are present in the event, 
+there are different possibilities of the association between the muons and their parent particles.
+In fact, the wrong pairing of the muons, called the combinatorial background, yields the majority of the \WZ and \ZZ background.
+For example, in an on-shell \WZ event, the muon from the \PW decay can be falsely paired with the oppositely signed (OS) muon from the \PZ decay, 
+making an invariant mass near the Higgs mass value.
+A set of cut-based event selection is optimized to reduced the combinatorial background, further improving the \SoB. 
+More details are given in Section~\ref{sec:vh_event_selection}.
+
+The minor backgrounds may include the \DY process accompanied with additional nonprompt leptons, or the \Pqt quark associated processes, 
+for example the \ttbar, $\Pqt\PW$, and $\ttbar\PV$ processes, where the \Pqb quarks from the top decays either fall out of the acceptance of the detector or fails the b-tagging,
+or the triboson processes. 
+All these minor backgrounds are reducible to different extents by their kinematic profiles. 
+Therefore Boosted Decision Tree (BDT) discriminators are trained in both the \WH and \ZH categories to account for the differences between the signal and the inclusive background as much as possible.
+
+With the BDT discriminators, the events are further divided in to several sub-categories with different \SoB. 
+In each sub-category, the \mmm spectrum is plotted, and analytical functions are used to model the shapes of the signal and the background.
+The strength of the \hmm signal is evaluated by fitting the signal and background functions to the \mmm spectrum of the data.
+Combining the results in all \WH and \ZH sub-categories, an observed (expected in absence of \hmm decay) upper limit of 10.8 (5.13) times the SM prediction 
+is set at the 95\% confidence level (CL) on the product of the Higgs boson production cross section and \brhmm.
+The corresponding signal strength, relative to the SM prediction, is $\mu = 5.48^{+3.10}_{-2.83}$.
+The excess of signal events is observed (expected with the SM prediction) with a significance of 2.02 (0.42) standard deviations.
+
+The following sections of this chapter are organized as follows: Section~\ref{sec:vh_event_selection} describes the event selection. 
+Section~\ref{sec:vh_bdt_cats} discusses the details of the training of the BDTs, and the determination of sub-categories based on them.
+Section~\ref{sec:vh_sig_bkg_model} shows the performances of different analytical functions on the signal and background modeling.
+Section~\ref{sec:vh_systematics} lists different sources of systematic uncertainties considered in this analysis.
+And Section~\ref{sec:vh_results} gives the statistical interpretation of the results.
+
+
+\section{Event selection}\label{sec:vh_event_selection}
+The \VH analysis takes physics objects reconstructed by the particle-flow (PF) algorithm~\cite{Sirunyan_2017}.
+Selections on the objects are described in details in Chapter~\ref{chp:objects}.
+The selection criteria for electrons and muons, which are the most important for this analysis, are also summarized in Tabel~\ref{tab:vh_lep_sel}.
+
+\begin{table*}[!htb]
+    \centering
+    \captionsetup{justification=centering}
+    \topcaption{Selection criteria on muons and electrons in the VH analysis.}
+    \begin{tabular}{lcc}
+    \hline
+    Variable               & Muon                      & Electron \\
+    \hline
+    \pt                    & $>$ 20\GeV                & $>$ 20\GeV       \\
+    $|\eta|$               & $<$ 2.4                   & $<$ 2.5          \\
+    ID and Iso             & Medium ID + Loose Iso     & MVA wp90         \\
+    ECal gap veto          & -                         & $(1.444,1.566)$  \\
+    $d_{xy}$(PV)           & $<$ 0.05 cm               & $<$ 0.05 cm      \\
+    $d_{z}$(PV)            & $<$ 0.10 cm               & $<$ 0.10 cm      \\
+    SIP                    & $<$ 8.0                   & $<$ 8.0          \\
+    Conversion Veto        & -                         & \checkmark       \\
+    Number of Missing Hits & -                         & $<$ 2            \\
+    lepMVA                 & $>$ 0.4                   & $>$ 0.4          \\
+    \hline
+    \end{tabular}
+    \label{tab:vh_lep_sel}
+\end{table*}
+
+The event selection targets the leptonic decays of the \PW or the \PZ bosons in the \VH signals.
+The selection steps are deviced to suppress different background processes 
+and optimize the \SoB in the \WH and \ZH categories respectively. 
+The event selection in the $\WH \to \ell\nu+\mu\mu$ category is described as follows:
+\begin{itemize}
+	\item At least one muon must have \pt $>$ 26\GeV /29\GeV /26\GeV 
+	      for year 2016/2017/2018 respectively, which is matched to a
+              single-muon trigger object
+	\item All SFOS lepton pairs must have an invariant mass $> 12$~\GeV
+	\item The charge of the three leptons must add up to $\pm 1$
+	\item At least one $\mu^{+}\mu^{-}$ pair must have an invariant mass between 110
+	      and 150~GeV
+	\item If two $\mu^{+}\mu^{-}$ pairs fall in the 110 - 150~GeV mass window, the pair
+	      with the higher \pt is chosen as the Higgs candidate (denoted $\mu\mu_{\PH}$)
+	\item The event must contain exactly 0 medium b-tagged jets and less than 2 loose b-tagged jets
+	\item In 3$\mu$ events, the non-Higgs-candidate $\mu^{+}\mu^{-}$ pair ($\mu\mu_{OS}$) must
+	      not have an invariant mass between 81 and 101~\GeV, to suppress WZ and Z+jets backgrounds
+\end{itemize}
+The event selection in the $\ZH \to \ell\ell + \mu\mu$ category is described as follows:
+\begin{itemize}
+	\item At least one muon must have \pt $>$ 26\GeV /29\GeV /26\GeV 
+	      for year 2016/2017/2018 respectively, and the event must
+	      contain an unprescaled single-muon trigger object
+	\item The charge of the four leptons must add up to 0.
+	\item All SFOS lepton pairs must have an invariant mass $> 12$~\GeV.
+	\item In $\mu\mu ee$ events, the $e^{+}e^{-}$ pair must have invariant mass between 70 and 110 GeV, and the $\mu^{+}\mu^{-}$ must have invariant mass between 110 and 150 GeV.
+	\item In 4$\mu$ events, if it is possible to form two distinct $\mu^{+}\mu^{-}$ pairs
+          each with a mass between 81 and 101~GeV, the event is discarded.
+	\item In 4$\mu$ events, one muon pair must have mass between 110 and 150 GeV, and the other muon pair must have mass between 81 and 101 GeV.
+	\item In 4$\mu$ events, if both combinations have a muon pair in the Z-mass window and a muon pair in the signal-mass window, the combination in which the mass of the Z candidate is closer to 91 GeV is chosen. 
+	\item The event must contain exactly 0 medium b-tagged jets and less than 2 loose b-tagged jets.    
+\end{itemize}
+These selection criteria are also summarized in Table~\ref{tab:vh_evt_sel}.
+\begin{table*}[!htb]
+    \centering
+    \captionsetup{justification=centering}
+    \topcaption{Event selections for the \WH and \ZH categories.}
+    \resizebox{\textwidth}{!}{\begin{tabular}{lcc}
+    \hline
+    Criterion                                                & \WH category            & \ZH category\\
+    \hline
+    Muon trig match                                          & \checkmark              & \checkmark \\
+    b-jets veto, 0 medium and $<$ 2 loose                    & \checkmark              & \checkmark \\
+    $\mu^{+}\mu^{-}$ pair with $110<\mmm<150~\GeV$           & \checkmark              & \checkmark \\
+    Additional lepton(s)                                     & 1                       & 1 SFOS pair \\
+    Low-mass resonance veto $m_{\ell\ell}>12~\GeV$           & \checkmark              & \checkmark \\
+    Number of $|\mmm-m_{\PZ}|<10~\GeV$ or $|m_{\Pe\Pe}-m_{\PZ}|<20~\GeV$     & $=$ 0          & $=$ 1  \\
+    Choice of muon combination                               & Highest $p_T(\mu\mu)$ as $\mu\mu_{\PH}$  & Smallest $|\mmm-m_{\PZ}|$ as $\mu\mu_{\PZ}$ \\
+    \hline
+    \end{tabular}}
+    \label{tab:vh_evt_sel}
+\end{table*}
+
+efficiency of sig combo and bkg combo,
+plots before and after.
+
+
+\section{MVA discrimination}\label{sec:vh_bdt_cats}
+
+After the event selection of the \WH or the \ZH categories, the remaining background processes 
+resemble the kinematic signitures of the signals and cannot be decisively reduced by simple selection cuts.
+To further suppress the backgrounds and enhance the \SoB, a BDT is trained in each category, 
+making use of the lesser discriminations from multiple variables.
+
+Different variables can be effective in separating different background processes.
+For example, the muon pair from \Pqt quark associated processes usually have more \pt than those from the \WH signal process,
+while the \MET in the \DY process is likely to be smaller than that in the \WH events.
+The main background, \WZ or \ZZ in \WH and \ZH categories respectively, 
+in which the Higgs candidate $\mu\mu$ pair comes from an off-shell \PZ boson,
+is a more complicated story as it looks almost kinematically identical to the signal.  
+The key in discrimating them lies in the spin difference between the \PZ and the \PH bosons,
+which is presented as a difference in the helicity angle $\theta^{*}$ between the decay products of the \PZ (\PH) boson.
+
+The helicity angle is defined in a decay system in the frame in which the parent particle is at rest,
+as the angle between the direction of the decay and the boost direction of the parent particle.
+The distribution of this angle is determinded by the spins of the parent particle and the decay products.
+In the case of $\PW \to \WZ$ ($\PZ \to \ZZ$) vs $\PW \to \WH$ ($\PZ \to \ZH$), the helicity angle between the \PW ($\PZ_{1}$) and the $\PZ_{2}$ follows the distribution (shown in Figure???),
+while the the helicity angle between the \PW (\PZ) and the \PH follows ....
+Similarly, for \zmm vs \hmm, the muons from a \PZ decay tend to align with the polarization of the \PZ boson, 
+while the muons from a \PH decay do not have a preference in direction.
+
+All these helicity angles, $\theta^{*}_{\WH}$, $\theta^{*}_{\ZH}$, and $\theta^{*}_{\mu\mu}$, 
+can in principle provide significant discrimination between the signal and the background.
+However, in practice, $\theta^{*}_{\WH}$ cannot be reconstructed due to the lack of information of the neutrino from the \PW decay, 
+and the distribution of $\theta^{*}_{\mu\mu}$ is severely sculpted by the acceptance of the CMS detector, 
+rendering a similar shape for the \zmm and \hmm processes.
+On the other hand, the helicity angle between the \PW-lepton and the $\mu\mu_{\PH}$ system still keeps partial information, 
+and some other angular correlations like $\Delta\phi$, $\Delta\eta$ may also reflect some discrimination.
+All these variables are tested as inputs to the BDT for the performance.
+Some of them turned out insignificant and are later trimmed from the input collection.
+To make sure the BDTs do not sculpt the \mmm shape, which will be used for the signal extraction,
+variables which are strongly correlated with the \mmm, for example the \pt of the muons, are not used in the BDTs.  
+
+
+\subsection{BDT targeting \texorpdfstring{$\WH \to \ell\nu+\mu\mu$}{WH to 3l} signal}\label{subsec:WHlep_BDT}
+
+The \WH BDT takes the variables of three different kinds, the kinematics of the leptons which are uncorrelated with the \mmm,
+the angular correlations between different leptons as discussed above, and the variables reflecting the missing energy in the event.
+In total, there are 16 input variables to the BDT, which are listed in Table~\ref{tab:wh_bdt_vars}. 
+The variables related to the missing energy includes the missing energy itself, 
+the transverse mass (\MT) between a lepton and the missing energy, and the angular separation between a lepton and the missing energy.
+Two types of missing energy are tested, the \MET, which is the inverse of the sum of the transverse energy of all PF candidates, 
+and the \MHT, which only considers the well-defined jets, photons, and leptons in the similar calculation.
+The \MET-related and \MHT-related variables are expected to play interchangable roles in the BDT.
+The \MHT-related variables turned out to be slightly better performing and are kept in the final BDT,
+while The \MET-related variables are trimmed.
+
+Another important feature in the \WH category is that about 40\% of the background are the wrong combination of muons in 3$\mu$ events.  
+The duplication of some variables calculated with the alternative combination of the muons in each event may also help with the discrimination.
+For example, apart from the transvers mass between the nominal \PW-lepton and the the \MHT, 
+another transverse mass is also considered, using the same-sign muon from the nominal Higgs candidate and the \MHT,
+which turns out to be effective.
+
+The sensitivity of this analysis depends largely on the resolution of \mmm peak, which is determined by the muon momentum resolution,
+which in turn primarily depends on the $\eta$ of the muon, as the detector condition differs in different $\eta$ regions of the CMS detector.
+Therefore it is important to divide events with different resolutions into different categories, as another way to enhance the overall \SoB.
+In the previous \hmm analysis~\cite{PhysRevLett.122.021801, carnesthesis}, this is achieved by making categories based on 
+both the BDT output and the $\eta$ value of the muons.  
+While in this work, this information is used in the BDT, not as an input variable, but by weighting the signal events by 1/$\sigma(\mmm)$,
+which is the per-event experimental dimuon mass resolution, calculated from the \pt uncertainty of the muon tracks.
+In this way, the BDT encapsulates both the kinematic information and the resolution information in its output, 
+allowing for the categorization based on this single variable, achieving better significance with fewer categories.
+The resolution is not used as an direct input to the BDT because its distribution is not very different between the signal and the background.
+The weights are only applied in the training on the signal events, and not applied in the evaluation of the BDT score.
+
+The BDT is trained with the collection of MC samples from all eras in Run 2.  
+The training is performed in the mass window of $110 \GeV{} < \mmm < 150 \GeV{}$.  
+To make sure the BDT is not sensitive to the \mmm valule, signal MC samples with different Higgs mass assumptions, 
+$\mh = 120, 125, 130$ GeV, are all used as signals in the training.  
+Signal events are only used if the candidate $\mu\mu$ pair truly originates from the Higgs decay, 
+so that the BDT only picks the true signitures from the signal. No parent matching is required for the backgrounds.   
+To benefit from the maximal statistics in the MC samples while keeping sensitive to all kinematic features, 
+events with $e+\mu\mu$ and $\mu+\mu\mu$ are used together in the training, but can be distinguished 
+by the "number of electrons" as one of the input variables to the BDT.  
+To increase the statistics of the non-prompt backgrounds in the MC events, 
+the lepMVA cut is loosened from 0.4 to -0.4 for the training collection, 
+and the non-prompt yields are scaled by a factor of 0.5 to account for the increased non-prompt lepton efficiency.  
+With both the signal and background samples, half of the events is used for the training, 
+while the other half is used for the testing.
+
+The BDT output and its Receiver Operating Characteristic (ROC) curve are shown in Figure~\ref{fig:wh_bdt_output}, 
+in which the BDT performs the same on training and testing samples, indicatign no over-training.
+The BDT input variables are shown in Figures~\ref{fig:wh_bdt_vars}.
+
+\begin{table*}[!htb]
+      \centering
+      \captionsetup{justification=justified}
+      \topcaption{List of input variables used to train the signal-background
+               separation BDT in the WH category. In this table, $\mu\mu_{\PH}$ is the Higgs candidate, 
+               $\ell$ is the lepton from the W decay, muOS (muSS) refers to the muons in the Higgs candidate which OS (SS) to the lepton.}
+      \begin{tabular}{lc}
+      \hline
+       Variable                            &  Description  \\
+      \hline
+       $\pt(\mu\mu_{\PH})$                 & \pt of the Higgs candidate \\
+       $|\eta(\mu_{1})|$                   & $\eta$ of the leading muon in the Higgs candidate \\
+       $|\eta(\mu_{2})|$                   & $\eta$ of the trailing muon in the Higgs candidate \\
+       $\Delta$R($\mu_{SS}, \mu_{OS}$)     & $\Delta$R between the two muons in the Higgs candidate \\
+       \pt($\ell$)                         & \pt of the extra lepton in the event \\
+       Number of electrons                 & Number of electrons in the event  \\
+       $\Delta$R($\ell, \mu\mu_{\PH}$)     & $\Delta$R between the extra lepton and the Higgs candidate \\
+       $\Delta\eta$($\ell, \mu\mu_{\PH}$)  & $\Delta\eta$ between the extra lepton and the Higgs candidate  \\
+       $\Delta\eta$($\ell, \mu_{SS}$)      & $\Delta\eta$ between the extra lepton and the SS muon \\
+       $\cos\theta^*(\ell, \mu_{SS})$      & $\cos\theta^*$ between the extra lepton and the SS muon \\
+       $\Delta$R($\ell, \mu_{OS}$)         & $\Delta$R between the extra lepton and the OS muon \\
+       $\Delta\eta$($\ell, \mu_{OS}$)      & $\Delta\eta$ between the extra lepton and the OS muon  \\
+       $\cos\theta^*(\ell, \mu_{OS})$      & $\cos\theta^*$ between the extra lepton and the OS muon \\
+       $\MT(\mu_{SS}, $MHT$)$              & transverse mass of the \MHT and the SS muon \\
+       $\MT(\ell, $MHT$)$                  & transverse mass of the \MHT and the extra lepton \\
+       $|\Delta\phi(\ell, $MHT$)|$         & $|\Delta\phi|$ between the \MHT and the extra lepton \\
+      \hline
+      \end{tabular}
+      \label{tab:wh_bdt_vars}
+\end{table*}
+
+\begin{figure}[!htb]
+      \centering
+      \captionsetup{justification=justified}
+      \includegraphics[width=0.50\textwidth]{pics/VH_sec/BDT_train_WH/WH_BDT_overtrain.pdf}
+      \includegraphics[width=0.43\textwidth]{pics/VH_sec/BDT_train_WH/WH_BDT_ROC.pdf}
+      \caption{On the left, the BDT output score from the WH $\to 3\ell$ BDT, with signal in blue
+      and background in red.  On the right, the receiver operating characteristic (ROC) curve, 
+      with training in red and testing in blue. A slight over-training is observed in the region of
+      low signal efficiency, due to the fluctuation in background. As will be shown in Fig.~\ref{fig:wh_bdt_mass}, 
+      the BDT dose not sculpt the shape of $\mmm$.}
+      \label{fig:wh_bdt_output}
+  \end{figure}
+  
+  \begin{figure*}[!htb]
+      \centering
+      \captionsetup{justification=justified}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_H_pair_pt.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_muH1_eta_abs.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_muH2_eta_abs.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_muSS_muOS_dR.pdf}
+  
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_pt.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_nEles.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_H_pair_dR.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_H_pair_dEta.pdf}
+  
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_muSS_dEta.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_muSS_cosThStar.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_muOS_dR.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_muOS_dEta.pdf}
+  
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_muOS_cosThStar.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_muSS_MHT_MT.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_MHT_MT.pdf}
+      \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_WH/BDT_lep_MHT_dPhi_abs.pdf}
+      \caption{Input variables to the WH $\to 3\ell$ BDT, with signal in blue and background in red.}
+      \label{fig:wh_bdt_vars}
+  \end{figure*}
+  
+\subsection{BDT targeting \texorpdfstring{ZH $\to \ell\ell+\mu\mu$}{ZH to 4l} signal}\label{subsec:ZHlep_BDT}
+
+After the event selection of the \ZH category, the background is almost purely composed of $\ZZ \to 4\ell$ and $\ggZZ \to 4 \ell$ processes. 
+Other backgrounds, prompt or non-prompt, have negligible contribution in this channel. 
+Both the ZZ and ggZZ processes have the identical final states as the ZH signal. 
+Apart from the dimuon mass, which is used in the last stage for 
+signal extraction, the most distinct discrimination between the signal and the background 
+lies in the helicity angles, between the leptons from the \PH (\PZ) decay, 
+and between the \PH ($\PZ_{1}$) and the $\PZ_{2}$ bosons.
+
+The input variables to the BDT are listed in Table~\ref{tab:zh_bdt_vars} and shown in Figure~\ref{fig:zh_bdt_vars}, 
+among which, $\cos\theta^*(\mu\mu_{\PH},\ell\ell_{\PZ})$, the helicity angle between 
+the Higgs candidate and the Z candidate, is one of the most discriminating. 
+In the ZZ background process, a propagator Z boson ($\PZ_{0}$) decays to two Z bosons ($\PZ_{1}$ and $\PZ_{2}$),
+which in turn decays to lepton pairs. Since Z bosons are spin-1 particles, in the $\PZ_{0} \to \PZ_{1}\PZ_{2}$ 
+process, the direction of the decay is more likely to align with the direction of the momentum of the $\PZ_{0}$.
+Whereas in the ZH events, since Higgs bosons are spin-0 particles, there is no preferred direction for 
+the the $\PZ_{0} \to \PZ_{1}\PH$ decay. \textcolor{red}{check if prefer perpendicular}.
+A similar kinematic discrimination is also present in the helicity angle $\cos\theta^*(\mu_{1}, \mu_{2})$, 
+between the \zmm decay and the \hmm decay, 
+where in the \PZ decay the muons prefer to align with their parent and in the \PH decay they follow a flat distribution. 
+However, in this analysis, due to the acceptance of the CMS detector, 
+the distribution of $\cos\theta^*(\mu_{1}, \mu_{2})$ is sculpted and turns out not very different between the signal and the background. 
+This variable is included in the initial training and later discarded during the variable trimming process.
+
+Similar to the WH BDT training, as described in Section~\ref{subsec:WHlep_BDT}, 
+the training is performed with MC samples from all eras in Run2. The training is performed in the mass 
+window of $110 \GeV{} < \mmm < 150 \GeV{}$.  This training was performed prior to the production
+of ggZH signal samples, thus only qqZH MC is used as signal events. 
+Signal MC samples with different Higgs mass assumptions $\mh = 120, 125, 130$ GeV are used. 
+Signal events are only used if the candidate $\mu\mu$ pair truly originates from the Higgs decay.  
+Signal events are weighted by 1/$\sigma[M(\mu\mu_{\PH})]$.
+Events with $ee+\mu\mu$ and $\mu\mu+\mu\mu$ are used together in the training, 
+but can be distinguished with the "lepton flavor" as one of the input variables.  
+To increase the statistics of MC events for training, the lepMVA cut is loosened from 0.4 to -0.4.
+Even so, there is no non-prompt background component passing the loosened selection.
+
+The BDT output and the ROC curve are shown in Figure~\ref{fig:zh_BDT_out},
+in which the BDT performs the same on training and testing samples, indicatign no over-training.
+The BDT input variables are shown in Figure~\ref{fig:zh_bdt_vars}.
+
+\begin{table*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \topcaption{List of input variables used to train the signal-background
+      separation BDT in the ZH category. In this table, $\mu\mu_{\PH}$ is the Higgs candidate,
+      and $\ell\ell_{\PZ}$ is the \PZ candidate.}
+    \begin{tabular}{lc}
+    \hline
+      Variable                                     & Description  \\
+    \hline
+      \pt$(\mu\mu_{\PH})$                          & \pt of the Higgs candidate\\
+      $|\eta(\mu\mu_{\PH})|$                       & $|\eta|$ of the Higgs candidate \\
+      $|\Delta\phi(\mu\mu_{\PH})|$                 & $|\Delta\phi|$ between the muons in the Higgs candidate\\
+      M$(\ell\ell_{\PZ})$                          & invariant mass of the Z candidate\\
+      \pt($\ell\ell_{\PZ}$)                        & \pt of the Z candidate\\
+      $|\eta(\ell\ell_{\PZ})|$                     & $|\eta|$ of the Z candidate\\
+      $\Delta$R$(\ell\ell_{\PZ})$                  & $\Delta$R between the leptons in the Z candidate\\
+      lepton flavor                                & flavor of the Z candidate lepton pair\\
+      $\cos\theta^*(\mu\mu_{\PH},\ell\ell_{\PZ})$  & cosine helicity angle between the Higgs and the Z candidates\\
+      $\Delta\eta(\mu\mu_{\PH},\ell\ell_{\PZ})$    & $\Delta\eta$ between the Higgs and the Z candidates\\
+    \hline
+    \end{tabular}
+    \label{tab:zh_bdt_vars}
+\end{table*}
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.50\textwidth]{pics/VH_sec/BDT_train_ZH/ZH_BDT_overtrain.pdf}
+    \includegraphics[width=0.43\textwidth]{pics/VH_sec/BDT_train_ZH/ZH_BDT_ROC.pdf}
+    \caption{On the left, the BDT output score, with signal in blue and background in red.  On the right, 
+             the receiver operating characteristic (ROC) curve showing the ZH $\to 4\ell$ BDT performance, 
+             with training in red and testing in blue.}
+    \label{fig:zh_BDT_out}
+\end{figure*}
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dimu_pt.pdf} 
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dimu_abs_eta.pdf}
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dimu_abs_dPhi.pdf}           
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dilep_mass.pdf}
+
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dilep_pt.pdf}           
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dilep_abs_eta.pdf}
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dilep_dR.pdf}           
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_lep_ID.pdf}
+
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_cts_dipair_H.pdf}           
+    \includegraphics[width=0.24\textwidth]{pics/VH_sec/BDT_train_ZH/BDT_dipair_dEta_H.pdf}
+
+    \caption{Input variables to the ZH $\to 4\ell$ BDT, with signal in blue and background in red.}
+    \label{fig:zh_bdt_vars}
+\end{figure*}
+
+
+\clearpage
+\subsection{Validation of the BDTs}\label{subsec:bdt_validation}
+
+As discussed in~\ref{sec:hmm_cat_and_strategy}, the strategy of this analysis is to divide events into sevaral sub-categories with different \SoB,
+and consequently maximize the overall sensitivity.
+The signal extraction is performed by fitting the \mmm spectrum, so it is crucial that 
+any selection cut applied to the BDT score should not sculpt the \mmm shape.
+Two checks are performed for this purpose.
+\begin{itemize}
+	\item The \mmm shape of the background is compared between events in different BDT quantiles, shown as the left plots of Figures~\ref{fig:wh_bdt_mass} and~\ref{fig:zh_bdt_mass}. 
+	\item The BDT output is compared between several signal samples with different \mh assumptions, shown as the right plots of Figures~\ref{fig:wh_bdt_mass} and~\ref{fig:zh_bdt_mass}.
+\end{itemize}
+From these plots, no sign of correlation between the BDT and the \mmm is seen. 
+Therefore the \WH and \ZH BDTs can be used for categorization without introducing sculpting of the \mmm shape.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_WH/mass_in_WH_BDT_quantiles.pdf}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_WH/WH_BDT_three_sigs.pdf}
+  \caption{For the WH BDT, the distribution of the dimuon mass shape in the background for five different BDT quantile (left), 
+           and the distribution of the BDT output for three different signal mass assumptions (right).}
+  \label{fig:wh_bdt_mass}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_ZH/mass_in_ZH_BDT_quantiles.pdf}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_ZH/ZH_BDT_three_sigs.pdf}
+  \caption{For the \ZH BDT, the distribution of the dimuon mass shape in the background for five different BDT quantile (left),
+           and the distribution of the BDT output for three different signal mass assumptions (right).}
+  \label{fig:zh_bdt_mass}
+\end{figure*}
+
+
+Furthermore, it is also important to make sure the BDT would perform the same way on data as they do on the simulation.
+In order to do this, the inputs and output of the BDTs are plotted comparing between data and the simulation.
+Figure~\ref{fig:vh_bdt_output_data} shows the output of the \WH BDT and the \ZH BDT, 
+and Figure~\ref{fig:wh_bdt_inputs_data} and~\ref{fig:zh_bdt_inputs_data} show the input variables to the \WH and \ZH BDTs respectively.
+Overall, the data and MC agree with each other within the uncertainties for the BDT outputs and most of the inputs.
+Some fluctuations are seen in data, especially in the \ZH category, as the total number of events is small. 
+These fluctuations are expected within the statistical uncertainty and do not indicate any systematic disagreement.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_WH/BDT_final.pdf}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_ZH/BDT_final.pdf}
+  \caption{The WH BDT output (left) and the \ZH BDT output (right) in full Run 2 in the signal region 110 \GeV $<$ \mmm $<$ 150 \GeV.}
+  \label{fig:vh_bdt_output_data}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/H_pair_pt.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/muH1_eta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/muH2_eta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/muSS_muOS_dR.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_pt.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/nEles.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_H_pair_dR.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_H_pair_dEta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_muSS_dEta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_muSS_cosThStar.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_muOS_dR.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_muOS_dEta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_muOS_cosThStar.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/muSS_MHT_MT.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_MHT_MT.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_WH/lep_MHT_dPhi_abs.pdf}
+  \caption{Input variables to the WH BDT in full Run 2 in the signal region 110 \GeV $<$ \mmm $<$ 150 \GeV.}
+  \label{fig:wh_bdt_inputs_data}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dimu_pt.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dimu_abs_eta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dimu_abs_dPhi.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dilep_mass.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dilep_pt.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dilep_abs_eta.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dilep_dR.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/lep_ID.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/cts_dipair_H.pdf}
+  \includegraphics[width=0.24\textwidth]{pics/VH_sec/valid_BDT_ZH/dipair_dEta_H.pdf}
+  \caption{Input variables to the ZH BDT in full Run 2 in the signal region 110 \GeV $<$ \mmm $<$ 150 \GeV.}
+  \label{fig:zh_bdt_inputs_data}
+\end{figure*}
+
+An arguable disagreement is seen in the leftmost region in one of the inputs to the \WH BDT, $\MT(\mu_{SS}, $MHT$)$,
+shown as the second plot in the bottom line of Figure~\ref{fig:wh_bdt_inputs_data}, also put separately in Figure~\ref{fig:wh_MT_check}. 
+To understand if this disagreement would translate into a mismodeling of the \WH BDT, 
+the BDT output is plotted for both the signal and the background in different $\MT(\mu_{SS}, $MHT$)$ bins, 
+shown as the right plot in Figure~\ref{fig:wh_MT_check}.
+In this plot, for both the signal and the background, 
+the BDT profile is almost the same for events with $\MT(\mu_{SS}, $MHT$)$ $<$ 40 \GeV and events with 40 $<$ $\MT(\mu_{SS}, $MHT$)$ $<$ 80 \GeV,
+while it is different between events with $\MT(\mu_{SS}, $MHT$)$ $<$ 80 \GeV from events with $\MT(\mu_{SS}, $MHT$)$ $>$ 80 \GeV.  
+The BDT is sensitive to whether the $\MT(\mu_{SS}, $MHT$)$ is greater or smaller than 80 \GeV, 
+but does not further distinguish events if the $\MT(\mu_{SS}, $MHT$)$ is less than 80 \GeV.
+Once the bins below 80 \GeV are merged in the left plot of Figure~\ref{fig:wh_MT_check}, there is no significant disagreement, 
+therefore it should not cause any mismodeling of the BDT.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_WH/muSS_MHT_MT.pdf}
+  \includegraphics[width=0.42\textwidth]{pics/VH_sec/valid_BDT_WH/check_MT_plot.png}
+  \caption{The input variable $\MT(\mu_{SS}, $MHT$)$ to the \WH BDT (left), 
+           and the BDT output for signal and background in different $\MT(\mu_{SS}, $MHT$)$ bins (right).
+           A mild disagreement is seen between the simulation and data in the low bins of $\MT(\mu_{SS}, $MHT$)$,
+           while the BDT is not sensitive to the $\MT(\mu_{SS}, $MHT$)$ values in that region.}
+  \label{fig:wh_MT_check}
+\end{figure*}
+
+\clearpage
+\section{Event Categorization}\label{sec:vh_event_cats}
+
+To optimize the overall sensitivity of the VH analyses, 
+the \WH and the \ZH phase-spaces are divided into several sub-categories with different S/B ratios based on the BDT discriminants described in Section~\ref{sec:vh_bdt_cats}. 
+ 
+To achieve the maximal sensitivity with a reasonable number of categories, 
+an iterative procedure is taken.  
+In each iteration, a cut is scanned at a step of 0.01 of the BDT value and the sum of
+the significance of the resulting categories is calculated as the figure of merit. 
+The figure of merit is defined as the $\mathrm{S}/\sqrt{\mathrm{B}}$ in each category 
+summed in quadrature, where $\mathrm{S}$ and $\mathrm{B}$ represent the expected 
+signal and background yields within the FWHM of the signal peak in each category.
+In addition, to ensure that there are enough events in each category to perform a shape analysis,
+all categories have to meet a minimal total event yield requirement during the BDT scanning process.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_BDT_cats/WH_BDT_scan1.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_BDT_cats/WH_BDT_scan2.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_BDT_cats/WH_BDT_scan3.pdf}
+  \caption{Scans for the first (left), second (middle) and a potential third (right) BDT cut in the WH channel.
+           The first BDT cut is chosen at 0.3. The second BDT cut is chosen at -0.1. A third BDT cut is not necessary.}
+  \label{fig:wh_bdt_cat_scan}
+\end{figure*}
+
+Figure~\ref{fig:wh_bdt_cat_scan} shows the iterations performed on the \WH BDT. 
+The minimum number of events in each category is set to be 30.
+In the first scan, the overall significance maximizes around $0 \sim 0.3$, 
+and the cut is chosen at 0.3 so that there are enough events on its left side for a second cut.
+In the second scan, the overall significance maximizes around $-0.1 \sim 0.05$,
+and the position of the second cut can be any value in this range.
+To help decide the second cut, several third scans are performed under different assumptions of the second cut,
+all showing negligible changes of the overall significance (similar to the right plot in Figure~\ref{fig:wh_bdt_cat_scan}).
+Therefore, there is no need for a third cut, and the choice for the second cut can be arbitrary.
+The second cut is decided at -0.1 so that there are a good number of events in the middle sub-category to ensure a stable shape analysis.  
+As a result, two BDT boundaries are set, dividing the WH phase-space into 3 sub-categories, 
+BDT within [-1.0, -0.1], BDT within [-0.1, 0.3] and BDT within [0.3, 1.0].
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_BDT_cats/ZH_BDT_scan.pdf}
+  \caption{Scans for the BDT cut in the \ZH channel. The BDT cut is chosen at -0.1.}
+  \label{fig:zh_bdt_cat_scan}
+\end{figure*}
+
+Similarly, Figure~\ref{fig:zh_bdt_cat_scan} shows the scan performed on the \ZH BDT. 
+The minimum number of events in each category is set to be 16, 
+as the total number of events in the \ZH category is less than 50. 
+In the BDT scan, the overall significance maxizies around $-0.15 \sim 0.05$.
+The BDT cut is chosen at -0.1, dividing the \ZH events into roughly two equal halves.
+A second cut is not needed as the number of events is not enough for a further division.
+The resulting 2 \ZH sub-categories are, BDT within [-1.0, -0.1], and BDT within [-0.1, 1.0].
+
+
+
+\section{Signal and background modeling}\label{sec:vh_sig_bkg_model}
+
+write something, use analytical shapes for statistical analysis.
+describe statistical analysis
+signal plus background fit performed for signal extraction.
+
+\subsection{Signal modeling}\label{sec:vh_sig_model}
+In all sub-categories, signals are modeled independently by different production modes,
+with the contributions from three years (2016, 2017, 2018) summed together. 
+In particular, \qqZH and \ggZH signals are modeled separately as there are no other signal component in the \ZH category.
+Each of the components is modeled with a Double-sided Crystal Ball function (DCB), as described in Equation~\ref{eq:dCBFunction}.  
+In all DCB functions, the parameters $n_L$ and $n_R$ are fixed to 2.0, 
+since they only affect the shape in tails and can take values in a large range without changing the quality of the fit by much. 
+Other parameters are allowed to float freely.  
+
+\begin{equation}
+  \label{eq:dCBFunction}
+  \text{DCB}(m_{\mu\mu})=%
+    \begin{cases}
+        e^{-(m_{\mu\mu} - s)^{2}/(2\sigma^{2})} & \ \ -\alpha_{\mathrm{L}} < (m_{\mu\mu}-s)/\sigma < \alpha_{\mathrm{R}} \\
+        (\frac{n_{\mathrm{L}}}{|\alpha_{\mathrm{L}}|})^{n_{\mathrm{L}}} \times e^{-\alpha^{2}_{\mathrm{L}}/2} \times (\frac{n_{\mathrm{L}}}{|\alpha_{\mathrm{L}}|} - |\alpha_{\mathrm{L}}| - (m_{\mu\mu}-s)/\sigma)^{-n_{\mathrm{L}}}
+        & \ \ (m_{\mu\mu}-s)/\sigma \leq -\alpha_{\mathrm{L}} \\
+        (\frac{n_{\mathrm{R}}}{|\alpha_{\mathrm{R}}|})^{n_{\mathrm{R}}} \times e^{-\alpha^{2}_{\mathrm{R}}/2} \times (\frac{n_{\mathrm{R}}}{|\alpha_{\mathrm{R}}|} - |\alpha_{\mathrm{R}}| + (m_{\mu\mu}-s)/\sigma)^{-n_{\mathrm{R}}}
+        & \ \ (m_{\mu\mu}-s)/\sigma \geq \alpha_{\mathrm{R}} \\
+    \end{cases}
+\end{equation}
+
+Examples of signal modeling are shown in Figures~\ref{fig:signal_models_in_WH3l} and ~\ref{fig:ZH_signal_model_in_ZH4l}. 
+Please note that the plots shown are the signals in the inclusive \WH and \ZH categories. 
+The actual models used in each sub-category are slightly different. 
+\ggH, \qqH and \bbH have negligible contributions to the WH category and are not considered.  
+Similarly, in the ZH category only \qqZH and \ggZH are considered since all other contributions are negligible. 
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models//WH_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models/qqZH_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models/ggZH_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models/ttH_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models/THQ_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/WH_signal_models/THW_CatAll_fit_DSCB_1.png}
+  \caption{The signal modeling in the WH $\to \ell+\mu\mu$ inclusive category. Considered signal modes are WH (top left), 
+           qqZH (top middle), ggZH (top right), ttH (bottom left), THQ (bottom middle), and THW (bottom right).}
+  \label{fig:signal_models_in_WH3l}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/ZH_signal_models/qqZH_CatAll_fit_DSCB_1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/ZH_signal_models/ggZH_CatAll_fit_DSCB_1.png}
+  \caption{The signal modelin in the ZH $\to \ell\ell+\mu\mu$ inclusive category. Considered signals modes are 
+           qqZH (left) and ggZH (right).}
+  \label{fig:ZH_signal_model_in_ZH4l}
+\end{figure*}
+
+
+\subsection{Background modeling}\label{sec:vh_bkg_model}
+
+As discussed in Section~\ref{sec:vh_event_selection}, the main background in the \WH (\ZH) category is the \WZ (\ZZ) process, 
+a fraction of which consists the wrong pairing of the muons.
+The \mmm spectrum of the correctly paired \WZ (\ZZ) events follows a Breit-Wigner tail of the \PZ boson, 
+while the spectrum of the wrongly paired \WZ (\ZZ) events is rather flat.
+Overall the background shapes in the \WH and \ZH categories are smoothly falling, and Breit-Wigner like to some extent.
+Therefore, a group of different functional forms are considered as the candidates for the background modeling.
+Some of them are physics-inspired, meaning that they are modified from the form of the Breit-Wigner function, 
+the others are agnostic, which take the form of some general functional bases.
+The physics-inspired function candidates include the $BWZ$ function (Equation~\ref{eq:BWZ}), which is a Breit-Wigner core times an exponential term , 
+the $BWZRedux$ (Equation~\ref{eq:BWZRedux}), which is a Breit-Wigner core times a exponential term with more degrees of freedom (DOFs),
+the $BWZGamma$ (Equation~\ref{eq:BWZGamma}), which is a linear combination of the $BWZ$ function and an exponential function,
+and the $BWZ \times Bernstein$ (Equation~\ref{eq:BWZBern}), which is the $BWZ$ function times a Bernstein polynomial. 
+
+
+\begin{equation}\label{eq:BWZ}
+   \mathrm{BWZ}(m_{\mu\mu}) = \frac{\Gamma_{\mathrm{Z}} \cdot e^{a\cdot m_{\mu\mu}}}{(m_{\mu\mu}-m_{\mathrm{Z}})^2+(\Gamma_{\mathrm{Z}}/2)^{2}}
+\end{equation}
+\begin{equation}\label{eq:BWZRedux}
+   \mathrm{BWZRedux}(m_{\mu\mu}) = \frac{\Gamma_{\mathrm{Z}} \cdot e^{a\cdot m_{\mu\mu}+b \cdot m_{\mu\mu}^2}}{(m_{\mu\mu}-m_{\mathrm{Z}})^c+(\Gamma_{\mathrm{Z}}/2)^{c}}
+\end{equation}
+\begin{equation}\label{eq:BWZGamma}
+   \mathrm{BWZGamma}(m_{\mu\mu}) = f \cdot \frac{\Gamma_{\mathrm{Z}} \cdot e^{a\cdot m_{\mu\mu}}}{(m_{\mu\mu}-m_{\mathrm{Z}})^2+(\Gamma_{\mathrm{Z}}/2)^{2}} + (1-f) \cdot \frac{e^{a\cdot m_{\mu\mu}}}{m_{\mu\mu}^2}
+\end{equation} 
+\begin{equation}\label{eq:BWZBern}
+  \mathrm{BWZ\times Bernstein}(m_{\mu\mu}) = \frac{\Gamma_{\mathrm{Z}} \cdot e^{a\cdot m_{\mu\mu}}}{(m_{\mu\mu}-m_{\mathrm{Z}})^2+(\Gamma_{\mathrm{Z}}/2)^{2}} \times \mathrm{Bern}_{n}(m_{\mu\mu})
+\end{equation}
+
+The agnostic function candidates include the Bernstein polynomials (Equation~\ref{eq:Bernstein}), 
+a series of exponential functions (Equation~\ref{eq:SumExp}), and a series of power functions (Equation~\ref{eq:SumPower}).
+In the actual fits, given the low statistics in the \VH sub-categories, the sum of exponential or power functions are usually reduced to 
+a single exponential or power function plus a constant (Equation~\ref{eq:ExpConst} and~\ref{eq:PowConst}).
+
+\begin{equation}\label{eq:Bernstein}
+  \mathrm{Bernstein}(m_{\mu\mu}) = \sum_{i}^{n} a_{i} \cdot \binom{n}{i} m_{\mu\mu}^{i}(1-m_{\mu\mu})^{n-i}
+\end{equation}
+\begin{equation}\label{eq:SumExp}
+  \mathrm{S\textrm{-}exponential}(m_{\mu\mu}) = \sum_{i}^{n} a_{i} \cdot e^{b_{i} \cdot m_{\mu\mu}}
+\end{equation}
+\begin{equation}\label{eq:SumPower}
+  \mathrm{S\textrm{-}power\textrm{-}law}(m_{\mu\mu}) = \sum_{i}^{n} a_{i} \cdot m_{\mu\mu}^{b_{i}}
+\end{equation}
+\begin{equation}\label{eq:ExpConst}
+  \mathrm{Exponential\textrm{+}constant}(m_{\mu\mu}) = f+(1-f)\times e^{a\cdot m_{\mu\mu}}
+\end{equation}
+\begin{equation}\label{eq:PowConst}
+  \mathrm{Power\textrm{-}law\textrm{+}constant}(m_{\mu\mu}) = f+(1-f)\times m_{\mu\mu}^{a}
+\end{equation}
+
+In each sub-category, the function candidates are fit to the \mmm shape in the range of $110 < \mmm < 150$ \GeV, 
+with events blinded in the signal region $120 < \mmm < 130$ \GeV, so the functions are not aware of the existence of the signal.
+Because the limited number of events in the \VH sub-categories, the distribution of data is subject to large fluctuations.
+The \mmm shape of data reflects both the underlying physics shape, as well as the specific features from the fluctuation of this particular dataset.
+It is important to make sure the modeling of the background does not over-fit these specific features.
+On the other hand, as shown in Section~\ref{sec:vh_event_selection} and~\ref{sec:vh_bdt_cats}, 
+the simulated samples are known to provide a good modeling of the data,   
+and the \mmm shape from the simulation can be assumed to be a good representation of the true physics shape.
+Therefore, the simulation can be used to study the performance of the background function candidates 
+to learn how they would model the generic expected physics shapes,
+and the data is treated as a particular realization of these physics distributions.
+The fit to simulation takes the \mmm shape of the simulation,
+but assumes the statistical error in each bin as the Poisson error of the expected number of events in that bin rather than the number of simulated events in the sample.
+If a function candidate provides a good fit to the simulation, it is then tested on the real dataset, 
+to make sure the fit does not break down because of the fluctuation, 
+If the function gives consistently good fit performances on the simulation and data, it is considered as a good candidate.
+It is worth a remark that the fit to data does not assume any parameter information from the fit to simulation,
+so the simulation is only used to study the performance of the background functions, but not used to constrain the specific shapes.
+
+All the functional forms listed above can be used with different DOFs.
+For the physics-inspired funtions, the $m_{Z}$ and $\Gamma_{Z}$ can either be fixed at the nomial value for the \PZ boson or allowed to float freely,
+while for the agnostic functions, the order of the serie can be adjusted.
+To find the right DOFs, each functional form is tested with different setups,
+and the optimal DOFs is determined following the idea of the likelihood ratio test.
+A standard likelihood ratio test compares the likelihood ratio between the fit with n and n+1 DOFs, 
+usually calculated as $2\dot(\mathrm{Log}\mathcal{L}_{n+1}-\mathrm{Log}\mathcal{L}_{n})$, 
+where the $\mathrm{Log}\mathcal{L}_{n}$ is the likelihood of the fit with n DOFs.
+This quantity should follow the $\chi^{2}_{1}$ distribution, the chi-square distribution with one degree of freedom, 
+whose p-value is then used to decide whether adding one more DOF in the fit leads to a significantly better fit quality.
+
+In the practice of background fitting in the \VH sub-categories, which all have low expected number of events,
+it turns out in most cases two DOFs are enough, one for the overall normalization and one for the shape variation.
+In some sub-categories with very low statistics, even functions without any shape DOF give good performances,
+namely, a function with all its shape parameters fixed at the best fit values to the simulation can be a good fit to data.
+These fixed shapes are included as some candidates along side with their freely floating versions.
+On the other hand, when the shape parameters are allowed to float, 
+agnostic functions with low DOFs do not always fit well as they lack enough flexibility.
+For example, an order-1 Bernstein polynomial (2 shape DOFs) is just a straight line and is obviously not the true \mmm shape,
+and the fits with a single exponetial or power function are not stable and sometimes do not converge.
+To mitigate these behaviors, a BWZ $\times$ order-1 Bernstein (2 shape DOF in total), in which the BWZ part is fixed with the nominal \PZ boson shape, is used instead of the plain Bernstein,
+and a single exponential (power) function plus a free constant (2 shape DOF in total) is used instead of the plain exponential (power) funtion.
+Overall, the good functions candidates includes fixed forms (1 normalization DOF + 0 shape DOF) and 
+floating forms (1 normalization DOF + 1 \sim 2 shape DOFs).
+
+The final choices of the background function in each sub-category is decided based on 
+the bias it may have against other possibilities, described in detail in Section~\ref{sec:bias_study}.
+If several functions pass the bias requirement, the function with fewest DOF is choosen, 
+as it leads to the highest significance in the statistical anlysis.
+
+
+\clearpage
+\section{Systematic uncertainties}\label{sec:vh_systematics}
+
+A crucial task in the statistical analysis is to evaluate all the systematic uncertainties 
+that affect the signal and background estimation.
+In this analysis, both the signal and background are described by analytical models,  
+and the statistical analysis is performed based on the fits of them.
+All sources of systematic uncertainties are translated into the 
+variations of the parameters of the signal and background functions.
+
+Several sources of signal systematic uncertainties are considered, divided into two types, the $shape$ and the $rate$ uncertainties.
+The $shape$ uncertainties, described in Section~\ref{sec:shape_uncertainty}, account for the factors affecting the expected shape of the signal peak, 
+while the $rate$ uncertainties, described in Section~\ref{sec:rate_uncertainty}, are those affecting the expected signal yield.
+
+A different approach is taken to evaluate the systematic uncertainty in the background.
+The background estimation always takes the best fit to data and does not rely on simulation,
+therefore none of the theoretical or experimental uncertainties considered for the signal needs to be considered for the background.
+However, by fitting the background shape with an analytical function, 
+a potential bias could be introduced between the chosen background model and the underlying real distribution.
+A bias between the background estimation and the true background appearing at the position of the signal is essentially a spurious signal.
+This bias has to be small so that it does not impact the validity of the signal strength evaluation.
+The study to evaluate this potential bias is described in details in Section~\ref{sec:bias_study}. 
+
+\subsection{Signal shape uncertainties}\label{sec:shape_uncertainty}
+For all Higgs boson production modes, the expected $m_{\mu\mu}$ signal shape is primarily affected by the uncertainties in the muon energy scale and resolution,
+in other words the mean and sigma values in the DCB fits of the signal peak. 
+As described in Chapter~\ref{chp:muon_corr}, the \RochCorr is implemented to correct for differences in both scale and resolution between data and simulated events, 
+while the \FSR and \GeoFit are not expected to introduce new differences between data and simulation.
+In the meantime, Section~\ref{sec:muon_cal} shows that the simulation of the \DY peak agrees with the data upto a per-mille level in scale and a percent level in resolution.
+The shape uncertainties can be estimated accordingly.
+
+The muon energy scale shape uncertainty is estimated to be 0.1\% of the mean value of the \mmm peak, 
+and the muon energy resolution uncertainty is conservatively estimated to be 10\% of the resolution of the \mmm peak. 
+The effect of the scale uncertainty is an overall shift of the \mmm peak to higher or lower mass value,
+while the effect of the resolution uncertainty is a stretching or squeezing of the width of the \mmm peak.
+Both uncertainties are modeled as a Gaussian constrained nuisance parameter 
+which is correlated across different production modes but uncorrelated between different sub-categories.
+
+
+\subsection{Signal rate uncertainties}\label{sec:rate_uncertainty}
+
+The rate uncertainties are the ones that affect the signal yield in each sub-category, and may come from various sources.
+Some of them affect the overall prediction of the signal and act as a factor on the overall normalization of the signal.
+The normalization uncertainties include the theoretical uncertainties on cross section of the signal production, 
+and theoretical uncertainties on the \brhmm, as well as the uncertainties on the CMS luminosity measurement.
+Other uncertainties tweak the event kinematics and affect the acceptance of signals in each sub-category.
+The acceptance uncertainties include the uncertainties on all the event weights in the simulation, 
+the uncertainties from all the efficiency scale factors applied in the analysis, 
+and the uncertainties from all the physics object calibrations and corrections.
+
+The impacts from theoretical uncertainties are shown in Table ~\ref{tab:vh_systematics_xsec}. 
+The uncertainty on the \brhmm is $\pm 1.23\%$, independent from the production modes.
+The luminosity uncertainty for each year are set following the official recommendation of CMS, 
+2.5\%, 2.3\% and 2.5\% for 2016, 2017 and 2018 respectively. 
+Since the signals are modeled summing all years, 
+the luminosity uncertainty in each year reflected in the overall signal yield are 0.7\%, 0.7\% and 1.1\%, for 2016, 2017, and 2018. 
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Normalization uncertainties on the Higgs boson production cross sections for various modes at $\sqrt{s} = 13$\TeV.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{c c c c c c}
+      \hline
+      Process     & Perturbative      & +QCD scale unc. & -QCD scale unc.  & +(PDF+$\alpha_{s}$) unc.    & -(PDF+$\alpha_{s}$) unc. \\
+                  & Order             & (\%)            & (\%)             & (\%)                        & (\%)                     \\
+      \hline
+%      \ggH        & N3LO(QCD)         & +4.6            & -6.7             & +3.2                        & -3.2                     \\
+%                  & NLO (EWK)         &                 &                  &                             &                          \\
+%      \qqH        & NNLO (QCD)        & +0.4            & -0.3             & +2.1                        & -2.1                     \\
+%                  & NLO (EWK)         &                 &                  &                             &                          \\
+      \WH         & NNLO (QCD)        & +0.5            & -0.7             & +1.9                        & -1.9                     \\
+                  & NLO (EWK)         &                 &                  &                             &                          \\
+      \qqZH       & NNLO (QCD)        & +0.5            & -0.6             & +1.9                        & -1.9                     \\
+                  & NLO (EWK)         &                 &                  &                             &                          \\
+      \ggZH       & NLO (QCD)         & +25.1           & -18.9            & +2.4                        & -2.4                     \\
+      \ttH        & NLO (QCD)         & +5.8            & -9.2             & +3.6                        & -3.6                     \\
+                  & NLO (EWK)         &                 &                  &                             &                          \\
+%      \bbH        & NNLO (QCD)        & +20.2           & -23.9            & \NA                         &  \NA                     \\
+      \tHq        & NLO (QCD)         & +6.5            & -14.9            & +3.7                        & -3.7                     \\
+      \tHW        & NLO (QCD)         & +4.9            & -6.7             & +6.3                        & -6.3                     \\
+      \hline
+\end{tabular}}
+\label{tab:vh_systematics_xsec}
+\end{table*}
+
+The impacts from the pileup re-weight and ECAL L1 trigger prefiring re-weight are shown in Table~\ref{tab:vh_systematics_pu_pf}.
+The acceptance impacts from the muon energy scale corrections are shown in Table~\ref{tab:vh_systematics_muScale}.
+The impacts from the muon and electron ID scale factors (the lepMVA scale factor) are shown in Table~\ref{tab:vh_systematics_lepMVA}.
+The impacts from the B-jet ID scale factors (for the B-jet vetoing) are shown in Table~\ref{tab:vh_systematics_bveto}.
+The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_systematics_jec}.
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Uncertainties on different signal components in the WH and ZH channels related to pileup re-weight and L1 prefiring re-weight.
+              Numbers before/after are the affects from shifting the uncertainty source up/down.
+              Uncertainties smaller than $0.1\%$ are neglected.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{l|l|c|c|c|c|c|c}
+  \hline
+  Uncertainty  & Category  & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
+  \hline
+  pileup 2016  & WH cat0   & +0.8/-0.7   & +0.8/-0.7   & +0.6/-0.5   & +0.9/-0.7   & +1.0/-0.9   & +0.4/-0.4   \\
+  (\%)         & WH cat1   & +0.8/-0.7   & +0.6/-0.5   & +0.6/-0.5   & +0.6/-0.5   & +1.0/-0.9   & +0.7/-0.6    \\
+               & WH cat2   & +0.6/-0.5   & +0.4/-0.3   & +0.6/-0.4   & +0.7/-0.6   & +0.2/-0.3   & +0.5/-0.4   \\
+               & ZH cat0   & -           & +0.7/-0.7   & +0.8/-0.7   & -           & -           & -           \\
+               & ZH cat1   & -           & +0.8/-0.7   & +0.7/-0.6   & -           & -           & -           \\
+  \hline
+  pileup 2017  & WH cat0   & +0.6/-0.5   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.2   & +0.3/-0.5   & +0.6/-0.7   \\
+  (\%)         & WH cat1   & +0.4/-0.4   & +0.4/-0.4   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.5   & +0.3/-0.4   \\
+               & WH cat2   & +0.5/-0.5   & +0.5/-0.3   & +0.3/-0.3   & +0.6/-0.6   & +0.5/-0.5   & +0.4/-0.2   \\
+               & ZH cat0   & -           & +0.4/-0.4   & +0.4/-0.5   & -           & -           & -           \\
+               & ZH cat1   & -           & +0.3/-0.4   & +0.4/-0.4   & -           & -           & -           \\
+  \hline
+  pileup 2018  & WH cat0   & +0.6/-0.6   & +0.4/-0.4   & +0.5/-0.5   & +0.6/-0.6   & +0.5/-0.5   & +0.5/-0.5   \\
+  (\%)         & WH cat1   & +0.5/-0.5   & +0.3/-0.3   & +0.4/-0.4   & +0.5/-0.5   & +0.4/-0.4   & +0.8/-0.8   \\
+               & WH cat2   & +0.4/-0.4   & +0.2/-0.3   & +0.4/-0.4   & +0.4/-0.3   & +0.5/-0.5   & +0.8/-0.8   \\
+               & ZH cat0   & -           & +0.6/-0.6   & +0.5/-0.5   & -           & -           & -           \\
+               & ZH cat1   & -           & +0.6/-0.6   & +0.5/-0.5   & -           & -           & -           \\
+  \hline
+  prefire 2016 & WH cat0   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   \\
+  (\%)         & WH cat1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
+               & WH cat2   & -           & +0.1/-0.1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.1/-0.1  \\
+               & ZH cat0   & -           & +0.1/-0.1   & +0.1/-0.1   & -           & -           & -           \\
+               & ZH cat1   & -           & +0.1/-0.1   & +0.1/-0.1   & -           & -           & -           \\
+  \hline
+  prefire 2017 & WH cat0   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.4   & +0.3/-0.3   & +0.2/-0.3   \\
+  (\%)         & WH cat1   & +0.1/-0.1   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.4   & +0.2/-0.2   \\
+               & WH cat2   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
+               & ZH cat0   & -           & +0.2/-0.2   & +0.3/-0.3   & -           & -           & -           \\
+               & ZH cat1   & -           & +0.1/-0.1   & +0.2/-0.2   & -           & -           & -           \\
+  \hline
+  \end{tabular}}
+  \label{tab:vh_systematics_pu_pf}
+\end{table*}
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Uncertainties on different signal components in the WH and ZH channels related to the muon energy scale. 
+              Numbers before/after are the affects from shifting the uncertainty source up/down.
+              Uncertainties smaller than $0.1\%$ are neglected.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{l|c|c|c|c|c|c}
+  \hline
+  Uncertainty (\%) & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
+  \hline
+  WH cat0     & -           & +0.0/+0.1   & -           & -0.1/+0.3   & +0.0/-0.1   & +0.0/+0.3   \\
+  WH cat1     & -           & -0.1/-0.0   & +0.1/-0.1   & +0.1/-0.0   & -0.1/+0.2   & -0.1/-0.2   \\
+  WH cat2     & +0.0/+0.1   & -0.2/-0.0   & -0.2/+0.1   & -0.2/-0.0   & +0.0/+0.4   & +0.1/-0.0   \\
+  ZH cat0     & -           & +0.0/+0.1   & +0.0/+0.1   & -           & -           & -           \\
+  ZH cat1     & -           & -0.1/-0     & -           & -           & -           & -           \\
+  \hline
+  \end{tabular}}
+  \label{tab:vh_systematics_muScale}
+\end{table*}
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Uncertainties on different signal components in the WH and ZH channels related to lepMVA scale factor. 
+              The lepMVA scale factor is the only scale factor applied to correct for the lepton efficiency modeling. 
+              The ID scale factor and Isolation scale factor are covered by the lepMVA scale factors. 
+              Numbers before/after are the affects from shifting the uncertainty source up/down.
+              Uncertainties smaller than $0.1\%$ are neglected.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{l|l|c|c|c|c|c|c}
+  \hline
+  Uncertainty & Category    & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
+  \hline
+  muon SF     & WH cat0     & -1.8/+1.8   & -1.7/+1.8   & -2.3/+2.3   & -2.3/+2.3   & -2.1/+2.1   & -2.5/+2.5   \\
+  (\%)        & WH cat1     & -1.7/+1.8   & -1.7/+1.7   & -2.4/+2.4   & -2.0/+2.0   & -1.9/+2.0   & -2.3/+2.3   \\
+              & WH cat2     & -2.3/+2.3   & -1.9/+2.0   & -2.5/+2.5   & -2.5/+2.5   & -2.3/+2.4   & -2.8/+2.9   \\
+              & ZH cat0     & -           & -1.9/+1.9   & -2.5/+2.6   & -           & -           & -           \\
+              & ZH cat1     & -           & -2.5/+2.6   & -3.3/+3.4   & -           & -           & -           \\
+  \hline
+  electron SF & WH cat0     & -0.3/+0.3   & -0.4/+0.4   & -0.4/+0.4   & -0.3/+0.3   & -0.4/+0.4   & -0.2/+0.2   \\
+  (\%)        & WH cat1     & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
+              & WH cat2     & -0.5/+0.5   & -0.6/+0.6   & -0.6/+0.6   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
+              & ZH cat0     & -           & -0.6/+0.6   & -0.6/+0.6   & -           & -           & -           \\
+              & ZH cat1     & -           & -0.8/+0.8   & -0.6/+0.6   & -           & -           & -           \\
+  \hline
+  \end{tabular}}
+  \label{tab:vh_systematics_lepMVA}
+\end{table*}
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Uncertainties on different signal components in the WH and ZH channels related to B-jet vetoing. 
+              Numbers before/after are the affects from shifting the uncertainty source up/down.
+              Uncertainties smaller than $0.1\%$ are neglected.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{l|c|c|c|c|c|c}
+  \hline
+  Uncertainty (\%)  & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
+  \hline
+  WH cat0     & +0.1/-0.1   & +0.1/-0.1   & -0.8/+0.8   & +5.5/-5.3   & -0.9/+0.9   & -1.4/+1.4   \\
+  WH cat1     & +0.1/-0.1   & +0.1/-0.1   & -0.9/+0.9   & +5.7/-5.5   & -0.8/+0.8   & -1.3/+1.3   \\
+  WH cat2     & +0.1/-0.1   & +0.0/-0.1   & -1.0/+1.0   & +5.3/-5.1   & -0.9/+0.9   & -1.4/+1.4   \\
+  ZH cat0     & -           & +0.1/-0.1   & -0.6/+0.6   & -           & -           & -           \\
+  ZH cat1     & -           & +0.2/-0.2   & -0.5/+0.5   & -           & -           & -           \\
+  \hline
+  \end{tabular}}
+  \label{tab:vh_systematics_bveto}
+\end{table*}
+
+
+\begin{table*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \topcaption{Uncertainties on different signal components in the WH Cat0 related to jet energy calibration. 
+              JEC uncertainties are in general small for the main signals in the WH and ZH channels. 
+              WH Cat0 is shown as an example. Numbers in other categories are similar. 
+              Numbers before/after are the affects from shifting the uncertainty source up/down.
+              Uncertainties smaller than $0.1\%$ are neglected.}
+  \resizebox{\textwidth}{!}{\begin{tabular}{l|c|c|c|c|c|c}
+  \hline
+  Uncertainty (\%)     & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
+  \hline
+  flavorQCD            & +0.1/-0.0   & -0.4/-0.0   & +0.1/-0.0   & +0.6/-0.9   & +0.2/-0.5   & +1.5/-0.8   \\
+  relativeBal          & +0.1/-0.0   & -0.2/-0.0   & +0.1/-0.0   & +0.7/-0.5   & +0.0/-0.2   & +0.7/-0.5   \\
+  absolute             & -           & +0.0/+0.1   & -           & -           & +0.0/+0.1   & +0.1/+0.4   \\
+  BBEC1                & +0.1/-0.0   & -0.4/-0.0   & +0.1/-0.1   & +1.5/-1.1   & +0.2/-0.7   & +1.2/-0.7   \\
+  EC2                  & -           & -           & -           & -0.1/-0.0   & -0.1/-0.3   & +0.2/+0.1   \\
+  HF                   & -0.1/+0.1   & -0.2/-0.0   & +0.1/+0.1   & +0.5/-0.6   & +0.0/-0.5   & +0.5/+0.3   \\
+  \hline
+  relativeSample\_2016 & -           & -0.1/-0.0   & -           & +0.1/-0.3   & -           & +0.1/-0.3  \\
+  absolute\_2016       & -           & +0.0/-0.1   & -           & +0.1/-0.1   & +0.0/+0.1   & -          \\
+  BBEC1\_2016          & -           & +0.0/-0.1   & -           & +0.0/-0.1   & +0.0/+0.1   & +0.1/-0.0  \\
+  EC2\_2016            & -           & -           & -           & -           & +0.0/+0.1   & +0.1/-0.0  \\
+  HF\_2016             & -           & -           & -           & -           & -           & +0.1/-0.0  \\
+  \hline
+  relativeSample\_2017 & -           & -0.1/+0.2   & +0.1/-0.0   & +0.1/-0.2   & -0.2/+0.1   & +0.3/+0.3   \\
+  absolute\_2017       & -           & -0.1/+0.2   & -           & +0.2/-0.1   & -           & +0.3/+0.2   \\   
+  BBEC1\_2017          & -           & -0.1/+0.1   & -           & +0.2/+0.0   & -0.1/+0.1   & +0.2/+0.0   \\   
+  EC2\_2017            & -           & +0.1/-0.0   & -           & -           & +0.1/+0.3   & +0.1/+0.3   \\   
+  HF\_2017             & -           & -           & -           & -           & -0.1/-0.2   & -           \\   
+  \hline
+  relativeSample\_2018 & -0.1/+0.1   & +0.1/+0.2   & +0.1/-0.0   & +0.4/-0.5   & +0.1/-0.4   & +0.7/-0.7   \\
+  absolute\_2018       & +0.0/+0.1   & -0.2/-0.0   & -           & +0.0/-0.1   & +0.2/-0.4   & +0.3/-0.6   \\   
+  BBEC1\_2018          & +0.0/+0.1   & -0.2/-0.0   & -           & +0.0/-0.1   & -           & +0.1/-0.1   \\   
+  EC2\_2018            & +0.0/+0.1   & -0.1/+0.1   & -           & +0.0/+0.1   & +0.0/+0.1   & +0.0/+0.1   \\   
+  HF\_2018             & -           & +0.0/-0.1   & -           & +0.0/+0.1   & +0.0/-0.1   & -           \\   
+  \hline
+
+  \end{tabular}}
+  \label{tab:vh_systematics_jec}
+\end{table*}
+
+
+\clearpage
+\subsection{Background systematic bias}\label{sec:bias_study}
+
+As described in Section~\ref{sec:vh_bkg_model}, the background modeling follows a data-driven approach,
+and is not affected by any systematic uncertainty in the simulation.
+Instead of evaluating the impacts of uncertainties as done for the signal modeling, 
+the main task for the background is to make sure it is robust against spurious signals.
+
+A spurious signal is produced by the bias between the analytic background function and the true background shape at the position of the expected signal.
+For an analysis with finite statistics, there is a statistical uncertainty on the signal strength, $\sigma_{stat}$,
+resulted from the from the statistical fluctuation of the background events.
+The best fit signal strength $\mu_{fit}$ under the null hypothesis, the hypothesis without the existence of a true signal,
+should follow $\mathcal{N}(0, \sigma_{stat})$, the normal distribution with a mean of 0 and a standard deviation of $\sigma_{stat}$.
+The $1\sigma$ or $2\sigma$ range of this distribution gives the 68.3\% or 95\% confidence intevals for the exclusion of this null hypothesis.
+If there is a systematic spurious signal $\hat{\mu}_{SS}$, i.e. a bias, the probability distribution for the $\mu_{fit}$ becomes $\mathcal{N}(\hat{\mu}_{SS}, \sigma_{stat})$,
+and the coverage of the $1\sigma_{stat}$ range becomes equation~\ref{eq:bias_inteval}, which is not 68.3\%.
+\begin{equation}\label{eq:bias_inteval}
+  \int_{-\sigma_{stat}}^{\sigma{stat}} \mathcal{N}(\hat{\mu}_{SS}, \sigma_{stat}) = \frac{1}{2} ~[erf(\frac{\sigma_{stat}+\hat{\mu}_{SS}}{\sqrt{2}~\sigma_{stat}}) + erf(\frac{\sigma_{stat}-\hat{\mu}_{SS}}{\sqrt{2}~\sigma_{stat}})]
+\end{equation}
+The left plot of Figure~\ref{fig:bias_derivation} illustrates this difference in coverage.
+The middle plot of Figure~\ref{fig:bias_derivation} shows how the coverage changes as the bias gets larger.  
+As a result, to achieve the 68.3\% confidence level, the signal uncertainty from the fit, $\sigma_{fit}$, 
+needs to satisfy equation~\ref{eq:bias_sigma} and becomes larger than the $\sigma_{stat}$. 
+\begin{equation}\label{eq:bias_sigma}
+  \frac{1}{2} ~[erf(\frac{\sigma_{fit}+\hat{\mu}_{SS}}{\sqrt{2}~\sigma_{stat}}) + erf(\frac{\sigma_{fit}-\hat{\mu}_{SS}}{\sqrt{2}~\sigma_{stat}})] = 68.3\%
+\end{equation}
+In this way, the bias in the background modeling, even if it is not strictly an uncertainty, 
+adds to the overall uncertainty of the signal strength measurement.
+The relationship between $\sigma_{fit}$ and $\hat{\mu}_{SS}$ is shown in the right plot of Figure~\ref{fig:bias_derivation}.
+As a convention in the \hmm analysis, biases below 20\% of the statistical uncertainty of the signal are considered acceptable,
+which corresponds to less than 2\% inflation of the signal uncertainty.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/bias_derivation/coverage_scheme.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/bias_derivation/coverage_1sigma.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/bias_derivation/sigma_fit.pdf}
+  \caption{Schemes on how the bias affects the uncertainty on the signal strength measurement.
+           The left plot is an illustration of the $[-\sigma, \sigma]$ coverage of the biased signal strength measurement.
+           The middle plot shows this coverage becomes less as the bias gets larger.
+           The right plot shows how the bias impacts the best fit signal strength uncertainty $\sigma_{fit}$.
+           The gray dash lines in the right plot indicates the conventional acceptable range of the bias in this analysis.}
+  \label{fig:bias_derivation}
+\end{figure*}
+
+In this analysis, the bias is evaluated between different function candidates via groups of toy studies.
+The true background shape is of course unknown, but is believed to be covered by the flexibility of the collective set of functional forms.
+The procedure for the bias evaluation is as follows:
+
+\begin{enumerate}
+  \item Toy generation
+  \begin{itemize}
+    \item One function candidate $f(\mmm)$ is fit to the background shape of the simulation to find the best fit parameters.
+    \item The best fit shape of $f(\mmm)$ is used as the Probability Density Function (PDF) to generate toy datasets. 
+          In the each toy, the number of events in each bin is taken sampling the Poisson distribution of the expected number of events given by $f(\mmm)$. 
+    \item For each selected function $f(\mmm)$, 3000 toys are generated.      
+  \end{itemize}
+
+  \item Signal injection
+  \begin{itemize}
+    \item For each background toy, an artificial signal is also generated following the Poisson distribution of a given signal strength $\hat{\mu}_{inj}$. 
+          In this set of study, two sets of artificial signal strength are tested, which are zero or the expected SM signal strength.
+    \item The artificial signal toys are added to the background toys, which completes the signal + background toys.
+  \end{itemize}
+  
+  \item Signal extraction
+  \begin{itemize}
+    \item For each signal + background toy of funtion $f(\mmm)$, the shape analysis is performed using another function $g(\mmm)$.
+          In these toy analyses, systematic uncertainties on the signal modeling are not included, as they are unrelated to the bias estimation. 
+    \item From these fits, the best fit signal strength $\mu_{fit}$ and its standard deviation $\sigma_{fit}$ are extracted.
+  \end{itemize}
+
+  \item Bias evaluation
+  \begin{itemize}
+    \item The spurious signal between funtion $f(\mmm)$ and $g(\mmm)$ in each toy is defined as: 
+          \begin{equation}\label{eq:bias}
+            \mu_{SS}(f, g) = \frac{\mu_{fit}-\hat{\mu}_{inj}}{\sigma_{fit}}
+          \end{equation}
+    \item The distribution (of 3000 toys) of this spurious signal is fit with a gaussian function. 
+          As stated above, this spurious signal should follow the Gaussian distribution $\mathcal{N}(\hat{b}, 1)$,
+          where $\hat{b} = \hat{\mu}_{SS} / \sigma_{stat}$.
+          The mean value from the Gaussian fit is the bias between funtion $f(\mmm)$ and $g(\mmm)$.
+  \end{itemize}
+\end{enumerate}
+
+
+
+Such bias is evaluated in each sub-category between each combination of $f(\mmm)$ and $g(\mmm)$, 
+and the results are summarized in Figure~\ref{fig:wh_bias_study} and ~\ref{fig:zh_bias_study}.
+Most of the functions have good bias response against other functions can be used for the analysis.
+In the final analysis, the BWZGamma function (2 shape DOF) is chosen as the background model in the WH [-1.0, -0.1] category,
+and the BWZ function (1 shape DOF) is chosen in all other categories. 
+
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_n10_n01_signal_strength_1_table.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_n01_p03_signal_strength_1_table.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_p03_p10_signal_strength_1_table.pdf}
+  \caption{Bias in different BDT-based WH sub-categories. The sub-categories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 0.3] (middle), Cat2 BDT [0.3, 1.0] (right). In the tables, the Power stands for a single "Power" function and the "PowerInt" stands for a single power function plus a constant.}
+  \label{fig:wh_bias_study}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_ZH_BDT_n10_n01_signal_strength_1_table.pdf}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_ZH_BDT_n01_p10_signal_strength_1_table.pdf}
+  \caption{Bias in different BDT-based ZH sub-categories. The sub-categories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 1.0] (right). In the tables, the "Power" stands for a single power function and the "PowerInt" stands for a single power function plus a constant.}
+  \label{fig:zh_bias_study}
+\end{figure*}
+
+
+
+\clearpage
+\section{Results of the VH analysis}\label{sec:vh_results}
+
+The final results are extracted by performing a binned maximum-likelihood fit in each \VH sub-category.
+The fit is performed on the observed \mmm distribution in the range of 110 $<$ \mmm $<$ 150 \GeV.
+All the different signal modes in different sub-categories shares a common signal strength modifier $\mu$.
+Figure~\ref{fig:wh_postfit} and ~\ref{fig:zh_postfit} show the post-fit results of the signal-plus-background fits in the \WH and \ZH sub-categories.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat2.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat3.png}
+  \caption{Post-fit \mmm distribution of the WH sub-categories. The sub-categories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 0.3] (middle), Cat2 BDT [0.3, 1.0] (right). 
+           The upper panel in the plots shows the distribution of observed data and the shape of the signal-plus-background fit.
+           The lower panel in the plots shows the residual distribution after subtracting the background component in the fits.
+           The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
+  \label{fig:wh_postfit}
+\end{figure*}
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_ZH_cat1.png}
+  \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_ZH_cat2.png}
+  \caption{Post-fit \mmm distribution of the ZH sub-categories. The sub-categories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 1.0] (right). 
+           The upper panel in the plots shows the distribution of observed data and the shape of the signal-plus-background fit.
+           The lower panel in the plots shows the residual distribution after subtracting the background component in the fits.
+           The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
+  \label{fig:zh_postfit}
+\end{figure*}
+
+As described in Section~\ref{chp:hmm_overview}, 
+the \VH analysis is combined with other categories (\ggH, \qqH, and \ttH) to make the inclusive \hmm analysis.
+More studies in the statistical analysis are covered in more details in Chapter~\ref{chp:hmm_results}.
+The expected and observed limits and significance for the \VH sub-categories are summurized in Table~\ref{tab:vh_results}.
+
+\begin{table*}[!htb]
+  \captionsetup{justification=justified}
+  \topcaption{Summary of the expect and observed limits and significance in each individual sub-category and the combination.}
+  \centering
+  \begin{tabular}{|l|cc|cc|}
+  \hline
+   Category                 & Expected UL & Observed UL & Expected Signif.  & Observed Signif. \\
+  \hline
+  WH $\to 3\ell$  Cat0      & 27          & 37.4        & 0.08              & 0.89  \\
+  WH $\to 3\ell$  Cat1      & 9.8         & 12.8        & 0.22              & 0.79  \\
+  WH $\to 3\ell$  Cat2      & 7.3         & 10.4        & 0.33              & 0.64  \\
+  \hline
+  ZH $\to 4\ell$  Cat0      & 58          & 68.2        & 0.05              & 0.65  \\
+  ZH $\to 4\ell$  Cat1      & 19          & 34.0        & 0.14              & 1.81  \\
+  \hline
+  WH combine                & 5.5         & 8.9         & 0.40              & 1.15 \\
+  ZH combine                & 17          & 31.7        & 0.15              & 1.92 \\
+  WH and ZH combine         & 5.1         & 10.2        & 0.43              & 1.86 \\
+  \hline
+  \end{tabular}
+  \label{tab:vh_results}
+\end{table*}
+  
+
+
+likelihood scan?
+goodness of fit?
+brazilian plots?
