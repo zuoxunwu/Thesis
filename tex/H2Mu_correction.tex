@@ -1,69 +1,69 @@
 \chapter{Muon momentum correction and calibration} \label{chp:muon_corr}
 
-This analysis aims to find a shape signal peak on top of a smooth background in the \mmm distribution.
+This analysis aims to find a sharp signal peak on top of a smooth background in the \mmm distribution.
 It is of crucial importance to correct the mismeasurement in muon momentum scale and improve the momentum resolution.
-The shaper muon peak, the better sensitivity of this analysis.
+The sharper muon peak, the better sensitivity of this analysis.
 It is also crucial to reduce the differences in the muon momentum scale and resolution between data and simulation, 
 so that there is no significant bias in the modeling of the signal.
 
 Three sets of corrections are applied in this analysis: 
 the \RochCorr~\cite{Bodek:2012id}, the recovery of the final state radiation (FSR) photons, and the \GeoFit.
 The \RochCorr is a centrally provided correction (by CMS) which corrects 
-the biases in the muon momentum resulted from the mismodeling of the detector alignment and the magnetic field. 
+the biases in the muon momentum resulted from the mismodeling of detector alignment and magnetic field. 
 A brief description of the \RochCorr is given in Section~\ref{sec:Roch_corr}, 
 while the technical details can be found in the Ref.~\cite{Bodek:2012id}.
 The \FSR is a common practice in many CMS analyses which corrects the muon energy loss via FSR radiation.
-The recovery scheme in this analysis is optimized specifically for the \hmm decay, which is described in Section~\ref{sec:fsr} and in more details in Ref.~\cite{}.
+The recovery scheme in this analysis is optimized specifically for the \hmm decay, which is described in Section~\ref{sec:fsr} and in more details in Ref.~\cite{oliverthesis}.
 The \GeoFit is developed by the author in the context of the \hmm analysis and approved by the CMS collaboration.
-It uses information of muon vertexing to correct the biases in the muon momentum of the mis-reconstructed muon tracks.
+It uses information of muon vertexing to correct the biases in muon momentum of the reconstructed muon tracks.
 The development of the \GeoFit is described in details in Section~\ref{sec:GeoFit}.
-The effects these three corrections focus on are orthogonal, and are even mutually exclusive between the \FSR and GeoFit.
+The effects these three corrections focus on are orthogonal, and are even mutually exclusive between the \FSR and \GeoFit.
 In practice, the \RochCorr is applied to all muons, then each muon is surveyed for FSR photons.
 If a FSR photon is found associated to the muon, the \FSR is applied, 
-if not, the \GeoFit is applied to the muon.
+if not, the \GeoFit is applied.
 
-The \RochCorr, \FSR, and \GeoFit are applied to both the data and the simulation.
-The performance of the muon corrections is examined with the studies on the \zmm peak,
+The \RochCorr, \FSR, and \GeoFit are applied to both data and simulation.
+The performance of the muon corrections is examined with the study on the \zmm peak,
 which is listed in details in Section~\ref{sec:muon_cal}.
-These corrections fix all the known biases in the muon measurement, 
-and ensure a per-mille-level agreement between the data and simulation. 
+These corrections fix all the known biases in muon measurement, 
+and ensure a per-mille-level agreement between data and simulation. 
 
 \section{Rochester correction} \label{sec:Roch_corr}
 
 In reality, the CMS detector can have various imperfections, 
 such as the misalignment of the detector components, and the uncertainties in the magnetic field.
-Sometimes these imperfections are not correctly represented in the reconstruction software, 
+Sometimes these imperfections are not correctly emulated in reconstruction software, 
 and as a result, the reconstructed muons can be inaccurate.
 These measurement biases are reflected as the dependences of the muon momemtum on its \eta, \phi ~coordinates, and its charge.
 These dependences, in turn, smear the inclusive muon resolution and lead to sub-optimal physics results.
 
-On the other hand, the detector simulation does not assume any of the imperfections,
-which leads to differences in the detector response from the data, and eventually mismodelings (usually over-optimistic modelings) in the muon measurement. 
-Therefore, the correction also needs to be applied to the simulation, which may not be the same as the correction on data.
-Instead of using the reconstructed muons in the simulation as the reference for the correction,
-the generated muon information is taken and smeared with some funtional forms to match the experimental resolution.
-This provides a set of reference muons that is free from any of the reconstruction effects. 
+On the other hand, in the simulation of CMS events, none of the imperfections is assumed,
+which leads to slightly different detector responses from those in data, and eventually mismodelings (usually over-optimistic modelings) in muon measurement. 
+The muon correction also needs to be applied to the simulation, in a manner not exactly the same as that to data.
+This also means that the reconstructed muons in simulation cannot be used as the reference for the correction.
+Instead, the correction is derived from the generated muon information, smeared with some funtional forms to match the experimental resolution.
+This provides a set of reference muons that is free from any bias in reconstruction. 
 
 The well-understood \zmm events are used to develop the \RochCorr. 
 The idea of the correction is briefly summarized as follows:
 \begin{itemize}
-  \item For the data, reconstructed simulation (reco-sim) and reference simulation (ref-sim), 
+  \item For data, reconstructed simulation (reco-sim), and the reference simulation (ref-sim), 
         muons are divided into different \eta ~and \phi ~bins, separately for $\mu^{+}$ and $\mu^{-}$.
-        In each bin, the $1/\pt$ distributions of the data and reco-sim are corrected so that the mean value of the distribution becomes the same as that in the ref-sim.
+        In each bin, the $1/\pt$ distributions of data and reco-sim are corrected so that the mean value of the distribution becomes the same as that in the ref-sim.
   \item The $1/\pt$ in reco-sim is usually narrower than that in data. 
-        A smearing is applied to the reco-sim $1/\pt$ distribution so it matches the resolution in data.
+        A smearing is applied to the reco-sim $1/\pt$ distribution so that it matches the resolution in data.
   \item After the steps above, the \mmm in each bin may still be off from the expected distribution by some small amounts.
-        The ratio between this offset and the nominal \PZ mass is applied to the muon \pt as a correction factor iteratively until the offset is minimized.
+        The ratio between this offset and the nominal \PZ mass is applied to the muon \pt as a correction factor iteratively, until the offset is minimized.
 \end{itemize}
-The \RochCorr removes the \mmm dependences on the muon \eta,~ \phi,~ and charge, 
-as well as the \mmm resolution differences between the data and the simulation.
+The \RochCorr removes the \mmm dependences on muon \eta,~ \phi,~ and charge, 
+as well as the \mmm resolution differences between data and the simulation.
 Details of the performance of the \RochCorr can be found in Section~\ref{sec:muon_cal}.
 
 
 \section{FSR recovery} \label{sec:fsr}
 
 In CMS, muons produced in pp collisions may radiate photons and lose energy, which is referred to as the final state radiation (FSR).
-The radiate may carry substantial energy and lead to a underestimation of the muon momentum,
+The radiation may carry substantial energy and lead to a underestimation of the muon momentum,
 In an analysis that relies on the dimuon mass \mmm, the FSR may lead to two effects that degrade the sensitivity:
 a loss of event acceptance, and a smearing of the \mmm resolution.
 To mitigate these effects, some of the FSR photons can be identified can added back to the muon energy, which is called the \FSR.
@@ -71,25 +71,25 @@ To mitigate these effects, some of the FSR photons can be identified can added b
 The selection for the FSR photons is modified on top of the strategy developed in the CMS $\PH \to \PZ\PZ$ analyses~\cite{Sirunyan:2017exp, Sirunyan:2018qlb}.
 The selection criteria is summarized as follows:
 \begin{itemize}
-  \item Photons with transverse energy $E^{\gamma}_{T} > $ 2 \GeV and $|\eta|<1.4$, $1.6<|\eta|<2.4$ are considered.
-  \item The photon is required to be within the cone of $\Delta{}R<0.5$ around the closest muon to it which satisfies $\pt >$ 20 \GeV and $|\eta| < 2.4$.
-  \item The photon is not identified as a bremsstrahlung photon associated with reconstructed electrons.
+  \item Photons with transverse energy $E^{\gamma}_{T} > $ 2 \GeV and $|\eta|<1.4$, $1.6<|\eta|<2.4$ are considered as FSR candidates.
+  \item The photon is required to be within the cone of $\Delta{}R<0.5$ around its closest muon which satisfies $\pt >$ 20 \GeV and $|\eta| < 2.4$.
+  \item The photon is not identified as a bremsstrahlung photon associated with a reconstructed electron.
   \item The PF isolation of the photon in a cone of $\Delta{}R < 0.3$ should be less than 1.8, i.e. $\sum_{i}\pt^{i}(\Delta{}R(\gamma, i)<0.3)/\pt(\gamma) < 1.8$, 
         where $i$ iterates the PF objects around the photon other than the candidate muon.
   \item The separation between the photon and the muon satisfies $\Delta{}R(\mu, \gamma)/\pt^{2}(\gamma) < 0.012$.
-  \item In order to suppress the energetic photons from the $\PH \to \PZ\gamma \to \mu\mu\gamma$ process,
+  \item In order to suppress energetic photons from the $\PH \to \PZ\gamma \to \mu\mu\gamma$ process,
         the \pt ratio between the photon and the muon is required to be less than 0.4, i.e. $\pt(\gamma)/\pt(\mu) < 0.4$.
   \item If multiple FSR photons are associated to a same muon, only the photon with the smallest $\Delta{}R(\mu, \gamma)/\pt^{2}(\gamma)$ is taken.
 \end{itemize}
 
-With this set of selection, about 3\% of the signal events are tagged with FSR photons.
+With this set of selection, about 3\% of signal events are tagged with FSR photons.
 The momentum of the FSR photons are added to the muon momentum, 
-while photons themselves are ignored from the calculation of the muon isolation.
+while the photons themselves are removed from the calculation of the muon isolation.
 The \FSR significantly improves the \mmm reconstruction in the FSR tagged events, as shown in the left plot of Figure~\ref{fig:fsr_sig}.
-Overall, as shown in the right plot of Figure~\ref{fig:fsr_sig}, the effect on the inclusive signal is a 3\% improvement on the \mmm resolution, 
+And overall, as shown in the right plot of Figure~\ref{fig:fsr_sig}, the effect on the inclusive signal is a 3\% improvement on the \mmm resolution, 
 and a 1.7\% increase in the total signal yield. 
-The performance of \FSR is also validated with the \zmm events, shown in Figure~\ref{fig:fsr_val}.
-A good agreement kept between the simulation and data with or without the \FSR. 
+The performance of \FSR is also validated with the \zmm events, shown in Figure~\ref{fig:fsr_val},
+where a good agreement is kept between simulation and data with or without the \FSR. 
 The \FSR is expected to perform the same way on data as on simulation, 
 and no bias is introduced by the application of the \FSR. 
 
@@ -98,7 +98,7 @@ and no bias is introduced by the application of the \FSR.
       \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_FSRtagged.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_FullSignal.pdf}
-      \caption{Taken from Ref.~\cite{}. 
+      \caption{Taken from Ref.~\cite{oliverthesis}. 
                Performance of the \FSR in the simulated \hmm events. 
                The \mmm before and after the \FSR are shown for the events that contain at least one FSR photon (left),
                and for the inclusive signal events (right).}
@@ -109,43 +109,42 @@ and no bias is introduced by the application of the \FSR.
       \centering
       \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_Validation.pdf}
-      \caption{Taken from Ref.~\cite{}.
+      \caption{Taken from Ref.~\cite{oliverthesis}.
                Performance of the \FSR in the \zmm events that contain FSR photons, in both data and simulation. 
-               A good agreement between the simulation and the data is observed, before or after the correction.}
+               A good agreement between simulation and data is observed, before or after the correction.}
       \label{fig:fsr_val}
 \end{figure*}
 
 
 \section{GeoFit correction} \label{sec:GeoFit}
 
-In CMS, the charged tracks are reconstructed from the hits in the tracker system.
-The tracks may originate from the primary vertices (PV), which are vertices of the pp interactions,
-or the secondary vertices, which are decay vertices of particles with a non-infinitesimal lifetime.
-The track reconstruction does not assume any vertex information as the vertices are reconstructed as the intersections of groups of tracks.
-This practice is essential for the studies of the \Pqb ~quarks, the \tau ~leptons, 
-and any other long-lived particles that produce a vertex displaced from the colliding region in the transverse plane at the scale of a millemeter or above.
-However, for the tracks which from prompt interactions, such as the decay of a \PZ boson, \PW boson, or \PH boson,
+In CMS, charged tracks are reconstructed from the hits in the tracker system.
+The tracks may originate from primary vertices (PV), which are vertices of the pp interactions,
+or secondary vertices, which are the decay vertices of particles with a non-infinitesimal lifetime.
+The track reconstruction does not assume any vertex information since the vertices are reconstructed as the intersections of groups of tracks.
+This practice is essential for the studies of \Pqb ~quarks, \tau ~leptons, 
+and other long-lived particles that produce a vertex displaced from the colliding region in the transverse plane at the scale of a millemeter or above.
+However, for the tracks from prompt interactions, such as the decay of a \PZ boson, \PW boson, or \PH boson,
 called the prompt tracks, even if they are expected not to have a visible displacement from the PV, 
-a non-zero displacement may still appear in the reconstructed tracks due to the uncertainties in the track fit.
+a non-zero displacement may still appear in reconstruction, due to the uncertainties in the track fit.
 In other words, if a track is known to be prompt, the posterior information on the colliding position 
-can be used to improve the quality of the track fit and in turn the measurement on the track momentum.
+can be used to improve the quality of the track fit, and in turn the measurement on the track momentum.
 
-The study shown in this section reports the finding that this false displacement of the prompt tracks
-has a strongly geometrical correlation with the mis-measurement of the track momemtum.
+The study shown in this section reports the finding that this false displacement in prompt tracks
+has a strong geometrical correlation with the mis-measurement of the track momemtum.
 A simple analytic function can be derived from the geometry and can be verified by 
 fitting the displacement vs the \pt bias in the simulated samples.
-This analytic form is applied as the correction to the \pt and is therefore named the \GeoFit.
-Section~\ref{sec:d0_geometry} explains the geometry of the track displacement and the correlation.
-Section~\ref{sec:dev_geofit} describes the studies on the simulated samples in order to find the best fit parameters in that correlation.
-The \GeoFit is developed using only the muon tracks in the context of the \hmm search.
-It removes the dependence of the \mmm on the track displacement which leads to an 
+This analytic form is applied as a correction to \pt and is therefore named the \GeoFit.
+Section~\ref{sec:d0_geometry} explains the geometry of the track displacement and the correlation between different variables.
+Section~\ref{sec:dev_geofit} describes the studies on simulated samples in order to find the best fit parameters in that correlation.
+The \GeoFit is developed using only muon tracks in the context of the \hmm search.
+It removes the dependence of \mmm on track displacement which leads to an 
 improvement on the \mmm resolution of the combined signal ranging from 3\% to 10\%, depending on the data-taking period.
-Details of the \GeoFit performance, along with various validation studies are shown in Section~\ref{sec:val_geofit}.
+Details of the \GeoFit performance, along with validation studies are shown in Section~\ref{sec:perf_geofit}.
 In addition, an alternative way to correct this \pt bias is to redo the track fit including the colliding vertex as an additional hit in the track, 
 which should achieve a more fundamental correction at the cost of more computational resources.
 A prelimimary set of study comparing the \GeoFit with the track re-fit shows the two correction methods give almost equivalent results,
 detailed in Section~\ref{sec:track_refit}.
-
 
 
 \subsection{Geometry of the track displacement}\label{sec:d0_geometry}
@@ -161,8 +160,8 @@ The definition of d0 can be expressed as
 \begin{equation}\label{eq:d0_def}
   d0 = -x_{0} \cdot sin(\phi_{0}) + y_{0} \cdot cos(\phi_{0})
 \end{equation}
-where $(x_{0}, y_{0})$ is the coordinate of a point near the vertex in the frame where the vertex is at $(0,0)$, 
-and the $\phi_{0}$ is the azimuthal angle of the track at that point.
+where $(x_{0}, y_{0})$ is the coordinate of a point near the vertex in the frame in which the vertex is at $(0,0)$, 
+and $\phi_{0}$ is the azimuthal angle of the track at $(x_{0}, y_{0})$.
 A scheme for this definition is shown in Figure~\ref{fig:d0_def}.
 
 \begin{figure*}[!htb]
@@ -171,7 +170,7 @@ A scheme for this definition is shown in Figure~\ref{fig:d0_def}.
       \includegraphics[width=0.70\textwidth]{pics/muon_corr/GeoFit/d0_def.pdf}
       \caption{Scheme of the d0 definition in CMS. The $(x_{0}, y_{0})$ is the coordinate of 
                a point near the vertex in the frame where the vertex is at $(0,0)$, 
-               and the $\phi_{0}$ is the azimuthal angle of the track at that point.}
+               and the $\phi_{0}$ is the azimuthal angle of the track at $(x_{0}, y_{0})$.}
       \label{fig:d0_def}
 \end{figure*}
 
@@ -182,35 +181,36 @@ A scheme for this definition is shown in Figure~\ref{fig:d0_def}.
       \caption{Scheme of the track geometry in the transverse plane. 
                The blue lines show the geometry of the reconstructed track, 
                compared to the black lines which are the geometry of the true track.
-               The difference between the blue track and black track is exaggerated in the scheme.
+               The difference between the blue track and black track is exaggerated in this scheme.
                The blue track and the black track must intersect at two points.
                $l$ is the distance between the two intersections, 
                and $x$ is the distance between the true vertex and the first intersection.
-               $s$ is the distance between the centers of the two circular tracks.}
+               $s$ is the distance between the circular centers of the two tracks.}
       \label{fig:d0_pt_scheme}
 \end{figure*}
 
 In the track geometry, illustrated in Figure~\ref{fig:d0_pt_scheme}, 
 the reconstructed track is very close to, but slightly deviated from, the true track,
 which leads to a small d0 between the reco track and the true vertex, 
-and a small distance between the circular centers of the reco track and the true track.
-The centers of the two tracks (circles) are labels as $O$ and $O'$ for the true track and the reco track,
+as well as a small distance between the circular centers of the reco track and the true track.
+The circular centers of the two tracks are labels as $O$ and $O'$ for the true track and the reco track,
 and $s$ is the distance between $O$ and $O'$. 
 The radii of the two tracks are $r$ and $r'$, with $\Delta{}r = r' - r$.
 The two tracks must intersect at two points, labeled as point $M$ and $N$, 
-and the distance between $M$ and $N$ denoted as $l$.
+with the distance between $M$ and $N$ denoted as $l$.
 $\beta$ is half of the central angle spanned by the chord $l$ in the true track,
 while $\alpha$ is the angle $\angle O'MO$.
-The true vertex is denoted as $V$, with d0 as the impact parameter of the reco track to it.
+The true vertex is denoted as $V$, with d0 as the impact parameter of the reco track to it,
 while the PCA on the reco track is denoted as $P$.
-$x$ is the distance between $M$ and $V$.
-In addition, the radii of the tracks under study are at the scale of several tens of meters,
+The distance between $M$ and $V$ is marked as $x$.
+As this scheme represents typical muon tracks in CMS, 
+the radii of the tracks under study are at the scale of several tens of meters,
 and the $\Delta{}r$ is expected to be much smaller than $r$.
-Points $M$ and $N$ are expected to be around the coverage of CMS tracker system, which is about a meter.
+Points $M$ and $N$ are expected to be around the coverage of the CMS tracker system, which is about a meter.
 Therefore $x$ and $l$ are expected to be much smaller than $r$ as well.
-Finally, d0 scale of the tracks under study is about ten microns, which is much smaller than $x$, $l$, and $r$. 
+Finally, the d0 scale of the tracks under study is about ten microns, which is much smaller than $x$, $l$, and $r$. 
 
-In this setup, a few geometric relationships can be found between the different variables, listed as follows:
+In this setup, a few geometric relationships can be found between different variables, listed as follows:
 Since $x \ll r$, arc $\stackrel{\frown}{VM}$ and $\stackrel{\frown}{PM}$ can be viewed as line segments which are respectively perpendicular to $OM$ and $O'M$.
 Therefore in triangle $\triangle VMP$, 
 \begin{equation}\label{eq:d01}
@@ -234,37 +234,37 @@ Combining Equation ~\ref{eq:d01} to ~\ref{eq:d04} and assuming $r \gg l$, one ca
 \end{equation}  
 Note that in CMS, under the 3.8T magnetic field, tracks follow 
 \begin{equation}
-    \pt ~(\text{in ~\GeV}) = 1.14 \cdot R ~(~\text{in meter})   
+    \pt ~(\text{in ~\GeV}) = 1.14 \cdot r ~(~\text{in meter})   
 \end{equation}
-Therefore we get
+We reach
 \begin{equation}\label{eq:d0_prop}
     d0 \propto \frac{\Delta{}\pt}{\pt^{2}}
 \end{equation}
 
 Now a quantitative relationship is extracted between d0 and \pt, but with one caveat:
 the variables $x$ and $l$ in the scheme above may vary track by track, and are impossible to measure in real data,
-meaning that coefficient in the proportionality is not a constant and Equation~\ref{eq:d0_prop} can be smeared.
-Therefore, to follow up, studies are performed on simulated samples comparing the reconstructed \pt and the generated \pt of muon tracks.
+meaning that the coefficient in the proportionality is not a constant for different tracks, and Equation~\ref{eq:d0_prop} can be smeared.
+Therefore, to validate this proportionality, studies are performed on simulated samples comparing the reconstructed \pt and the generated \pt of muon tracks.
 Plots of $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 are made, 
-to see whether the proportionality can be observed, after the smearing,
+to see whether the proportionality can be observed after the smearing,
 which is the topic of Section~\ref{sec:dev_geofit}.
 
-Another remark needs to be made that in Figure~\ref{fig:d0_pt_scheme} the \pt mismeasurement is related to the relative position of the true vertex to the reconstructed track,
-namely, if the true vertex is inside of the reco track, the \pt is over-estimated, 
-while if the true vertex is outside of the reco track, the \pt is under-estimated. 
+Another remark needs to be made, that in Figure~\ref{fig:d0_pt_scheme} the \pt mismeasurement is related to the relative position of the true vertex to the reconstructed track.
+To be more specific, if the true vertex is inside of the reco track, the \pt is overestimated, 
+while if the true vertex is outside of the reco track, the \pt is underestimated. 
 However, in the CMS definition of d0 shown in Figure~\ref{fig:d0_def}, the sign of d0 corresponds to an opposite relative position between the vertex and the track
 for the positively charged muons and the negatively charged muons. 
-A positive d0 value means the true vertex is inside of the reco track for the positive muons, but outside of the reco track for the negative cases.
+A positive d0 value means the true vertex is inside of the reco track if the muon is positive, but outside of the reco track if the muon is negative.
 Therefore in CMS convention the d0-\pt correlation is expected be reversed for different muon charges,
 and in Section~\ref{sec:dev_geofit} studies are always performed evaluating d0 $\cdot$ charge rather than just d0.
 
 \subsection{Development of GeoFit}\label{sec:dev_geofit}
 
 The $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 plots are made with the following steps:
-The values $\pt^{reco}$, $\pt^{gen}$, and d0 are extracted for each track in the simulated samples.
+The values $\pt^{reco}$, $\pt^{gen}$, and d0 are extracted for each track in simulated samples.
 The distribution of $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ is made for tracks in different d0 $\cdot$ charge bins.
 The maximum position and the corresponding full-width-half-maximum (FWHM) is found for each 
-fine-binned $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ distribution and set as the value and uncertainty
+fine-binned $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ distribution and set as the value and the uncertainty
 of one data point in the plots in Figure~\ref{fig:pv_vs_bs_fits}.
 The plots are then fit with analytic functions which are considered as the experimental realization of Equation~\ref{eq:d0_prop}.
 
@@ -273,12 +273,12 @@ A primary vertex is a 3D-point which is compatible with several tracks in the sa
 Ususally several PVs are reconstructed per event, each of them considered as the position of a pp collision instance.
 The beam spot, on the other hand, is actually a 3D-region in which most of the pp collisions happen,
 and is reconstructed with all tracks in all the events in many consecutive luminosity sections.
-The beam spot usually is around 10-20 \mum wide in the x, y directions, and about 7-9 \cm long in the z direction.
+The beam spot is usually around 10-20 \mum wide in the x, y directions, and about 7-9 \cm long in the z direction.
 
-Both the PV and BS are reasonable representation of the colliding position and are useful in different cases.
+Both the PV and the BS are reasonable representation of the colliding position and are useful in different cases.
 The PV has a good z coordinate precision and can be used to judge if two tracks originate from the same interaction. 
 But the position of the PV can be biased by the few energetic tracks associated to it, 
-as the tracks are weighted by $\pt^{2}$ in the reconstruction of the PV.
+as the tracks are weighted by their $\pt^{2}$ in the reconstruction of the PV.
 The BS is wide-spread in z direction, but is less affected by individual tracks in its x, y coordinates.
 To compare the two types of vertices, the d0 is measured regarding each of them, 
 and examples of the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 dependences are shown in Figure~\ref{fig:pv_vs_bs_fits}.
@@ -291,17 +291,18 @@ Therefore, the BS is considered as the position of the true vertex in the rest o
       \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/fit_results/d0_pt_PV_eg.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/fit_results/d0_pt_BS_eg.pdf}
-      \caption{Example plots showing the correlation between $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ and d0 $\cdot$ charge.
+      \caption{Plots credit to Efe Yigitbasi.
+               Example plots showing the correlation between $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ and d0 $\cdot$ charge.
                The vertices used for the d0 calculation are the PV (left) and the BS (right). 
-               The PV plot shows a modulated dependence while the BS plot shows a linear shape as expected.
+               The PV plot shows a modulated dependence from expectation while the BS plot shows a linear shape as expected.
                Only barral tracks from 2016 data are shown as examples. 
                Plots of other |\eta| regions and other data-taking periods show simular behaviors.
                }
       \label{fig:pv_vs_bs_fits}
 \end{figure*}
 
-The $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation is found to be different for different |\eta| regions and data-taking periods:
-the different |\eta| regions are covered by different detector components, and there have been upgrades on the detector and the reconstruction algorithm between different data-taking periods.
+The $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation is found to be different in different |\eta| regions and data-taking periods: 
+different |\eta| regions are covered by different detector components, and there have been upgrades on the detector and the reconstruction algorithm between different data-taking periods.
 Overall, the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation is evaluated by three years (2016, 2017, 2018) and 
 three |\eta| regions (barrel, overlap, endcap), shown in Figure~\ref{fig:geofit_param_2016} for 2016, ~\ref{fig:geofit_param_2017} for 2017, and ~\ref{fig:geofit_param_2018} for 2018.
 Each of the plot is fit with a linear function, whose best fit parameters are also shown in the plot.
@@ -312,7 +313,8 @@ Each of the plot is fit with a linear function, whose best fit parameters are al
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
-      \caption{Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2016 \DY simulation, 
+      \caption{Plots credit to Efe Yigitbasi.
+               Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2016 \DY simulation, 
                and the linear fits to them. Muon tracks are divided into three different |\eta| regions:
                $|\eta| <$ 0.9 (left), 0.9 $< |\eta| <$ 1.7 (middle), and 1.7 $< |\eta|$ (right).
                }
@@ -325,7 +327,8 @@ Each of the plot is fit with a linear function, whose best fit parameters are al
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
-      \caption{Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2017 \DY simulation, 
+      \caption{Plots credit to Efe Yigitbasi.
+               Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2017 \DY simulation, 
                and the linear fits to them. Muon tracks are divided into three different |\eta| regions:
                $|\eta| <$ 0.9 (left), 0.9 $< |\eta| <$ 1.7 (middle), and 1.7 $< |\eta|$ (right).
                }
@@ -338,16 +341,17 @@ Each of the plot is fit with a linear function, whose best fit parameters are al
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
-      \caption{Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2018 \DY simulation, 
+      \caption{Plots credit to Efe Yigitbasi.
+               Plots for the $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ vs d0 correlation in the 2018 \DY simulation, 
                and the linear fits to them. Muon tracks are divided into three different |\eta| regions:
                $|\eta| <$ 0.9 (left), 0.9 $< |\eta| <$ 1.7 (middle), and 1.7 $< |\eta|$ (right).
                }
       \label{fig:geofit_param_2018}
 \end{figure*}
 
-These fit results are applied as the analytical correction to the muon \pt, 
-based on the d0, \pt, |\eta| and charge of the muon.
-The correction is applied to all muon in the data and simulation in all categories in the \hmm analysis, 
+These fit results are applied as the analytic correction to muon \pt, 
+based on the d0, \pt, |\eta|, and charge of the muon.
+The correction is applied to all muons in data and simulation in all categories in the \hmm analysis, 
 unless the muon is tagged for \FSR.
 The performance of this correction is detailed in Section~\ref{sec:perf_geofit}.
 
@@ -356,9 +360,9 @@ The performance of this correction is detailed in Section~\ref{sec:perf_geofit}.
 The \GeoFit removes the \pt dependence on d0, 
 the overall effect of which on the \zmm peak is illustrated in Figure~\ref{fig:mucal_d0_run2}.
 A clear trend in the \mmm is seen regarding to d0 before the \GeoFit, 
-while no significant dependence remains after the \GeoFit.
-As a side remark, Figure~\ref{fig:mucal_d0_run2} shows the mismeasurement in \mmm can be as large as 1.5 \GeV,
-but in the data and simulation the distribution of the muon d0 is roughly a Gaussian shape with a standard deviation around 15 \mum.
+while no significant dependence remains after the correction.
+As a side remark, the \mmm mismeasurement in Figure~\ref{fig:mucal_d0_run2} can be as large as 1.5 \GeV for extreme d0 values,
+but in data and simulation the distribution of the muon d0 is roughly a Gaussian shape with a standard deviation around 15 \mum.
 So most of the events are near the center of the plots, and the size of the correction is not as exaggerated as the values at the tails. 
 
 \begin{figure*}[!htb]
@@ -367,9 +371,9 @@ So most of the events are near the center of the plots, and the size of the corr
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/muP_d0_summary_mean.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/muN_d0_summary_mean.pdf}
       \caption{Plots showing the \pt dependence on the d0 value with different stages of muon correction.
-               The plots compare the \zmm peak the data and the simulation for three years (2016-2018) combined.
+               The plots compare the \zmm peak in data and simulation for three years (2016-2018) combined.
                All positively charged muons are put in the left plot and all negatively charged ones are put in the right plot.
-               The \pt-d0 dependence is reversed for the positive and negative muons.
+               The \pt-d0 dependence is reversed for positive and negative muons.
                }
       \label{fig:mucal_d0_run2}
 \end{figure*}
@@ -386,9 +390,8 @@ This improvement on signal resolution translates into about 5\% improvment on th
       \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/ggHVBF.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/VHttH.pdf}
-      \caption{Taken from Ref.~\cite{cmscollaboration2020evidence}.
-               Plots showing the \GeoFit improvement on the four main \hmm signal modes, 
-               \ggH and \qqH plotted on the left and \VH and \ttH plotted on the right.
+      \caption{Plots showing the \GeoFit improvement on the four main \hmm signal modes, 
+               \ggH and \qqH plotted on the left, and \VH and \ttH plotted on the right.
                The plots are made combining the expected signal in all three years of data-taking (2016-2018).
                The relative improvements on \mmm resolution for \ggH, \qqH, \VH, and \ttH modes are, respectively,
                6.1\%, 7.8\%, 8.0\%, and 9.8\%.
@@ -400,10 +403,38 @@ This improvement on signal resolution translates into about 5\% improvment on th
 
 \subsection{GeoFit vs track re-fit}\label{sec:track_refit}
 
+The \GeoFit provides a simple method to correct the \pt dependence on d0 based on high level physics variables.
+Since the origin of this \pt dependence is well-understood, it is also possible to derive a more fundamental correction
+by re-fitting each muon track including the BS position as an additional constraint to the track.
+This method requires lower-level information of muon reconstruction and is computationally more expensive,
+but is in principle more precise.
+To compare the performance of the \GeoFit and the re-fitting method, a preliminary study is made on the 2018 \ggH signal simulation.
+The \mmm shape of the inclusive signal is plotted applying the track re-fit method vs applying the \GeoFit, shown in Figure~\ref{fig:refit_vs_geofit}.
+This comparison shows that the \mmm shapes from the two methods are almost equivalent.
+The \GeoFit, although an approximation method, captures most of the effect and provides about the same improvement in \mmm resolution as the re-fitting method.
+The \GeoFit is therefore chosen in the \hmm analysis to speed up the workflow.
+In the meantime, the possibility of CMS centrally providing the re-fit results for more general use cases is under discussion,
+which may become an official option in Run 3 (2022-2024) of CMS data-taking.
+
+\begin{figure*}[!htb]
+      \centering
+      \captionsetup{justification=justified}
+      \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_pf_2018.pdf}
+      \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_geofit_2018.pdf}
+      \caption{Plots credit to Pierluigi Bortignon.
+               Plots of the \mmm shape of the 2018 \ggH simulation sample, comparing different muon corretion methods.
+               The left plot shows the \mmm distribution calculated with muon tracks re-fit with the additional BS constraint, 
+               compared with the particle flow shape (left plot).
+               The \RochCorr is not applied in the left plot for both the red and the blue lines.
+               The right plot shows the \mmm distribution from the re-fit method, with the \RochCorr applied,
+               compared with the shape from \GeoFit + \RochCorr (right plot).
+               }
+      \label{fig:refit_vs_geofit}
+\end{figure*}
 
 \section{Muon calibration results} \label{sec:muon_cal}
 
-The \zmm is a well-understood process with a mass scale not far from the Higgs boson and much more number of events in CMS.
+The \zmm is a well-understood process with a mass scale not far from the Higgs boson and with a much larger number of events in CMS.
 It is therefore used as a candle to monitor the performance of the \RochCorr and the \GeoFit, 
 and validate that these corrections do not introduce new biases.
 In this study, the distribution of the \mmm is plotted in different bins of some dimuon kinematic variables.
@@ -415,7 +446,15 @@ and are plotted against the dimuon kinematic variable of interest to check for p
 
 The calibration plots are made by year as the corrections are provided by year.
 Events containing \FSR are removed from this study as it is a separate effect.
-Different variables are tested in the Figures listed:
+Different variables are tested in the Figures listed: 
+Figure~\ref{fig:mucal_muP_eta} for the \eta ~of the positive muon,
+Figure~\ref{fig:mucal_muP_phi} for the \phi ~of the positive muon,
+Figure~\ref{fig:mucal_muN_phi} for the \phi ~of the negative muon,
+Figure~\ref{fig:mucal_muP_pt} for the \pt ~of the positive muon,
+Figure~\ref{fig:mucal_dimu_pt} for the \pt ~of the dimuon system,
+Figure~\ref{fig:mucal_dimu_eta} for the \eta ~of the dimuon system,
+Figure~\ref{fig:mucal_muP_d0} for the d0 of the positive muon,
+and Figure~\ref{fig:mucal_muN_d0} for the d0 of the negative muon.
 
 From these plots, it can be concluded that all the known biases in muon \pt are removed and no new bias has been introduced.
 The \RochCorr and \GeoFit correct orthogonal effects, and do not interfere the performance of each other.
@@ -432,7 +471,8 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_eta_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_eta_summary_reso.pdf}
       \caption{Muon calibration plots vs $\eta(\mu^{+})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
       \label{fig:mucal_muP_eta}
 \end{figure*}
 
@@ -447,7 +487,8 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_phi_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_phi_summary_reso.pdf}
       \caption{Muon calibration plots vs $\phi(\mu^{+})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
+              The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+              while the bottom row shows its experimental resolution.}
       \label{fig:mucal_muP_phi}
 \end{figure*}
 
@@ -462,8 +503,26 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muN_phi_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muN_phi_summary_reso.pdf}
       \caption{Muon calibration plots vs $\phi(\mu^{-})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
       \label{fig:mucal_muN_phi}
+\end{figure*}
+
+
+\begin{figure*}[!htb]
+      \centering
+      \captionsetup{justification=justified}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_pt_summary_mean.pdf}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_pt_summary_mean.pdf}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_pt_summary_mean.pdf}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_pt_summary_reso.pdf}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_pt_summary_reso.pdf}
+      \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_pt_summary_reso.pdf}
+      \caption{Muon calibration plots vs $\pt(\mu^{+})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.
+               The \pt binning sculpts the shape of the \mmm peak, which leads to a jump at the \pt = 45 \GeV in the plots.}
+      \label{fig:mucal_muP_pt}
 \end{figure*}
 
 
@@ -477,7 +536,8 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/dimu_pt_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/dimu_pt_summary_reso.pdf}
       \caption{Muon calibration plots vs $\pt(\mu\mu)$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
       \label{fig:mucal_dimu_pt}
 \end{figure*}
 
@@ -492,8 +552,9 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/dimu_eta_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/dimu_eta_summary_reso.pdf}
       \caption{Muon calibration plots vs $\eta(\mu\mu)$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
-      \label{fig:mucal_dimu_pt}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
+      \label{fig:mucal_dimu_eta}
 \end{figure*}
 
 
@@ -507,7 +568,8 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_d0_rebin_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_d0_rebin_summary_reso.pdf}
       \caption{Muon calibration plots vs $d0(\mu^{+})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
       \label{fig:mucal_muP_d0}
 \end{figure*}
 
@@ -522,6 +584,7 @@ while the agreement in \mmm resolution is about a few percent.
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muN_d0_rebin_summary_reso.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muN_d0_rebin_summary_reso.pdf}
       \caption{Muon calibration plots vs $d0(\mu^{-})$, for 2016 (left column), 2017 (middle column) and 2018 (right column).
-               The top row shows the mean value of the \mmm while the bottom row shows its experimental resolution.}
-      \label{fig:mucal_muP_d0}
+               The top row shows the mean value of the Voigtian fit to the \mmm distribution, 
+               while the bottom row shows its experimental resolution.}
+      \label{fig:mucal_muN_d0}
 \end{figure*}
