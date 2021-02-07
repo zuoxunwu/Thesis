@@ -26,7 +26,7 @@
 % Enable format for table, figure, object
 \haveTablestrue%        Uncomment this if you have tables in your thesis.
 \haveFigurestrue%       Uncomment this if you have figures in your thesis.
-\haveObjectstrue%       Uncomment this if you have Objects in your thesis. This is almost certainly not the case however.
+%\haveObjectstrue%       Uncomment this if you have Objects in your thesis. This is almost certainly not the case however.
 
 
 % Author info
@@ -38,26 +38,29 @@
 \thesisType{Dissertation}%              Dissertation (PhD) or Thesis (Masters)
 \degreeYear{2021}%                      Intended graduation year (not the year you submit the thesis)
 \degreeMonth{May}%                   Month of graduation should be May, August, or December.
-\chair[Darin Acosta]%                   Chair and Cochair (see comment block above).
+\chair{Darin Acosta}%                   Chair and Cochair (see comment block above).
 
 %% additional sections
 %\setDedicationFile{dedicationFile}%                 Dedication Page
-%\setAcknowledgementsFile{acknowledgementsFile}%     Acknowledgements Page
-%\setAbstractFile{abstractFile}%                     Abstract Page (This should only include the abstract itself)
-\setReferenceFile{referenceFile}{amsplain}%         References. First argument is your bibtex source file
+\setAcknowledgementsFile{tex/acknowledgementsFile}%     Acknowledgements Page
+\setAbstractFile{tex/abstractFile}%                     Abstract Page (This should only include the abstract itself)
+%\setReferenceFile{referenceFile}{amsplain}%         References. First argument is your bibtex source file
 %%                                                       the second argument is your bibtex style file.
+\setReferenceFile{referenceFile}{unsrtnat} %         unsrtnat sorts references in cite order, and shows url.
 %\setBiographicalFile{biographyFile}%                Biography file of the Author (you).
 %
 %%%% These are NOT required, so only use them if you actually need/have them.
 
 %%\setAbbreviationsFile{abbreviations}%           Abbreviations Page
-%\setAppendixFile{appendix}%                     Appendix Content; hyperlinking might be weird.
+%\setAppendixFile{tex/appendix}%                     Appendix Content; hyperlinking might be weird.
 %\multipleAppendixtrue%                          Uncomment this if you have more than one appendix, 
 %%                                                   comment it if you have only one appendix.
 
 
 % main text
 \begin{document}
+
+%\input{tex/abstractFile.tex}
 
 \input{tex/definitions.tex}
 
