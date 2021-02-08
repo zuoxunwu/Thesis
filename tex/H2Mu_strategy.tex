@@ -3,16 +3,16 @@
 
 In 2012, a new boson at 125 \GeV was discovered by ATLAS and CMS at the LHC~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}. 
 Various measurements have been performed to probe the properties of this boson ever since, 
-and the boson was later ackownledged as the Higgs boson predicted by the SM.
+and the boson was later acknowledged as the Higgs boson predicted by the SM.
 Up to now, the couplings between the Higgs boson and the electroweak (EW) gauge bosons have been observed to be consistent with the SM prediction, 
 while the Yukawa couplings between the Higgs boson and the fermions have only been established for the third generation fermions. 
 The first and second generation fermions are less massive than their third generation counterparts and thus weaker coupling to the Higgs boson, 
 as the coupling strength is proportional to the mass of the fermion.
 This leads to significantly smaller branching fractions of the decay modes of the Higgs boson to the first or second generation fermions, 
 and poses a substantial challenge to the searches for such decays.  
-The \hmm decay in particular, has a branching raio of ${\brhmm = 2.18 \times 10^{-4}}$, 
+The \hmm decay in particular, has a branching ratio of ${\brhmm = 2.18 \times 10^{-4}}$, 
 which corresponds to an expectation of about 1000 event instances in all the data collected by CMS from 2016 to 2018 (called the LHC Run 2 data-taking period).
-In contrast, these 1000 so-called signal events are engulfed by millions of events produced through other processes (background events) that mimic their experimental signiture.
+In contrast, these 1000 so-called signal events are engulfed by millions of events produced through other processes (background events) that mimic their experimental signature.
 The search for the \hmm decay, in a nutshell, is a struggle to make the signal events stand out from the vast backgrounds with statistical significance.
 
 The search for the \hmm decay has been conducted using proton-proton ($pp$) collision data collected at center-of-mass energies of 7, 8, and 13 \TeV
@@ -23,7 +23,7 @@ SM prediction of the Higgs boson production and the \brhmm, at the 95\% confiden
 Despite the challenging nature of the \hmm analysis, many efforts can be made to improve the separation of signal and background processes, 
 allowing for a sizable refinement of the result.
 First of all, the Higgs boson has a narrow natural width, and the muons are well identified objects in the CMS detector.
-This means that the two muons from the Higgs decay always compose an invariate mass near the nominal Higgs mass, 125 \GeV.
+This means that the two muons from the Higgs decay always compose an invariant mass near the nominal Higgs mass, 125 \GeV.
 While for the background processes, the muons are created either by the decay of a \PZ boson, 
 or by decays of multiple particles, for example a \Pqt and \Paqt quark pair, each resulting in a single muon.
 The \PZ boson has a mean mass at 91.2 \GeV and a natural width of 2.5 \GeV, making a slowly falling tail in the mass spectrum around 125 \GeV.
@@ -241,13 +241,13 @@ along with the expected number of events in the Run 2 dataset (137 \invfb).
     \label{tab:signal_xsec}
 \end{table}
 
-Four event categories are definited in this analysis targeting each of the four main Higgs production modes,
+Four event categories are defined in this analysis targeting each of the four main Higgs production modes,
 all of them requiring two oppositely charged (OS) muons that form a candidate for the Higgs boson decay.
 The additional requirements for each category are:
 the \ttH category requires the presence of additional b-jets (from the decay of the top quarks) in the event,
 the \VH category targets events with additional leptons (\Pe or \mu, from the decay of the vector boson), 
 the \qqH category selects events with two energetic and forward jets,
-while the \ggH category does not spefify additional objects, and collects all events that are not selected by the other three categories.
+while the \ggH category does not specify additional objects, and collects all events that are not selected by the other three categories.
 No dedicated category is made for the minor signal modes, either because they have very similar features to one of the main modes, 
 or because their cross sections are much smaller than the main modes and do not make a difference.
 
@@ -271,7 +271,7 @@ The generated events are processed through a detailed simulation of the CMS dete
 and are reconstructed with the same algorithms that are used for data.
 All MC samples except the EW $\PZ+jj$ samples use \PYTHIA 8.2~\cite{SJOSTRAND2015159} to model the parton showering (PS), 
 hadronization, and the underlying event (UE), while the EW $\PZ+jj$ samples use \HERWIGpp and \HERWIGSeven~\cite{Bellm:2015jjp} for the same purpose.
-The effect of pileup interactions is modelled by overlaying simulated inelastic $pp$ collisions on the hard-scattering event.\\
+The effect of pileup interactions is modelled by overlaying simulated inelastic $pp$ collisions on the hard-scattering event.
 
 \bigskip
 \subsection{The simulation of the signal processes}
@@ -387,7 +387,7 @@ The detailed definition of the different objects used in this categorization is 
     \captionsetup{justification=justified}
     \includegraphics[width=0.9\textwidth]{pics/category_scheme.png}
     \caption{Scheme of the procedure of assigning events to different categories. All events passing the common baseline selection
-             are divided into four mutally exclusive categories: \ggH, \qqH, \VH (\WH and \ZH), and \ttH (leptonic and hadronic).}
+             are divided into four mutually exclusive categories: \ggH, \qqH, \VH (\WH and \ZH), and \ttH (leptonic and hadronic).}
     \label{fig:event_categories}
 \end{figure}
 
@@ -410,11 +410,11 @@ As a result, two different strategies to perform the analysis are considered:
           The systematic uncertainties do not affect the background estimation since it is based on data rather than predictions from simulations.
     \item \textbf{MC-based template fit to the Neural Network discriminator:}
           This approach is also based on an MVA, for which a ML algorithm, Deep Neural Network (DNN), is taken.
-          The DNN takes all the kinematic variables \textit{includeing \mmm}, and profiles the discrimination between the signal and the background.
+          The DNN takes all the kinematic variables \textit{including \mmm}, and profiles the discrimination between the signal and the background.
           Without making further categories, the binned template of the DNN output in the whole phase space is used for the signal strength evaluation.
           Since the fit is applied to the DNN output rather than the \mmm distribution, the \textit{signal fit region} is further divided into two parts:
           the \textit{signal region}, $115<\mmm<135 ~\GeV$, and the \textit{sideband region}, $110<\mmm<115 ~\GeV$ or $135<\mmm<150 ~\GeV$.
-          The data are fit simutaneuosly in both regions using the DNN templates of the signal and background simulation. 
+          The data are fit simultaneously in both regions using the DNN templates of the signal and background simulation. 
           The systematic uncertainties affect both the signal and the background prediction, and are employed as variations in either the yield or the shape of the templates.
           The background yield is estimated from simulation and is allowed to vary within its uncertainty in the fit, in the same manner as the other systematic uncertainties.
           The signal strength is extracted from the fit in the \textit{signal region}.
@@ -425,7 +425,7 @@ These two strategies should give comparable results in the ideal case, where the
 and where the data are well described by simulation.
 However these conditions are usually not met in real analyses, and one strategy may become preferable over the other.
 The $pp$ collision is a very noisy environment, making it difficult to achieve an accurate modeling of many kinematic aspects,
-for example the pile-up events, the parton shower, and the production of leptons through bottom or charm quarks (nonprompt leptons).
+for example the pile-up events, the parton shower, and the production of leptons through bottom or charm quarks (non-prompt leptons).
 The modeling of these features usually involves extensive work in the validation of simulated samples, and is generally associated with large systematic uncertainties.
 In the scenarios where the MC does not model the data very well, or where the uncertainties from MC modeling are not much smaller than the statistical uncertainty in the data,
 it is more advantageous to follow the data-driven approach.
@@ -439,11 +439,11 @@ The \qqH category is featured with a good amount of events, although much less t
 This makes it possible to enhance the sensitivity of the analysis by picking very high \SoB regions with the help of MVA discriminators. 
 Naturally, the number of events in the high \SoB regions is very low. Therefore the MC-based strategy is used in the \qqH category.
 The \VH and the \ttH categories both have very few events, but high \SoB, which seems like a good playground for the MC-based approach.
-However, one of the main backgrounds in the \VH and \ttH categories involves extra lepton(s) from nonprompt sources, and lacks accurate MC modeling.
+However, one of the main backgrounds in the \VH and \ttH categories involves extra lepton(s) from non-prompt sources, and lacks accurate MC modeling.
 Moreover, the expected signal yields in these categories are low. 
 It is impractical to make DNN templates with many bins, 
 otherwise only a small fraction of one data event is expected in each bin.
-Given the dataset used in this analysis, the data-driven method is the prefered choice in both the \VH and the \ttH categories.
+Given the dataset used in this analysis, the data-driven method is the preferred choice in both the \VH and the \ttH categories.
 Overall, the \ggH, \VH, and \ttH categories follow the data-driven strategy, while the \qqH category takes the MC-based approach.
 
 More details of the analysis strategy can be found in the paper describing this analysis~\cite{cmscollaboration2020evidence}, recently submitted for publication by CMS. 

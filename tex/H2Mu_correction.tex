@@ -34,14 +34,14 @@ In reality, the CMS detector can have various imperfections,
 such as the misalignment of the detector components, and the uncertainties in the magnetic field.
 Sometimes these imperfections are not correctly emulated in reconstruction software, 
 and as a result, the reconstructed muons can be inaccurate.
-These measurement biases are reflected as the dependences of the muon momemtum on its \eta, \phi ~coordinates, and its charge.
+These measurement biases are reflected as the dependences of the muon momentum on its \eta, \phi ~coordinates, and its charge.
 These dependences, in turn, smear the inclusive muon resolution and lead to sub-optimal physics results.
 
 On the other hand, in the simulation of CMS events, none of the imperfections is assumed,
 which leads to slightly different detector responses from those in data, and eventually mismodelings (usually over-optimistic modelings) in muon measurement. 
 The muon correction also needs to be applied to the simulation, in a manner not exactly the same as that to data.
 This also means that the reconstructed muons in simulation cannot be used as the reference for the correction.
-Instead, the correction is derived from the generated muon information, smeared with some funtional forms to match the experimental resolution.
+Instead, the correction is derived from the generated muon information, smeared with some functional forms to match the experimental resolution.
 This provides a set of reference muons that is free from any bias in reconstruction. 
 
 The well-understood \zmm events are used to develop the \RochCorr. 
@@ -123,7 +123,7 @@ The tracks may originate from primary vertices (PV), which are vertices of the p
 or secondary vertices, which are the decay vertices of particles with a non-infinitesimal lifetime.
 The track reconstruction does not assume any vertex information since the vertices are reconstructed as the intersections of groups of tracks.
 This practice is essential for the studies of \Pqb ~quarks, \tau ~leptons, 
-and other long-lived particles that produce a vertex displaced from the colliding region in the transverse plane at the scale of a millemeter or above.
+and other long-lived particles that produce a vertex displaced from the colliding region in the transverse plane at the scale of a millimeter or above.
 However, for the tracks from prompt interactions, such as the decay of a \PZ boson, \PW boson, or \PH boson,
 called the prompt tracks, even if they are expected not to have a visible displacement from the PV, 
 a non-zero displacement may still appear in reconstruction, due to the uncertainties in the track fit.
@@ -131,7 +131,7 @@ In other words, if a track is known to be prompt, the posterior information on t
 can be used to improve the quality of the track fit, and in turn the measurement on the track momentum.
 
 The study shown in this section reports the finding that this false displacement in prompt tracks
-has a strong geometrical correlation with the mis-measurement of the track momemtum.
+has a strong geometrical correlation with the mis-measurement of the track momentum.
 A simple analytic function can be derived from the geometry and can be verified by 
 fitting the displacement vs the \pt bias in the simulated samples.
 This analytic form is applied as a correction to \pt and is therefore named the \GeoFit.
@@ -143,18 +143,18 @@ improvement on the \mmm resolution of the combined signal ranging from 3\% to 10
 Details of the \GeoFit performance, along with validation studies are shown in Section~\ref{sec:perf_geofit}.
 In addition, an alternative way to correct this \pt bias is to redo the track fit including the colliding vertex as an additional hit in the track, 
 which should achieve a more fundamental correction at the cost of more computational resources.
-A prelimimary set of study comparing the \GeoFit with the track re-fit shows the two correction methods give almost equivalent results,
+A preliminary set of study comparing the \GeoFit with the track re-fit shows the two correction methods give almost equivalent results,
 detailed in Section~\ref{sec:track_refit}.
 
 
 \subsection{Geometry of the track displacement}\label{sec:d0_geometry}
 
 The displacement of a track from a vertex is usually measured as the impact parameters, $d_{xy}$ and $d_{z}$,
-which are the signed distance between the vertex and its point of closest approach (PCA) on the track, in the transverse and longitudal directions.
+which are the signed distance between the vertex and its point of closest approach (PCA) on the track, in the transverse and longitudinal directions.
 In CMS, because most studies only care about the transverse impact parameter, 
 the PCA is defined as the point on the 2D-projection of the track in the transverse plane that is the closest to the vertex.
 (It is not necessarily the PCA in the 3D-space. The $d_{z}$ is calculated at the 3D-point corresponding to the 2D-PCA, rather than the 3D-PCA.)
-As the $d_{z}$ is not used in our studies, the term "impace parameter", if not otherwise stated,
+As the $d_{z}$ is not used in our studies, the term "impact parameter", if not otherwise stated,
 refers specifically to the transverse impact parameter $d_{xy}$, also denoted as d0.
 The definition of d0 can be expressed as 
 \begin{equation}\label{eq:d0_def}
@@ -210,7 +210,7 @@ Points $M$ and $N$ are expected to be around the coverage of the CMS tracker sys
 Therefore $x$ and $l$ are expected to be much smaller than $r$ as well.
 Finally, the d0 scale of the tracks under study is about ten microns, which is much smaller than $x$, $l$, and $r$. 
 
-In this setup, a few geometric relationships can be found between different variables, listed as follows:
+In this setup, a few geometrical relationships can be found between different variables, listed as follows:
 Since $x \ll r$, arc $\stackrel{\frown}{VM}$ and $\stackrel{\frown}{PM}$ can be viewed as line segments which are respectively perpendicular to $OM$ and $O'M$.
 Therefore in triangle $\triangle VMP$, 
 \begin{equation}\label{eq:d01}
@@ -270,9 +270,9 @@ The plots are then fit with analytic functions which are considered as the exper
 
 In CMS, the colliding position can be measured as two different physics objects, the primary vertex (PV) and the beam spot (BS).
 A primary vertex is a 3D-point which is compatible with several tracks in the same event.
-Ususally several PVs are reconstructed per event, each of them considered as the position of a pp collision instance.
+Usually several PVs are reconstructed per event, each of them considered as the position of a pp collision instance.
 The beam spot, on the other hand, is actually a 3D-region in which most of the pp collisions happen,
-and is reconstructed with all tracks in all the events in many consecutive luminosity sections.
+and is reconstructed with all tracks in all the events in each luminosity section.
 The beam spot is usually around 10-20 \mum wide in the x, y directions, and about 7-9 \cm long in the z direction.
 
 Both the PV and the BS are reasonable representation of the colliding position and are useful in different cases.
@@ -295,8 +295,8 @@ Therefore, the BS is considered as the position of the true vertex in the rest o
                Example plots showing the correlation between $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ and d0 $\cdot$ charge.
                The vertices used for the d0 calculation are the PV (left) and the BS (right). 
                The PV plot shows a modulated dependence from expectation while the BS plot shows a linear shape as expected.
-               Only barral tracks from 2016 data are shown as examples. 
-               Plots of other |\eta| regions and other data-taking periods show simular behaviors.
+               Only barrel tracks from 2016 data are shown as examples. 
+               Plots of other |\eta| regions and other data-taking periods show similar behaviors.
                }
       \label{fig:pv_vs_bs_fits}
 \end{figure*}
@@ -383,7 +383,7 @@ This improvement is different for different processes depending on their kinemat
 Figure~\ref{fig:geofit_sigs} shows the improvement on \mmm resolution in the four main expected signal modes, \ggH, \qqH, \VH, and \ttH.
 The relative improvements on \mmm resolution for \ggH, \qqH, \VH, and \ttH modes are, 
 respectively, 6.1\%, 7.8\%, 8.0\%, and 9.8\%.
-This improvement on signal resolution translates into about 5\% improvment on the significance of the inclusive \hmm analysis.
+This improvement on signal resolution translates into about 5\% improvement on the significance of the inclusive \hmm analysis.
 
 \begin{figure*}[!htb]
       \centering
@@ -422,7 +422,7 @@ which may become an official option in Run 3 (2022-2024) of CMS data-taking.
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_pf_2018.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_geofit_2018.pdf}
       \caption{Plots credit to Pierluigi Bortignon.
-               Plots of the \mmm shape of the 2018 \ggH simulation sample, comparing different muon corretion methods.
+               Plots of the \mmm shape of the 2018 \ggH simulation sample, comparing different muon correction methods.
                The left plot shows the \mmm distribution calculated with muon tracks re-fit with the additional BS constraint, 
                compared with the particle flow shape (left plot).
                The \RochCorr is not applied in the left plot for both the red and the blue lines.
@@ -439,7 +439,7 @@ It is therefore used as a candle to monitor the performance of the \RochCorr and
 and validate that these corrections do not introduce new biases.
 In this study, the distribution of the \mmm is plotted in different bins of some dimuon kinematic variables.
 The \mmm distributions are fit with a Voigtian + Exponential function, 
-the Voigtian part being a convoluiton of a Breit-Wigner function and a Gaussian function.
+the Voigtian part being a convolution of a Breit-Wigner function and a Gaussian function.
 The parameters mean mass from the Breit-Wigner part and standard deviation from the Gaussian part are 
 taken as the mean value and the experimental resolution of the \mmm distribution,
 and are plotted against the dimuon kinematic variable of interest to check for potential trends.
