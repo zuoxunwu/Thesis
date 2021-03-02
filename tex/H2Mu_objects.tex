@@ -349,7 +349,7 @@ Cluster seeds are first identified as HCAL cells that have an energy over a thre
 Seeds are grown into topological clusters by iteratively including adjacent cells with an energy above another threshold.
 A topological cluster may cover many seeds if they are connected by cells with significant energy deposits.
 Each topological cluster is fit with a Gaussian-mixture model in which the energy distribution in the cells is assumed to be 
-the sum of N Gaussian energy distributions, where N is the number of seeds in the topological cluster.
+the sum of $N$ Gaussian energy distributions, where $N$ is the number of seeds in the topological cluster.
 Each resulting Gaussian component is considered a a cluster.
 
 Within the tracker acceptance, HCAL clusters linked to tracks are reconstructed as charged hadrons. 
@@ -360,16 +360,103 @@ and photons are reconstructed with the remaining ECAL clusters.
 All hadrons (and non-isolated photons) are considered as PF candidates but are not used as individual physics objects for analyses.
 PF candidates are clustered into more complex objects like jets and the hadronic decays of \tau{} leptons,
 which are used in physics analyses indicating outgoing partons or \tau{} leptons from the collisions.  
-Jets are reconstructed with the anti-$k_{T}$ algorithm~\cite{Cacciari_2008, fastjet}, 
-and hadronic \tau{} decays are reconstructed wth the hadrons-plus-strips (HPS) algorithm~\cite{tau2016, tau2018} seeded from jets.
-Jets can be reconstructed considering all PF candidates (PF jets), 
-or reconstructed with PF candidate except charged hadrons from pileup vertices via charged hadron subtraction (CHS).
-Only CHS jets are used in the \hmm analysis.%, whose selection criteria are detailed in Section~\ref{sec:sel_jet}.
-Hadronic \tau{} decays are not used in the \hmm analysis.
+Reconstruction of jets and hadronic \tau{} decays are detailed in Section~\ref{sec:reco_jet} and~\ref{sec:reco_tau}.
 
-%\subsection{Jets}\label{sec:reco_jet}
 
-%\subsection{Hadronic tau decays}\label{sec:reco_tau}
+\subsection{Jets}\label{sec:reco_jet}
+
+All partons carry color charges. 
+They cannot exist as free particles because QCD forbids isolated color charges, known as color confinement.
+When partons are emitted from collisions, the strong interaction potential grows rapidly between the color charges as they move away from each other.
+Once the potential reaches a threshold known as Hagedorn temperature, corresponding to an energy of roughly 150 \MeV,
+the excessive energy is converted into the production of a quark-antiquark pair in between the outgoing color charges. 
+If the original outgoing partons are energetic enough, this process is repeated, leading to a cascade of quarks and gluons.
+These quarks and gluons bind with each other and form hadrons which are color-neutral, known as the hadronization process.
+Some of the hadrons have short lifetime and decay into photons, leptons, or lighter hadrons.
+As a result, a parton produced in collisions are always received as a cluster of mixed particles that traverse with roughly collinear directions, known as a jet.
+In $pp$ collisions at the LHC, on average, 65\% of the jet energy is carried by charged hadrons, 25\% by photons, and 10\% by neutral hadrons.
+
+In particle-flow, jets are reconstructed with the anti-$k_{T}$ algorithm~\cite{Cacciari_2008, fastjet},
+which clusters particles based on a parametrized distance between them.
+Jet can be reconstructed considering all PF candidates (PF jets), 
+or be reconstructed with PF candidate except charged hadrons from pileup vertices via charged hadron subtraction (CHS). 
+The jet momentum is calculated as the vector sum of all of its constituent PF candidates, 
+In the same fashion, an invariant mass of the jet is also calculated. 
+PF jets are studied down to a \pt of 15 \GeV.
+
+The energies of PF jets are systematically underestimated for several reasons.
+Very low \pt charged hadrons loop in the tracker and do not reach the calorimeter.
+It is usually difficult to cluster these tracks with other particles and many of them end up unassigned.
+Neutral hadrons with low energy ($< 10 \GeV$) may not be successfully identified from the HCAL noise, and are sometimes not reconstructed.
+Furthermore, neutral hadrons usually also leave energy deposits in the ECAL, 
+which are systematically identified as (non-isolated) photons,
+following the reconstruction procedure described in Section~\ref{sec:reco_phot}.
+These ECAL deposits are calibrated following the photon hypothesis, 
+which is not suitable for hadrons and leads to an systematic underestimate of energy.
+
+To mitigate this systematic bias in the jet energy estimate, 
+a jet energy correction (JEC) procedure~\cite{Khachatryan_2017} is applied,
+which brings the jet response, defined as the mean ratio between the reconstructed jet energy to the true jet energy,
+to unity across different \pt and $\eta$ regions.
+The jet energy resolution is mostly determined by the resolution of the HCAL, 
+therefore the relative resolution is better for more energetic jets.
+After the JEC, in the barrel region, the relative energy resolution is typically 15\% for 20~\GeV jets,
+10\% for 100~\GeV jets, and 5\% for 1~\TeV jets. 
+
+The \hmm analysis uses PF+CHS jets, with JEC applied.
+Jets are particularly important in the \qqH category which is tagged with two energetic forward jets.
+In the \VH category, on the other hand, jets are not used explicitly but only considered for the calculation of the missing transverse energy. 
+The selection criteria of jets are detailed in Section~\ref{sec:sel_jet}.
+
+\subsection{B-jets}\label{sec:reco_btag}
+
+Jets originating from bottom or charm quarks contain heavy-flavor hadrons, and are called heavy-flavor jets.
+These heavy-flavor hadrons have lifetimes of the order of 1~ps, and their decays give rise to secondary vertices (SV) a few \mm away from the corresponding primary vertex. 
+Therefore the heavy-flavor jets can be distinguished from the light-flavor ones (originating from light-flavor quarks or gluons).
+The identification of jets initiated by \Pqb~quarks, called b-jets, are particularly important to both SM measurements and BSM searches.
+CMS provides several algorithms to evaluate the probability of a jet to be a b-jet~\cite{Sirunyan:2017ezt}, among which the DeepCSV tagger is adopted in the \hmm analysis.
+
+The DeepCSV considers many discriminating variables of a jet: the track multiplicity, the kinematic properties of the tracks in the jet,
+the energy ratio and spatial separation between different tracks, the position and the invariant mass of secondary vertices, 
+and the presence/absence of semileptonic decays of hadrons in the jet.
+These variables are processed with a deep neural network, whose outputs are probabilities of the jet to contain one b hadron ($P$(b)), or two b hadrons ($P$(bb)),
+or one c hadron ($P$(c)), or two c hadrons ($P$(cc)), or none of them ($P$(udsg)).  
+The result $P$(b)~+~$P$(bb) is used as the figure-of-merit to set standard b-tagging working points in CMS.
+Three working points are officially provided: the loose, medium, and tight tags, 
+which are chosen with a misidentification rate of 10\%, 1\%, and 0.1\%, 
+and correspond to a tagging efficiency of about 85-90\%, 70-75\%, and 50-55\%, respectively.
+B-tagging relies heavily on the tracking information and is therefore only developed and applied inside the tracker acceptance region $|\eta| < 2.5$.
+
+B-tagging are used in the \hmm analysis to identify the b-jets from the top quark decays in \ttH events, 
+or to veto such decays in other event categories.
+The exact criteria for b-tagged jet selection in the \hmm analysis is detailed in Section~\ref{sec:sel_jet}.
+
+\subsection{Hadronic tau decays}\label{sec:reco_tau}
+
+The \tau{} lepton has a mean lifetime of 0.3~ps and decays to either an electron or a muon plus two neutrinos, or a few hadrons plus one neutrino.
+The reconstruction of leptonic \tau{} decays is unrealistic as they are only received by the detector as an electron or muon, 
+which is hardly distinguishable from electrons or muons produced in other processes.
+On the other hand, the reconstruction of hadronic \tau{} decays, denoted as $\tau_{h}$, can be achieved based on the track multiplicity, collimation, and isolation of the decay products.  
+
+The main hadronic \tau{} decay modes contain either one or three charged hadrons, from zero to two neutral hadrons ($\pi_{0}$), and a neutrino.
+Their detector signature resembles that of low-multiplicity jets.
+Therefore in PF, $\tau_{h}$ candidates are reconstructed starting with PF jets as seeds. 
+The reconstruction algorithm is called the hadrons-plus-strips (HPS) algorithm~\cite{tau2016, tau2018},
+which picks charged hadrons from the seeding jet, and clusters photon and electron constituents of the seeding jet into "strips" in the $\eta-\phi$ plane.
+Each strip is considered as a $\pi_{0} \to \gamma\gamma$ candidate inside the $\tau_{h}$ decay.
+Different combinations of one or three charged hadron candidates plus up to two strips are tested for several $\tau_{h}$ hypotheses:
+$\tau^{\pm} \to h^{\pm}h^{\mp}h^{\pm}\nu_{\tau}$, $\tau^{\pm} \to h^{\pm}\pi_{0}\pi_{0}\nu_{\tau}$,
+$\tau^{\pm} \to h^{\pm}\pi_{0}\nu_{\tau}$, and $\tau^{\pm} \to h^{\pm}\nu_{\tau}$.
+Hypotheses are rejected if they fail requirements on the invariant mass, the sum of charge, the isolation, and the track vertexing in cases of multiple tracks.
+If multiple combinations inside a jet are compatible with the $\tau_{h}$ hypotheses, the one with the largest \pt is retained and all others are discarded.
+
+The identification of $\tau_{h}$ candidates is performed separately against jets, electrons, and muons.
+The ID discriminants can either be cut-based or MVA-based, on various kinematic properties of the $\tau_{h}$ candidates.
+Several working points are provided for each discriminant, whose efficiencies range from 30\% to 70\% (vs jets), from 70\% to 90\% (vs electrons), and from 98\% to 99\% (vs muons),
+all with a misidentification rate below 1\%.
+
+Hadronic \tau{} candidates are not considered in the \hmm analysis.
+
 \subsection{Missing transverse momentum}\label{sec:reco_met}
 
 Neutral particles produced in $pp$ collisions that interact weakly with regular material can traverse the CMS detector undetected.
@@ -377,10 +464,10 @@ There is no way to determine their number, type, or exact direction.
 However, when these particles are produced along with detectable particles: muons, electrons, photons, hadrons etc.,
 their presence can be inferred from the detected particles as an imbalance in the total momentum perpendicular to the beam pipe.
 This imbalance is referred to as the missing transverse momentum ($\vec{p}^{miss}_{T}$) or the missing transverse energy (\MET).
-No distinguishment is made between \MET and the magnitude of the missing transverse momentum ($p^{miss}_{T}$) 
+In practice, no distinguishment is made between \MET and the magnitude of the missing transverse momentum ($p^{miss}_{T}$) 
 as there is no way to infer the invariant mass of the missing particle(s).
 
-\MET (or \MHT) itself is not a physics object but is crucial to physics analyses, 
+\MET itself is not a physics object but is crucial to physics analyses, 
 both in SM measurements containing leptonic decays of the \PW boson
 and in searches for new weakly-interactive particles beyond the SM.
 CMS offers two ways to reconstruct the \MET~\cite{Sirunyan_2019}.
@@ -484,4 +571,26 @@ Finally, the LeptonMVA discriminator, similar to that for muons, is also develop
 The selection requirement of LeptonMVA $> 0.4$ is also applied to electrons, 
 corresponding to an efficiency of about 93\% and a fake rate of about 4\%.
 
-%\subsection{Jet selection}\label{sec:sel_jet}
+\subsection{Jet selection}\label{sec:sel_jet}
+
+CMS provides two types of identification criteria on jets~\cite{Sirunyan_2020}: the jet ID which distinguishes real jets from fake ones originating from detector noise,
+and the pileup jet ID which tells jets originating from the primary interaction apart from jets produced in pileup interactions.
+The jet ID is determined with a series of selection cuts on the jet constituent variables,
+which quantifies the number of neutral hadrons, charged hadrons, photon, and leptons in the jet, 
+as well as the fractions of jet energy carried by them.
+There is only one working point for the jet ID, corresponding to an efficiency of 98-99\%, referred to as the standard jet ID, or historically as the tight jet ID.
+The pileup jet ID is an MVA-based discriminator summarizing the jet properties such as the number of objects in the jet, 
+the vertexing of tracks in the jet (if inside the tracker coverage), and the shape of the jet cluster.
+The pileup ID is only trained with (and applied to) jets with $\pt < 50 \GeV$, where it is most likely for pileup jets to appear.
+Three working points are offered for the pileup ID, loose, medium, and tight, 
+which correspond to 80(80)\%, 90(90)\%, and 99(95)\% efficiencies in $|\eta| < 2.5$ ($|\eta| > 2.5$) regions, respectively.
+
+The \hmm analysis considers PF+CHS jets with $\pt > 25 \GeV$ and $|\eta| < 4.7$ after the JEC. 
+Jets are required to pass the jet ID and the loose pileup ID in general.
+To mitigate the exceptional ECAL endcap noise in 2017,
+jets in 2017 datasets are specifically required to pass the tight pileup ID if they lie in $2.6 < |\eta| < 3.0$ region.
+Finally, jets are rejected if they are found near a selected muon or electron with the geometrical separation of $\Delta{}R < 0.4$.
+
+B-tagged jets are also considered in the \hmm analysis, mainly for the determination of the \ttH event category.
+B-tagged jets should meet the selection requirements on generic jets, and are tagged with the DeepCSV tagger described in Section~\ref{sec:reco_btag}.
+Events containing at least one medium b-tagged jet or at least two loose b-tagged jets are classified into the \ttH category.

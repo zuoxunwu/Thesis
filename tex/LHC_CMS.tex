@@ -199,6 +199,7 @@ Figure~\ref{fig:cms_field} shows the operating magnetic field of CMS.
 \end{figure*}
 
 
+% tracker
 The CMS inner tracker is designed to provide a precise and efficient measurement of the trajectories of charged particles emerging from the LHC collisions.
 It is laid out in a cylindrical volume of 5.8-\meter length and 2.5-\meter diameter surrounding the beam pipe, shown in Figure~\ref{fig:cms_tracker}.
 It is composed of a pixel detector with four barrel layers at radii of 2.9~\cm, 6.8~\cm, 10.9~\cm, and 16.0~\cm~\cite{phase1_tracker},
@@ -250,6 +251,145 @@ in which the pixel layers are cooled with aluminum conducting tubes,
 and the strip layers are cooled with a continuous flow of $\text{C}_{6}\text{F}_{14}$ liquid.
 
 
+% explain shower, radiation length
+The tracker provides high precision measurements on the charged particles but does not their particle type.
+It does not acquire information on the numerous neutral particles like photons and neutral hadrons, either.
+Calorimeters are placed outside of the tracker to absorb most types of particles and provide energy measurements on them.
+Photons and electrons interact with matter primarily through the electromagnetic interaction, 
+where photons convert into electron-positron pairs while electrons (and positrons) emit bremsstrahlung photons.
+As a result, a photon or electron incident to thick material turns into a cascade of photons and electrons, called the electromagnetic shower.
+Similarly, hadrons interact primarily with nuclei in matter through the strong interaction,
+where multiple secondary hadrons are produced, which in case of dense material form a cascade of hadrons called the hadronic shower.
+The spatial developments of the electromagnetic shower and hadronic shower are characterized by the radiation length ($X_{0}$) and the nuclear interaction length ($\lambda_{I}$), respectively.
+CMS contains a specialized electromagnetic calorimeter (ECAL) and hadronic calorimeter (HCAL) to initiate and measure these two types of showers,
+and in turn measure the energies of the corresponding particle types.
+$X_{0}$ is in general much smaller than $\lambda_{I}$, therefore the ECAL in placed on the inside of the HCAL.
+
+
+% ECAL
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.75\textwidth]{pics/LHC_CMS/ECAL.jpg}
+    \caption{Schematic view of the CMS ECAL.
+             Plot taken from Ref.~\cite{BROWN200729}.}
+    \label{fig:cms_ecal}
+\end{figure*}
+
+The ECAL is a hermetic homogeneous calorimeter made of 75848 lead tungstate ($\text{PbWO}_{4}$) crystals,
+61200 of which are mounted in the barrel part and 7324 in each of the two endcaps.
+It is laid out in a cylindrical volume encircling the tracker, as shown in Figure~\ref{fig:cms_ecal}. 
+The barrel part of the ECAL~(EB) covers the pseudorapidity range of $|\eta| < 1.479$, 
+with a granularity of 360-fold in $\phi$ and $2 \times 85$-fold in $\eta$.
+They are mounted not exactly toward the collision region but with a small angle of $3^{\circ}$ in both the $\phi$ and $\eta$ projections.
+This avoids the intermodule cracks aligning with potential particle trajectories and creating blind regions.
+The front faces of the crystals are at a radius of 1.29~\meter.
+Each barrel crystal has a cross section of $22 \times 22 \mm^{2}$ at the front face and $26 \times 26 \mm^{2}$ at the rear face, and a length of 230~\mm ($25.8 X_{0}$). 
+$\text{PbWO}_{4}$ has a density of $8.28 g/\cm^{3}$, and overall the barrel crystals weigh 67.4~t.
+The endcap ECAL~(EE) covers the pseudorapidity range of $1.479 < |\eta| < 3.0$,
+with the front faces of crystals 315.4~\cm away from the collision region in the longitudinal direction. 
+The endcap crystals have an identical shape, with a cross section of $28.62 \times 28.62 \mm^{2}$ at the front face and $30 \times 30 \mm^{2}$ at the rear face, and a length of 220~\mm ($24.7 X_{0}$).
+The crystals are grouped in mechanical units of $5 \times 5$ crystals arranged in a rectangular $x-y$ grid.
+All crystals point at a focus 1300~\mm beyond the collision region, 
+so that the intermodule cracks are $2^{\circ} - 8^{\circ}$ tilted from the directions to the collision region.
+Each endcap is divided into 2 semicircles called $Dees$, each containing 138 standard $5 \times 5$ units and 18 partial units on the inner and outer circumferences.
+The two endcaps together weigh 24.0~t.
+
+$\text{PbWO}_{4}$ is a optically transparent material which scintillates at a wavelength of 420-430~\nm when excited by electrons and photons passing through it.
+The crystals have a refractive index of $n = 2.29$ around the scintillation wavelength, and are optically isolated from each other.
+Photons undergo total internal reflection in the crystal and are collected by the photodetector installed at the rear face of the crystal.  
+The number of scintillation photons emitted by the crystals and the amplification of the photodetectors are both temperature dependent.
+To maintain the stability of the ECAL performance, the operation temperature of the ECAL is kept precisely within $18 \pm 0.05^{\circ}C$
+by constant $18^{\circ}C$ water flows which thermally couple to the crystals and electronics via aluminum grids.
+
+The ECAL resolution is affected by several factors: 
+the stochastic fluctuation in the shower containment, in photostatistics, and in the energy absorbed by preceding detector material along the particle trajectory; 
+the noises in electronics and from pileup interactions;
+and the constant error in the crystal non-uniformity and in detector calibration.
+Overall, the resolution response and can be parametrized as:
+\begin{equation}\label{eq:ecal_reso}
+    ( \frac{\sigma}{E} )^{2} = ( \frac{S}{\sqrt{E}} )^{2} + ( \frac{N}{E} )^{2} + C^{2}
+\end{equation}
+in which $\sigma$ is the resolution, $E$ is the deposit energy,
+$S$ is the stochastic term with an empirical value of 2.8\%, 
+$N$ is the noise term with an empirical value of 12\%,
+and $C$ is the constant term with an empirical value of 0.3\%.
+
+In addition to the crystals, a preshower detector is placed in front of each ECAL endcap. 
+It is a sampling calorimeter covering a pseudorapidity range of $1.653 < |\eta| < 2.6$, 
+consisting of two layers of lead radiator + silicon strip sensor composite. 
+The lead radiator initiate electromagnetic showers from incoming photons and electrons and the strip sensors measure the shower energy without absorbing them.
+Each strip is 1.9~\mm wide, and the strip orientation in the two layers are orthogonal.
+This provides a much better spatial resolution than the crystals and significantly improves the 
+identification of photons from collinear photon pairs produced by the decay of neutral pions.
+
+
+% HCAL
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/HCAL.png}
+    \caption{Schematic view of one quarter of the Phase-1 CMS HCAL in r-z view,
+             showing the locations of the HB, HE, HO, and HF calorimeters.
+             Plot taken from Ref.~\cite{Mans:1481837}.}
+    \label{fig:cms_hcal}
+\end{figure*}
+
+The HCAL is designed to absorb and measure hadrons produced in $pp$ collisions.
+It consists four main parts: a barrel calorimeter (HB) placed in between the outer extent of the EB (at $R = 1.77 \meter$) and the inner extent of the magnet coil (at $R = 2.95 \meter$),
+two endcap calorimeters (HE) located in between the rear of the EE (at $z = \pm 3.9 \meter$) and the front of the first endcap muon station (at $z = \pm 5.6 \meter$),
+an outer calorimeter (HO) installed outside of the solenoid complementing the HB,
+and two forward forward calorimeters (HF) outside of the last endcap muon station at $z = \pm 11.2 \meter$ around the beam pipe.
+The layout of these HCAL components are shown in Figure~\ref{fig:cms_hcal}.
+The HB and HO covers the pseudorapidity range of $|\eta| < 1.3$, the HE covers $1.3 < |\eta| < 3.0$,
+and the HF covers $3.0 < |\eta| < 5.2$.
+
+The HB consists of 36 identical azimuthal wedges, each divided into 4 sectors in $\phi$ and 16 sectors in $\eta$.
+The wedges ar constructed out of 16 flat absorber plates aligned parallel to the beam axis, each has a thickness of 40-75~\mm.
+The front and rear plates are made of stainless steel, while the other 14 plates in between are made of brass.
+The total absorber thickness ranges from 5.4 to 10.3 $\lambda_{I}$ depending on $\eta$, and the ECAL in front adds about another 1.1 $\lambda_{I}$ of material.
+The hadronic energy deposits are sampled by 17 scintillator layers inserted in between the absorber plates (including the front and rear surfaces).
+The scintillator material is called Kuraray SCSN81, with optical fibers embedded to guide the light.
+The two outermost scintillator layers are 9~\mm thick while the other layers are 3.7~\mm.
+The HE is built with a similar design with 17 interposing 79-\mm brass plates and 3.7-\mm SCSN81 scintillators, summing to a thickness of about 10 $\lambda_{I}$.
+It consists 36 azimuthal wedges, each has 5 divisions between $1.3 < |\eta| < 1.6$ and 9 divisions between $1.6 < |\eta| < 3.0$.
+
+The HO sits outside of the solenoid coil, which adds about $1.4 / sin\theta$ interaction lengths before HO.
+The HO is geometrically aligned with the muon system and has 5 2.536-\meter-wide rings along $z$-axis.
+Each ring has a single-layer scintillator at $r = 4.07 \meter$.
+In particular, the HB has the minimal absorber depth near $\eta = 0$ therefore the central ring has 
+two layers of scintillators at $r = 3.82 \meter$ and $4.07 \meter$, sandwiching an additional 19.5~\cm thick piece of iron.
+HO rings are divided into 12 identical $\phi$ sectors and each sector is further divided into 6 slices.
+Each slice is in turn divided into basic units called tiles along $\eta$, with 8 divisions in ring 0, 6 divisions in rings $\pm 1$, and 5 divisions in rings $\pm 2$. 
+
+The HF is overall a cylindrical structure with an outer radius of 130.0~\cm and an inner bore radius of 12.5~\cm to accommodate the beam pipe.
+Each HF calorimeter is divided into 18 equal wedges in $\phi$ and 13 units, known as towers, with roughly equal $\eta$ intervals. 
+Each tower is made of a bundle of quartz fibers which run parallel to the beam line.
+Quartz is chosen because of its resilience to harsh radiation environment in the forward region:
+on average 760~\GeV of energy per $pp$ collision is deposited into the HF, while 100~\GeV is distributed in the rest of the detector.
+Signals are detected not as hadronic showers but as the Cherenkov radiation generated by charged particles in the quartz medium, 
+therefore the HF is insensitive to neutral hadrons.
+The whole cylindrical structure is housed in a hermetic radiation shielding consisting of composite layers of steel, concrete and polyethylene. 
+
+Overall, HCAL has a granularity of $\Delta\eta \times \Delta\phi = 0.087 \times 0.087$ for $|\eta| < 1.6$ (HB and HE), 
+$0.17 \times 0.17$ for $1.6 < |\eta| < 3.0$ (HE), and $0.175 \times 0.175$ for $3.0 < |\eta| < 5.0$ (HF).
+
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/muon_chambers.png}
+    \caption{A longitudinal section view of the CMS detector specifying the locations of muon chambers.
+             This plot is different from Figure~\ref{fig:cms_longitudinal} only by the GEM detector installed in 2019.
+             Plot taken from Ref.~\cite{}.}
+    \label{fig:cms_muons}
+\end{figure*}
+
+Muon detection at CMS, as implied by its name, is of central goal of its design.
+CMS uses three types of gaseous particle detectors for muon detection in its original design:
+drift tubs (DT), cathode strip chambers (CSC), and resistive plate chambers (RPC).
+Additional gas electron multipliers (GEM) are installed in 2019 as a part of the phase-2 upgrade plan of CMS. 
+The locations of different muon detectors are shown in Figure~\ref{fig:cms_muons}.
 
 
 %\section{Trigger system in CMS}
