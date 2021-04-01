@@ -2,7 +2,7 @@
 
 The Standard Model provides a precise description of the elementary particles we have known.
 But there remains fundamental questions to be answered.
-Is there a Higgs boson that provides the mechanism for particles to be massive?
+How correct is the SM prediction on the Higgs boson properties?
 Are there more than one type of Higgs bosons?
 Is supersymmetry a real?
 What are dark matter and dark energy?
@@ -95,17 +95,6 @@ while some, in radiation areas, are built of normal conducting material.
 The electric currents in these various magnets range from 60 A (for small correctors) to 12 kA (for main dipoles and quadrupoles),
 while the total energy stored in the magnets is about 10 GJ during full operations of the LHC.
 
-\begin{figure*}[!htb]
-    \centering
-    \captionsetup{justification=justified}
-    \includegraphics[width=0.70\textwidth]{pics/LHC_CMS/sherpa_sim.png}
-    \caption{An illustration of the interactions in a $pp$ collision.
-             The primary interaction in this example is the Higgs boson production in association with a top quark pair, 
-             whose Feynman diagram is shown in ~\ref{fig:main_higgs_modes}.
-             Plot taken from Ref.~\cite{Gleisberg_2009}.}
-    \label{fig:sherpa_pp}
-\end{figure*}
-
 Proton-proton ($pp$) collisions at the LHC initiate a diverse range of processes.
 Quarks and gluons, together called partons, in protons can initiate QCD processes, 
 in which a cascade of quarks and gluons are produced, which in turn hadronize and form various hadrons at high multiplicity.
@@ -117,7 +106,18 @@ As a result, the energy of each interaction can vary in a broad range.
 Furthermore, protons, compared to antiprotons and positrons, are easy to obtain and accelerate,
 allowing for collisions at high energy and high luminosity.
 Overall, $pp$ collisions can generate all physics processes in a wide energy spectrum with a large statistical sample size, 
-making a ideal tool to perform generic searches for expected and unexpected physics processes. 
+making a ideal tool to conduct studies on expected and unexpected physics processes. 
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.70\textwidth]{pics/LHC_CMS/sherpa_sim.png}
+    \caption{An illustration of the interactions in a $pp$ collision.
+             The primary interaction in this example is the Higgs boson production in association with a top quark pair, 
+             whose Feynman diagram is shown in ~\ref{fig:main_higgs_modes}.
+             Plot taken from Ref.~\cite{Gleisberg_2009}.}
+    \label{fig:sherpa_pp}
+\end{figure*}
 
 Figure~\ref{fig:sherpa_pp} demonstrates an example of the interactions initiated in a hard $pp$ scatter instance.
 The primary interaction in this example is the production of the Higgs boson associated with a top quark pair (\ttH),
@@ -149,6 +149,8 @@ a lead tungstate crystal electromagnetic calorimeter (ECAL) (cyan blocks),
 a brass-scintillator hadron calorimeter (HCAL) (yellow blocks),
 a superconducting solenoid (white blocks), 
 and an iron return yoke (red blocks) interleaved with a multi-layer muon detector (white panels).
+These detector components are described individually in Section~\ref{sec:magnet} to~\ref{sec:muon_chambers}.
+In addition, the data acquisition of CMS relies on a trigger system which is described in Section~\ref{sec:trigger}.
 
 \begin{figure*}[!htb]
     \centering
@@ -179,6 +181,8 @@ The CMS coordinates, along with the $\eta - \theta$ correspondence, are shown in
 \end{figure*}
 
 
+\subsection{Solenoid magnet}\label{sec:magnet}
+
 The solenoid magnet of CMS is based on the same material as the LHC magnets, operating also at 1.9 K.
 During its full operation, the superconducting coil carries an electric current of 18500 A and stores an energy of 2.6 GJ.
 It generates a homogeneous 4 T field inside its bore of 6-\meter diameter and 12.5-\meter length,
@@ -199,7 +203,8 @@ Figure~\ref{fig:cms_field} shows the operating magnetic field of CMS.
 \end{figure*}
 
 
-% tracker
+\subsection{Silicon tracker}\label{sec:tracker}
+
 The CMS inner tracker is designed to provide a precise and efficient measurement of the trajectories of charged particles emerging from the LHC collisions.
 It is laid out in a cylindrical volume of 5.8-\meter length and 2.5-\meter diameter surrounding the beam pipe, shown in Figure~\ref{fig:cms_tracker}.
 It is composed of a pixel detector with four barrel layers at radii of 2.9~\cm, 6.8~\cm, 10.9~\cm, and 16.0~\cm~\cite{phase1_tracker},
@@ -224,7 +229,7 @@ At the nominal LHC luminosity, about 1000 charged particles are produced in each
 corresponding to a hit occupancy of the order $10^{-4}$ per pixel per bunch crossing.
 
 At its operation, a charged particle usually generate signals in a few neighboring pixels, known as the charge-sharing.
-The pixel system reads with analog pulse height read-out, which enables an interpolation between the neighboring pixels
+The pixel system reads with analog pulse height readout, which enables an interpolation between the neighboring pixels
 and achieves a spatial resolution in the range of 15-20~\mum.
 
 The strip detector is made up of two subsystems in two regions, the inner region ($20 \cm < r < 55 \cm$) 
@@ -244,15 +249,16 @@ in which a second micro-strip detector module is mounted back-to-back to each or
 This measurement achieves a resolution of 230~\mum in the inner barrel and 530~\mum in the outer barrel, 
 while the resolution varies in the endcap disks depending on the hit location.
 
-The whole tracking system, consisting of the numerous silicon sensors and their read-out system,
+The whole tracking system, consisting of the numerous silicon sensors and their readout system,
 consumes about 60~kW of electric power, which in turn is dissipated as heat in the tracker volume.
 A cooling system is built to maintain its operation temperature of -10~${}^{\circ}$C, 
 in which the pixel layers are cooled with aluminum conducting tubes, 
 and the strip layers are cooled with a continuous flow of $\text{C}_{6}\text{F}_{14}$ liquid.
 
 
-% explain shower, radiation length
-The tracker provides high precision measurements on the charged particles but does not their particle type.
+\subsection{Calorimeters}\label{sec:calos}
+
+The tracker provides high precision measurements on the charged particles but does not distinguish their particle type.
 It does not acquire information on the numerous neutral particles like photons and neutral hadrons, either.
 Calorimeters are placed outside of the tracker to absorb most types of particles and provide energy measurements on them.
 Photons and electrons interact with matter primarily through the electromagnetic interaction, 
@@ -264,7 +270,6 @@ The spatial developments of the electromagnetic shower and hadronic shower are c
 CMS contains a specialized electromagnetic calorimeter (ECAL) and hadronic calorimeter (HCAL) to initiate and measure these two types of showers,
 and in turn measure the energies of the corresponding particle types.
 $X_{0}$ is in general much smaller than $\lambda_{I}$, therefore the ECAL in placed on the inside of the HCAL.
-
 
 % ECAL
 \begin{figure*}[!htb]
@@ -375,15 +380,7 @@ Overall, HCAL has a granularity of $\Delta\eta \times \Delta\phi = 0.087 \times 
 $0.17 \times 0.17$ for $1.6 < |\eta| < 3.0$ (HE), and $0.175 \times 0.175$ for $3.0 < |\eta| < 5.0$ (HF).
 
 
-\begin{figure*}[!htb]
-    \centering
-    \captionsetup{justification=justified}
-    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/muon_chambers.png}
-    \caption{A longitudinal section view of the CMS detector specifying the locations of muon chambers.
-             This plot is different from Figure~\ref{fig:cms_longitudinal} only by the GEM detector installed in 2019.
-             Plot taken from Ref.~\cite{Colaleo:2021453}.}
-    \label{fig:cms_muons}
-\end{figure*}
+\subsection{Muon detectors}\label{sec:muon_chambers}
 
 Muon detection at CMS, as implied by its name, is of central goal of its design.
 CMS uses three types of gaseous particle detectors for muon detection in its original design:
@@ -391,7 +388,224 @@ drift tubs (DT), cathode strip chambers (CSC), and resistive plate chambers (RPC
 Additional gas electron multipliers (GEM) are installed in 2019 as a part of the phase-2 upgrade plan of CMS. 
 The locations of different muon detectors are shown in Figure~\ref{fig:cms_muons}.
 
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/muon_chambers.png}
+    \caption{A longitudinal section view of the current CMS detector specifying the locations of muon chambers.
+             This plot is different from Figure~\ref{fig:cms_longitudinal} only by the GEM detector installed in 2019.
+             Plot taken from Ref.~\cite{Colaleo:2021453}.}
+    \label{fig:cms_muons}
+\end{figure*}
 
-%\section{Trigger system in CMS}
+
+
+The muon system consists of a barrel section and two endcaps, each of them containing four layers of composite detectors, 
+called stations, interleaved with the return yoke of the solenoid magnet.
+The barrel of the muon system covers $|\eta| < 1.2$ with 5 wheels along the $z$ direction.
+Each wheel consists 4 stations along the $r$ direction and each station is made of 12 sectors.
+Each sector is a planar structure parallel to $z$ and perpendicular to $r$, 
+and the 12 of them together encircle the barrel.
+In each sector, there are one DT layer and one or two RPC layers: the DT in the first and second stations is sandwiched by two layers of RPC,
+while the DT in the third and fourth stations is only accompanied with a RPC layer on the inner side of it.
+The muon endcaps cover $0.9 < |\eta| < 2.4$, forming an overlap with the barrel to make sure there is no acceptance gap.
+Each endcap is a disk with 4 stations of muon chambers.
+Each station is divided into 2 or 3 rings (3 for the first station and 2 for the others), and each ring consists six $60^\circ$ sectors.
+In each sector, there are six $10^\circ$ CSC chambers except for the inner ring of stations 2-4 which have three $20^\circ$ degree chambers.
+The CSC chambers in the inner ring of the first station (ME1/1) are accompanied with GEM chambers whose boundaries are aligned with the CSC chambers.
+The CSC chambers in the outer rings of station 1 and in the outer ring of stations 2-4 are accompanied with RPC chambers aligned with them.
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.45\textwidth]{pics/LHC_CMS/DT.png}
+    \includegraphics[width=0.45\textwidth]{pics/LHC_CMS/DT_superlayer.png}
+    \caption{Left: sketch of a cell of the drift tube detector showing drift lines and isochrones.
+             Right: schematic view of DT superlayers.
+             Plot taken from Ref.~\cite{collaboration_2013}.}
+    \label{fig:cms_dt}
+\end{figure*}
+
+The DT chambers are arrays of rectangular drift cell, whose design is illustrated in the left plot of Figure~\ref{fig:cms_dt}.
+Each cell has a transverse size of $42 \times 13 \mm^{2}$ with a 50-\mum-diameter 
+gold-plated stainless steel wire positioned in the center through its full length.
+A DT chamber is made of 3 (or 2 for the fourth station) superlayers, each made of 4 stacked layers of drift cells, staggered by half a cell.
+The superlayers are aligned alternately along the $z$ and $\phi$ directions, shown in the right plot of Figure~\ref{fig:cms_dt}.
+The cell length is 2.5~\meter for those aligned along $z$, and ranges from 1.9~\meter to 4.1~\meter for those aligned along $\phi$.
+DT tubes are filled with a gas mixture of 85\% Ar and 15\% $\text{CO}_{2}$.
+Electric voltages are applied to different parts in the tube to generate a certain potential gradient:
+the steel wires are at $+3600$~V as the anodes, the aluminum walls on the 13-\mm sides are at $-1200$~V as the cathodes,
+and the aluminum walls on the 42-\mm sides are at $+1800$~V to help guide the gradient from anodes to cathodes.
+
+When a muon passes through DT cells, it ionize the $\text{Ar-CO}_{2}$ mixture. 
+The resulting free electrons are attracted to the anodes and accelerated in the field, ionizing more gas molecules along their path.
+This avalanche makes a gain about $10^5$ and leads to a detectable current as the signal.
+The electron avalanche drifts at a roughly constant velocity about 50 $\mum/\ns$, 
+meaning that it takes at maximum close to 400 \ns for the electric signal to develop 
+(for incident muons at the farthest corners 21 \mm away from the anode wire).
+This drift time is measured from the signal timing differences between the 4 staggered layers in a superlayer~\cite{ARCE2004441}.
+The determination of this drift time is particularly important as the $pp$ bunch crossings are only 25 \ns apart from each other.
+Overall, the DT can achieve a time resolution of about 2 \ns, which, given the constant drift velocity, 
+can be translated into a spatial resolution of order 100 \mum.
+However, a caveat is accompanied with this great time and spatial resolution: 
+in a very unlikely case where two or more muons pass through the same drift cell in consecutive bunch crossings,
+the cell may not recover from the earlier avalanche and become inefficient to the later ones.
+This is mitigated by the fast-responding RPC detectors which are described later in this section.
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/CSC.png}
+    \caption{Left: layout of a CSC chamber showing arrangement of anode wires and cathode strips.
+             Right: an illustration of the principle of CSC operation.
+             Plots taken from Ref.~\cite{collaboration_2013}.}
+    \label{fig:cms_csc}
+\end{figure*}
+
+The CSCs, shown as the left plot of Figure~\ref{fig:cms_csc}, are multiwire chambers comprised of 6 anode wire planes interleaved among 7 cathode strip panels.
+The wires are equally spaced of about 3~\mm and run along the $\phi$ direction.  
+Each cathode strip panel contains 80 strips running along the $r$ direction, each covering a constant $\phi$ interval and corresponding to a width between 3~\mm to 16~\mm. 
+The gap between adjacent cathode panels (with wires in between) is about 1 \cm.  
+The overall dimension of CSCs vary for different stations and rings, the largest of which is about $3.4 \times 1.5 \meter^{2}$.
+
+A gas mixture of 40\%Ar+50\%CO$_{2}$+10\%CF$_{4}$ is filled in the CSC chambers and 
+a 3.6~kV voltage difference is applied between the anodes and cathodes.
+The principle for CSC operation is the same as that described for the DT.
+The drift time in CSC is within a few bunch crossings as it has a shorter drift length than the DT.
+After offline calibrations, the CSC can achieve a time resolution of about 3~\ns.
+In particular, when electrons move toward the anode wires, charges are induced in the nearby cathode strips, as illustrated in the right plot of Figure~\ref{fig:cms_csc}.
+By interpolating the distribution of these charges, a spatial resolution of the incident particle can be achieved better than the strip pitch,
+as good as about 2~\mm at the trigger level and around 100~\mum in off-line reconstruction.  
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/RPC.png}
+    \caption{Schematic view of a double gap RPC.
+             Plot taken from Ref.~\cite{collaboration_2013}.}
+    \label{fig:cms_rpc}
+\end{figure*}
+
+The RPC chambers are used in both the barrel and endcaps, with their dimensions aligned with the corresponding DT or CSC chambers.
+A basic double-gap RPC module is shown in Figure~\ref{fig:cms_rpc}. 
+Each gas gap consists of resistive plates made of graphite-coated 2-\mm bakelite plates, 
+which are separated by 2-\mm spacers and a composite gas mixture.
+A layer of anode strips is inserted between the double gas gaps as the readout.
+The nominal voltage applied to the outer resistive plates is 9.6~kV.
+
+The RPC features a respond rate much shorter than 25~\ns,
+which is crucial in providing bunch crossing assignment and keeping high efficiency of the overall muon system.
+It spatial resolution, on the contrary, is worse than the DT and CSC, ranging between 0.8~\cm to 1.4~\cm.
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/GEM.png}
+    \caption{Left: schematic view showing the GEM structure and its working principle.
+             Right: exploded view of the mechanical design of GEM.
+             Plot taken from Ref.~\cite{Colaleo:2021453}.}
+    \label{fig:cms_gem}
+\end{figure*}
+
+The GEM detectors are a new component installed in the muon endcaps in front of the CSC chambers in 2019.
+At the moment only one GEM station has been installed for each endcap, as shown in Figure~\ref{fig:cms_muons}.
+The basic unit of GEM is a "Triple-GEM detector", shown in Figure~\ref{fig:cms_gem}.
+A triple-GEM chamber features a stack of three GEM foils placed with gaps of a few millimeter immersed in a gas mixture.
+Each GEM foil is a thin metal-clad polymer foil with arrays of holes on it distributed in a hexagonal patter. 
+GEM foils are encased by a drift board and a readout board which are connected to a nominal voltage difference of 3200~V.
+The total distance between the drift board and the readout board is about 7~\mm.
+The holes in GEM foils guides the electric field through them, providing a high avalanche amplification factor while preventing electrical breakdown problems.
+
+The readout board is fine grained with a 300~$\mu$rad (or 0.8~\mm) precision along the $\phi$ direction.
+As the GEM chamber has a short drift distance and a fast drift speed, it is fast-responding with a time resolution better than 10~\ns, 
+In practice, two triple-GEM chambers are always stacked to form a superchamber, providing independent measurements.
+Combination of the two measurements improves the time and spatial resolution and also recover inefficiency which are about 3\% for a single chamber.
+
+\subsection{Trigger system}\label{sec:trigger}
+
+LHC is an extremely busy machine colliding protons bunches with a nominal bunch spacing of 25~\ns and a nominal instantaneous luminosity of $1.0 \times 10^{34}~\cm^{-2}\text{s}^{-1}$. 
+With tens of millions of readout channels in the CMS detector, it is impossible to record all collision data, which correspond to a data flow of about 50~TB/s. 
+Meanwhile, most $pp$ collisions are soft scatters and do not contain physics processes of primary interests.
+To reduce the intense requirement on offline storage and processing, and to filter out uninteresting collisions,
+a trigger system is implemented in CMS selecting and recording only 0.0025\% of the collision events.
+
+The CMS trigger system has two levels. 
+The first level is called the Level-1 Trigger (L1T) which is built from custom electronics specialized in fast parallel processing.
+It makes decisions based on signals from calorimeters and muon chambers and reduces the event rate from the collision rate of 40~MHz to below 100~kHz.
+The second level is the High Level Trigger (HLT) is a software system operating on a commercial processor farm.
+It utilizes the readouts from all detectors and reduces the event rate to less than 1~kHz. 
+
+The L1T receives coarsely segmented data, known as Trigger Primitives (TP), from the calorimeters and the muon system, 
+while holding the full-precision data in pipelined memory buffers corresponding to a latency of 4~\mus.
+The L1T must analyze every bunch crossing and decide whether to keep the data before they are pushed out of the buffer and lost forever.
+As electronic signals only travel (at the speed of light) 1200~\meter in 4~\mus, the L1T needs to be physically near the detector for swift communication.
+Part of L1T electronics is installed on the CMS detector, and the rest is located in the underground control room about 90~\meter from the experimental cavern.
+The full-precision data of L1T accepted events are transmitted to the above-ground computing center at a rate of about 100~GB/s and are further analyzed by the HLT. 
+The HLT processes these events among more than 20000 CPU cores with the per-event processing time relaxed to O(100~\ms).
+The HLT runs a full reconstruction algorithm similar to the offline reconstruction described in Section~\ref{sec:obj_reco}
+and selects events based on their physics signatures. 
+Events passing the HLT selection, corresponding to a data flow of a few GB/s, 
+are distributed in the CERN computing grid for storage and further processing,
+composing the collision dataset recorded by the CMS experiment. 
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/L1T.png}
+    \caption{Diagram of the CMS Level-1 trigger structure during Run 2.
+             Plot taken from Ref.~\cite{l1t_perform}.}
+    \label{fig:cms_l1t}
+\end{figure*}
+
+The structure of the L1T is shown in Figure~\ref{fig:cms_l1t}, 
+it consists a muon trigger and a calorimeter trigger.
+The muon trigger includes three muon track finders (MTF) covering the barrel (BMTF), overlap (OMTF), and endcap (EMTF) regions,
+and a global muon trigger for final muon selection. 
+Trigger Primitives (TP) are generated for each detector sector containing information like $\eta$, $\phi$ positions, timing (bunch crossing), and hit patterns.
+The CSC TPs are track segments called local charged tracks (LCT) and are organized by the muon port cards (MPC).
+The DT TPs are also track segments. 
+They are combined with near by RPC hits to form superprimitives in processors called TwinMux~\cite{CMS-DP-2016-074}.
+As RPC chambers have less internal layers, the RPC TPs are hits containing only position and timing information.
+RPC hits in the barrel region are processed by the TwinMux, while hits in the endcaps are clustered and formatted by the concentration preprocessing and fan-out (CPPF) boards.
+The BMTF takes inputs from TwinMux, the EMTF takes inputs from both MPC and CPPF, 
+while the OMTF receives inputs from all these components within its coverage.
+The MTFs combine TPs from different muon stations, build muon track candidates, 
+evaluate their momentum, and assign a ranking based on their track qualities.
+Each MTF can send up to 36 muon candidates to the global muon trigger, 
+which resolves duplicates from different sources, sorts the overall ranking, 
+and sends up to 8 highest ranked muons to the global trigger for final L1T decisions.
+
+The calorimeter trigger consists two layers. 
+The Layer-1 receives TPs from ECAL and HCAL and calibrates their energy deposits. 
+The Layer-2 combines the calibrated TPs and reconstructs trigger objects such as electrons, photons, tau leptons, jets, and energy sums.
+(Electrons and photons are indistinguishable at L1T level and are together referred to as $E/\gamma$ candidates.)
+The Layer-2 is a time multiplexed trigger~\cite{Frazier_2012} in which different bunch crossings are analyzed in parallel by multiple identical boards. 
+In this way each board has a more relaxed processing time and can access the full acceptance and granularity of the ECAL and HCAL.
+A demultiplexer (DeMux) board summarizes, reorders, and formats the output from multiplexers and transmits the results to the global trigger.
+
+All the mentioned L1T components are built on Xilinx Virtex-7 Field Programmable Gate Array (FPGA) boards.
+This design greatly boosts the reusability and flexibility of the trigger system, and reduces the workload for development and maintenance.
+The largely programmable boards also enable the application of complex multivariate algorithms at trigger level in the form of look-up tables.
+
+The global trigger examines all muon and calorimeter objects and makes decisions based a list of trigger requirements known as the trigger menu.
+The trigger menu consists of about 400 trigger seeds combined with "or" logic.
+Each trigger seed is a set of requirements on the \pt, $\eta$, isolation, and other quantities of certain trigger object(s).
+For example, a single muon trigger may ask for a muon with $\pt > 22$~\GeV and to be isolated from other trigger objects, 
+and a single muon + double jets trigger may ask for one muon and two jets in the events that are close together.
+A detailed list of trigger seeds can be found in Ref.~\cite{l1t_perform}.
+The selection requirements in trigger seeds are adjusted so that the total trigger rate is contained at a reasonable level.
+For some cases where there is a need to make loose selections while keeping the trigger rate low, a "prescale" method is applied.
+A trigger with a prescale of $N$ means that in every $N$ events passing this trigger, only one of them is accepted and recorded.
+In general, the unprescaled triggers are used to collect data for physics analyses, 
+while the prescaled triggers are used for calibrations and trigger performance studies.
+One extreme example of the prescaled triggers is the zero-bias trigger, 
+which does not require any particular objects from the proton collisions.
+It fires at a very low rate and makes the baseline dataset for various trigger studies.
+
+The HLT menu is similar to the L1T menu but is based on much better reconstructed physics objects.
+In particular, the trigger paths taken by the analysis of \hmm decay are the single isolated muon triggers 
+with a \pt threshold of 24/27/24~\GeV for 2016/2017/2018 datasets.  
+These single muon triggers in general have an efficiency greater than 90\% for muons above the trigger threshold. 
+With two muons from the Higgs decay, the overall trigger efficiency for signal events is close to 100\% with regard to the offline analysis selection detailed in Section~\ref{sec:obj_sel}.
 
 %\section{Level-1 Trigger}
