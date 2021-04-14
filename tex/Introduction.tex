@@ -1,43 +1,118 @@
 \chapter{Introduction}
 
-\section{The standard model of particle physics}
-
-The success of modern particle physics, since its inception in 1970s, 
-is summarized as the Standard Model (SM) of particle physics.
-It is a formulation that describes all known elementary particles, 
-and three of the four known fundamental interactions between them:
-the electromagnetic, weak, and strong interactions, but not the gravitational interaction whose quantization is not yet confirmed.
-Elementary particles can be classified into fermions and bosons, based on their spins.
-Elementary fermions are spin 1/2 particles that form matter in the macroscopic world as we know,
-while elementary bosons have integer spins (0 or 1) and are the carrier of particle interactions.
-Fermions are further categorized into quarks and leptons, each has three generations.
-In each generation, there is one charge = $+\frac{2}{3}$ quark (u, c, and \Pqt for each generation), 
-one charge = $-\frac{1}{3}$ quark (d, s, and \Pqb), one charge = 1 lepton ($\Pe$, \mu, and \tau), 
-and one neutral lepton ($\nu_{e}$, $\nu_{\mu}$, and $\nu_{\tau}$). 
-Each of these particles is complemented with an anti-particle which has the same mass and spin as the particle itself, 
+The success of modern particle physics has been a great success in describing the basic constituents of matter and the fundamental interactions between them.
+The Standard Model (SM) of particle physics summarizes the behavior of all observed elementary particles, shown in Figure~\ref{fig:SM_table}.
+There are 12 types of elementary fermions, 4 types of elementary gauge bosons, and 1 Higgs boson.
+Elementary fermions are matter particles and are further categorized into quarks and leptons.
+Both quarks and leptons have 3 generations.
+In each generation, there is a charge = $+\frac{2}{3}$ quark (u, c, and \Pqt quarks),
+a charge = $-\frac{1}{3}$ quark (d, s, and \Pqb quarks), 
+a charge = -1 lepton ($\Pe$, \mu, and \tau leptons),
+and a neutral lepton ($\nu_{e}$, $\nu_{\mu}$, and $\nu_{\tau}$ neutrinos).
+Each of these particles has a counterpart called an anti-particle which has the same mass and spin as the particle itself, 
 but opposite charge and other quantum numbers.
-There are two types of elementary bosons, the vector bosons (also called gauge bosons) that have spin = 1 and the scalar boson with has spin = 0.
-Gauge bosons are the carriers of fundamental interactions: photons for the electromagnetic interaction, the \PW and \PZ bosons for the weak interaction,
-and gluons for the strong interaction.
-The Higgs boson is the only scalar boson in the SM, 
-which couples to all massive elementary particles and provide the mechanism for them to be massive.
-The elementary particles of the SM is summarized in Figure~\ref{fig:SM_table}.
+Gauge bosons have spin~=~1 are carriers of fundamental interactions: 
+gluons for the strong interaction, photons for the electromagnetic interaction,
+and \PW and \PZ bosons for the weak interaction.
+Gravity is another fundamental interaction whose quantization has not been observed experimentally,
+and is not included in the SM.
+The Higgs boson is the only scalar boson (spin~=~0) in the SM.
+It plays a special role in the SM as it interacts with all massive elementary particles 
+and introduces the mechanism for them to have nonzero masses.
+The anti-particles of gauge bosons and the Higgs boson are themselves.
 
 \begin{figure*}[!htb]
     \centering
     \captionsetup{justification=justified}
     \includegraphics[width=0.9\textwidth]{pics/Intro/standard_model_cern.png}
     \caption{The Standard Model of particles physics: 12 elementary fermions and 5 elementary bosons.
-             Photo taken from~\cite{SM_table_CERN}. }
+             Plot taken from~\cite{SM_table_CERN}. }
     \label{fig:SM_table}
 \end{figure*}
 
-The SM is mathematically constructed within Quantum Field Theory with a structure of the product of an SU(3), an SU(2), and an U(1) groups.
-The Lagrangian density of the SM is expressed as:
+The theory of the SM is formulated in quantum field theory and exhibits rich physics phenomena.
+The mathematical construction of the SM is given in the following sections:
+Section~\ref{sec:gauge_symmetry} describes the basic formalism of quantum field theory and the idea of gauge symmetry;
+Section~\ref{sec:SM_Lagrangian} shows the mathematical description of the SM without the Higgs field and its drawback in describing particle masses;
+Section~\ref{sec:Higgs_mech} introduces the Higgs field and its interplay with the gauge fields and fermion fields which allows particles to retain masses;
+and Section~\ref{sec:SM_parameters} discusses the free parameters in the SM and the motivation to study the Higgs to muons decay.
+
+
+\section{Quantum field theory and gauge symmetry}\label{sec:gauge_symmetry}
+
+Symmetry is a key concept in physics. 
+A symmetry regarding a certain quantity means the equations of motion do not depend on this quantity
+and implies the existence of a conservation law.
+Taking a free Dirac field for example, its Lagrangian is 
+\begin{equation}\label{eq:Dirac_Lagrangian}
+    \mathcal{L} = \bar{\psi}(x)(i\gamma^{\mu}\partial_{\mu}-m)\psi(x)
+\end{equation}
+where $\psi(x)$ is the Dirac field,
+$\partial_{\mu}$ is the regular partial derivative with Lorentz index $\mu$,
+$\gamma_{\mu}$ is the Dirac matrix of index $\mu$,
+and $m$ is the mass of the Dirac spinor.
+This Lagrangian is invariant under external spacetime translations or internal phase translations
+\begin{equation}\label{eq:global_space}
+     \psi(x) \to \psi(x+a_{0})
+\end{equation}
+and 
+\begin{equation}\label{eq:global_phase}
+    \psi(x) \to e^{i\theta_{0}}\psi(x)
+\end{equation}
+where $a_{0}$ and $\theta_{0}$ are arbitrary constants.
+Such properties of invariance correspond to the conservations of energy, momentum, and probability current of free Dirac spinors.
+
+Such symmetries are global symmetries as $a_{0}$ and $\theta_{0}$ are independent from the spacetime location.
+A crucial practice in quantum field theory is to promote global symmetries to local symmetries, 
+also known as gauge symmetries, under transformations like
+\begin{equation}\label{eq:local_space}
+  \psi(x) \to \psi(x+a(x))
+\end{equation}
+and 
+\begin{equation}\label{eq:local_phase}
+ \psi(x) \to e^{i\theta(x)}\psi(x)
+\end{equation}
+where $a(x)$ and $\theta(x)$ are no longer constants but functions of the spacetime coordinates~$x$.
+Obviously Equation~\ref{eq:Dirac_Lagrangian} is not invariant under these gauge transformations, 
+as the transformations give rise the new terms of $\partial_{\mu}a(x)$ and $\partial_{\mu}\theta(x)$.
+The way to achieve gauge invariance is to replace the partial derivatives $\partial_{\mu}$ by covariant derivatives, 
+through whose construction new interactions are introduced.
+
+The construction of spacetime gauge symmetry essentially leads to gravitation and is not the topic of this work.
+Here we focus on the gauge invariance of transformation Equation~\ref{eq:local_phase}, 
+and write the covariant derivative as 
+\begin{equation}\label{eq:cov_de_phase}
+    D_{\mu} = \partial_{\mu} + \text{i}eA_{\mu}
+\end{equation}
+where $e$ is an arbitrary constant and $A_{\mu}$ is a new field following the transformation
+\begin{equation}\label{eq:EM_transformation}
+    A_{\mu}(x) \to A_{\mu}(x) - \frac{1}{e}\partial_{\mu}\theta(x)
+\end{equation}
+In fact, this exact formula can be used to describe electromagnetism, 
+for which $A_{\mu}$ is the vector potential of the electromagnetic field and $e$ is the electric charge.
+
+Modifying Equation~\ref{eq:Dirac_Lagrangian} with Equation~\ref{eq:cov_de_phase} and adding the EM field term, 
+we get a gauge invariant Lagrangian describing a Dirac field interacting with an EM field
+\begin{equation}\label{eq:Dirac_EM}
+    \mathcal{L} = \bar{\psi}(x)(i\gamma^{\mu}\partial_{\mu}-m)\psi(x) - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+where $F_{\mu\nu}$ is the EM field tensor
+\begin{equation}\label{eq:EM_tensor}
+    F_{\mu\nu}(x) = \partial_{\mu}A_{\nu}(x) - \partial_{\nu}A_{\mu}(x) 
+\end{equation}
+The transformation Equation~\ref{eq:local_phase} takes the form of the group U(1) at each point $x$.
+Therefore we say the electromagnetic interaction follows a U(1) gauge symmetry.
+
+
+
+\section{The standard model Lagrangian}\label{sec:SM_Lagrangian}
+
+Following the formalism in Section~\ref{sec:gauge_symmetry} and knowing there are 6 quarks, 6 leptons, and 4 gauge bosons,
+the SM Lagrangian without considering a Higgs boson can be written as:
 \begin{equation}\label{eq:SM_Lagrangian}
   \begin{split}
-    \mathcal{L} = & \bar{\psi}^{i} (i\gamma^{\mu})(\mathcal{D}_{\mu})_{ij}\psi^{j} -
-                  - \frac{1}{4} G^{a}_{\mu\nu}G^{a\mu\nu}
+    \mathcal{L} = & \bar{\psi}^{i} (i\gamma^{\mu})(D_{\mu})_{ij}\psi^{j} -
+                  - \frac{1}{4} G^{k}_{\mu\nu}G^{k\mu\nu}
                   - \frac{1}{4} W^{a}_{\mu\nu}W^{a\mu\nu}
                   - \frac{1}{4} B_{\mu\nu}B^{\mu\nu} \\
                 & - m_{f} \bar{\psi}^{i}_{f} \psi_{fi}
@@ -48,150 +123,288 @@ The Lagrangian density of the SM is expressed as:
 \end{equation}
 In the equation:
 \begin{itemize}
-  \item $\psi$ is the fermion field (matter field);
-  \item $G^{a}_{\mu\nu}$, $W^{a}_{\mu\nu}$, and $B_{\mu\nu}$ are field strength tensors for the interaction fields 
+  \item $\psi$ is the fermion field and $D_{\mu}$ is the covariant derivative;
+  \item $G^{k}_{\mu\nu}$, $W^{a}_{\mu\nu}$, and $B_{\mu\nu}$ are field strength tensors for the interaction fields 
         corresponding to the groups SU(3), an SU(2), and an U(1), respectively;
-  \item $\mathcal{D}_{\mu}$ is the covariant derivative operator: $\mathcal{D}_{\mu}\psi = (\partial_{\mu} - ig^{\prime}B_{\mu}Y - igW^{a}_{\mu}T^{a} - ig_{s}G^{a}_{\mu}t^{a})\psi$,
-        $g^{\prime}$, $g$, and $g_{s}$ being field strength coefficients, and $Y$, $T^{a}$, and $t^{a}$ being interaction operators;
-  \item Index $a$ is the index of the group generators, which runs from 1 to 8 for the gluon, and 1 to 3 for the \PW boson;
-  \item $m_{f}$, $m_{G}$, $m_{W}$, and $m_{B}$ are the masses of the fermion, gluon, \PW boson, and the neutral gauge boson;
-  \item $\mu$ and $\nu$ are the Lorentz vector indices.
+  \item $\mu$ and $\nu$ are the Lorentz vector indices. Index $k$ and $a$ are the index of the group generators, $k$ running from 1 to 8, and $a$ running from 1 to 3;
+  \item $m_{f}$, $m_{G}$, $m_{W}$, and $m_{B}$ are the masses of the fermions and gauge bosons of SU(3), SU(2), and SU(1);  
 \end{itemize}
 
-The second line in Equation~\ref{eq:SM_Lagrangian} indicates that fermions and gauge bosons can be massive.
-However, these terms unlike the terms in the first line, are not invariant under local gauge transformation.
-An additional scalar field is introduced, which interacts with the fermion and boson fields,
-leading to a spontaneous symmetry breaking and allowing the mass terms to appear in Equation~\ref{eq:SM_Lagrangian} without violating gauge invariance.
-This is scalar field is called the Higgs field and its effect is called the Higgs mechanism.
 
-% Higgs self
+This Lagrangian takes the structure of groups SU$(3)_{c} \times$SU$(2)_{L} \times$U$(1)_{Y}$.
+The SU$(3)_{c}$ represents the strong interaction with the subscript $c$ standing for color.
+The SU$(2)_{L} \times$U$(1)_{Y}$ is the electroweak interaction, 
+where the $L$ means it only acts on left-handed fermions
+and the $Y$ is the hypercharge associated with the U(1) group.\footnote{The hypercharge $Y$ is not the electric charge $e$ in Equation~\ref{eq:cov_de_phase}.
+In fact, for all fermions, the electric charge $Q = T_{3} + Y/2$.}
+Here the SU$(2)_{L} \times$U$(1)_{Y}$ cannot be disentangled and viewed separately as the weak interaction and electromagnetic interaction.
+
+The gauge transformations on the fermion field are:
+\begin{equation}\label{eq:gauge_fermion}
+  \begin{split}
+    \text{U(1)}:  & ~~~~ \psi(x) \to  \text{exp}[i\theta_{Y}(x)Y]\psi(x) \\
+    \text{SU(2)}: & ~~~~ \psi(x) \to  \text{exp}[i\theta^{a}_{L}(x)T^{a}]\psi(x) \\
+    \text{SU(3)}: & ~~~~ \psi(x) \to  \text{exp}[i\theta^{k}_{c}(x)t^{k}]\psi(x) 
+  \end{split}  
+\end{equation}  
+with $D_{\mu}$ taking the form of 
+\begin{equation}\label{eq:SM_cov_dev}
+  D_{\mu} = \partial_{\mu} - ig^{\prime}B_{\mu}Y - igW^{a}_{\mu}T^{a} - ig_{s}G^{k}_{\mu}t^{k}
+\end{equation} 
+where $g^{\prime}$, $g$, and $g_{s}$ are field strength coefficients, 
+and $Y$, $T^{a}$, and $t^{k}$ are interaction operators, for U(1), SU(2), and SU(3) respectively.
+In this construction the transformations on the interaction fields are:
+\begin{equation}\label{eq:gauge_interaction}
+  \begin{split}
+    \text{U(1)}:  & ~~~~  B_{\mu}(x) \to B_{\mu}(x) + \frac{1}{g^{\prime}}\partial_{\mu}\theta_{Y}(x) \\
+    \text{SU(2)}: & ~~~~  W^{a}_{\mu}(x) \to  W^{a}_{\mu}(x) + \frac{1}{g}\partial_{\mu}\theta^{a}_{L}(x) + \epsilon^{abc}W^{b}_{\mu}(x)\theta^{c}_{L}(x) \\
+    \text{SU(3)}: & ~~~~  G^{k}_{\mu}(x) \to  G^{k}_{\mu}(x) + \frac{1}{g_{s}}\partial_{\mu}\theta^{k}_{c}(x) + f^{klm}G^{l}_{\mu}(x)\theta^{m}_{c}(x)
+  \end{split}  
+\end{equation}  
+Furthermore, the field tensors in Equation~\ref{eq:SM_Lagrangian} are related to the field vectors as
+\begin{equation}\label{eq:field_tensor}
+  \begin{split}
+    \text{U(1)}:  & ~~~~ B_{\mu\nu} = \partial_{\mu}B_{\nu} - \partial_{\nu}B_{\mu} \\
+    \text{SU(2)}: & ~~~~ W^{a}_{\mu\nu} = \partial_{\mu}W^{a}_{\nu} - \partial_{\nu}W^{a}_{\mu} + g\epsilon^{abc}W^{b}_{\mu}W^{c}_{\nu} \\
+    \text{SU(3)}: & ~~~~ G^{k}_{\mu\nu} = \partial_{\mu}G^{k}_{\nu} - \partial_{\nu}G^{k}_{\mu} + g_{s} f^{klm}G^{l}_{\mu}G^{m}_{\mu} 
+  \end{split}
+\end{equation}
+in which the $\epsilon^{abc}$ and $f^{klm}$ are structure constants of SU(2) and SU(3) governing the relations between group generators
+\begin{equation}\label{eq:struture_constant}
+  \begin{split}
+    [T^{a}, T^{b}] = i\epsilon^{abc}T_{c} \\
+    [t^{k}, t^{l}] = if^{klm}t_{m}
+  \end{split}
+\end{equation}
+
+So far we have modeled the strong and electroweak interactions with matter fields.
+However, the mass terms in the form of Equation~\ref{eq:SM_Lagrangian} are actually not gauge invariant.
+For the gauge boson terms, $m^{2}_{G} G_{\mu}G^{\mu}$, $m^{2}_{W} W_{\mu}W^{\mu}$, and $m^{2}_{B} B_{\mu}B^{\mu}$,
+it is already shown in Equation~\ref{eq:gauge_interaction} that the transformation of them always introduces terms depending on the transformation,
+and is therefore not gauge invariant.
+The fermion terms $m_{f} \bar{\psi}^{i}_{f} \psi_{fi}$ turn out not gauge invariant, either.
+This is not so obvious in this form but becomes clear when written in left and right chiral forms: $\psi = \psi_{R} + \psi_{L}$
+in which 
+\begin{equation}\label{eq:psi_chiral}
+    \psi_{R} = \begin{pmatrix} \psi_{+} \\ 0 \end{pmatrix}, 
+    ~\text{and}~
+    \psi_{L} = \begin{pmatrix} 0 \\ \psi_{-} \end{pmatrix}
+\end{equation}
+We also introduce the projection operators:
+\begin{equation}\label{eq:projection_op}
+    P_{\pm} = \frac{1}{2}(1 \pm \gamma^{5})
+\end{equation}
+who act on $\psi$ as
+\begin{equation}\label{eq:proj_psi}
+  \begin{split}
+    P_{+}\psi = \psi_{R}, & ~~~ P_{-}\psi = \psi_{L}, \\
+    \bar{\psi}P_{+} = \bar{\psi_{L}}, & ~~~ \bar{\psi}P_{-} = \bar{\psi_{R}}
+  \end{split}
+\end{equation}
+Expanding the term $m\bar{\psi} \psi = m(\bar{\psi_{R}} + \bar{\psi_{L}}) (\psi_{R} + \psi_{L})$,
+the terms $\bar{\psi_{R}}\psi_{R}$ and $\bar{\psi_{L}}\psi_{L}$ vanish.
+\begin{equation}\label{eq:RR_term}
+    \bar{\psi_{R}}\psi_{R} = \bar{\psi} P_{-}P_{+} \psi = \bar{\psi} \frac{1}{4} (1 - (\gamma^{5})^{2}) \psi = 0
+\end{equation}
+The surviving terms $m\bar{\psi} \psi = m\bar{\psi_{R}}\psi_{L} + m\bar{\psi_{L}}\psi_{R}$
+is not invariant under the SU$(2)_{L}$ transformation as it only acts on the left chiral component,
+leaving uncancelled "phase" terms from the transformation.\footnote{The surviving terms of $\bar{\psi} (i\gamma^{\mu})(D_{\mu})\psi$
+are $\bar{\psi_{R}} (i\gamma^{\mu})(D_{\mu})\psi_{R}$ and $\bar{\psi_{L}} (i\gamma^{\mu})(D_{\mu})\psi_{L}$, 
+in which the SU$(2)_{L}$ "phase" term cancels properly, making them gauge invariant.}
+
+Therefore, in this form of SM shown in Equation~\ref{eq:SM_Lagrangian}, all mass parameters $m_{f}$, $m_{G}$, $m_{W}$, $m_{B}$ should be 0,
+which contradicts the experimental fact that most elementary particles are massive.
+The follow section describes a mechanism to allow particles to retain masses 
+through the introduction of a new field component called the Higgs field.
+
+
+\section{The Higgs mechanism}\label{sec:Higgs_mech}
+
 The Higgs field is a complex scalar field whose potential is:
 \begin{equation} \label{eq:Higgs_potential}
     V(\Phi) = - \mu^{2} \Phi^{\dagger}\Phi + \lambda(\Phi^{\dagger}\Phi)^{2}
 \end{equation}
 in which $\Phi$ is the complex scalar field and $\mu$, $\lambda$ are coefficients.
-$\lambda$ needs to be positive for $V(\Phi)$ to have a minimum value.
-If $\mu^{2} = 0$, the minimum of $V(\Phi)$ is zero, when $|\Phi| = 0$,
-and the no mass is raised for the fermions and bosons.
-If $\mu^{2} < 0$, $V(\Phi)$ shall have a nonzero minimum value when $|\Phi^{\dagger}\Phi| = \frac{\mu^{2}}{2\lambda}$.
-In gauge transformation, when reducing $\Phi$ to a real scalar field $\phi$,
-it can be rewrote as $\phi = \nu + h$, where $\nu = \frac{\mu^{2}}{\lambda}$ is a constant,
-the Lagrangian of the Higgs field can be written as:
-\begin{equation}\label{eq:Higgs_Lagrangian}
-    \mathcal{L}_{H} = - V(\Phi) = -\lambda \nu^{2} h^{2} - \lambda \nu h^{3} - \frac{\lambda}{4} h^{4} + const.
-\end{equation}
-in which the first term is the mass term of the Higgs boson, the second term is the tri-Higgs coupling vertex term,
-and the third term is the quad-Higgs coupling term.
-The Higgs mass, from the first term, is:
-\begin{equation}\label{eq:Higgs_mass}
-    m_{h} = \sqrt{2 \lambda} \nu   
-\end{equation}
-where $\nu$ can be determined from theory $\nu = $ 246 \GeV, while $\lambda$ is an unknown parameter.
+The shape of the this potential is shown in Figure~\ref{fig:Higgs_potential}. 
+Parameter $\lambda$ needs to be positive for $V(\Phi)$ to have a minimum (ground state).
+If $\mu^{2} \leqslant 0$, there is a single minimum of $V(\Phi)$ at zero when $|\Phi| = 0$.
+If $\mu^{2} > 0$, $V(\Phi)$ can have a degenerate minimum of $-\frac{\mu^{4}}{4\lambda}$ when $\Phi^{\dagger}\Phi = \frac{\mu^{2}}{2\lambda}$.
 
-% Higgs gauge
-Adding the Higgs field to a massless SM Lagrangian, the Lagrangian becomes:
-\begin{equation}\label{eq:SM_Lagrangian_Higgs}
-  \begin{split}
-    \mathcal{L} = & \bar{\psi}^{i} (i\gamma^{\mu})(\mathcal{D}_{\mu})_{ij}\psi^{j} -
-                  - \frac{1}{4} G^{a}_{\mu\nu}G^{a\mu\nu}
-                  - \frac{1}{4} W^{a}_{\mu\nu}W^{a\mu\nu}
-                  - \frac{1}{4} B_{\mu\nu}B^{\mu\nu} \\
-                & + \mu^{2} \Phi^{\dagger}\Phi - \lambda (\Phi^{\dagger}\Phi)^{2} \\
-                & + (\mathcal{D}_{\mu}\Phi)^{\dagger} (\mathcal{D}^{\mu}\Phi)  \\
-                & - y_{e} \bar{L}^{L} \Phi{} e_{R}
-                  - y_{u} \bar{Q}_{L} \bar{\Phi} u_{R}
-                  - y_{d} \bar{Q}_{L} \Phi{} d_{R} + \text(h.c.)
-  \end{split} 
-\end{equation}
-where the first line is the massless SM terms, the second line is the Higgs self-interaction term,
-the third line is the Higgs-gauge interaction term, and the fourth line is the Higgs-fermion interaction term.
-
-The Higgs-gauge term can be expanded as:
-\begin{equation}\label{eq:Higgs_gauge}
-  \begin{split}
-    (\mathcal{D}_{\mu}\Phi)^{\dagger} (\mathcal{D}^{\mu}\Phi) = &   \frac{1}{2} (\partial_{\mu} h)(\partial^{\mu} h) \\
-                                                                & + \frac{g^{2}\nu^{2}}{4} W^{+}_{\mu} W^{-}_{\mu}
-                                                                  + \frac{(g^{2}+{g^{\prime}}^{2}) \nu^{2}}{8} Z_{\mu} Z^{\mu} \\
-                                                                & + \frac{g^{2}\nu}{2} h W^{+}_{\mu} W^{-}_{\mu}
-                                                                  + \frac{g^{2}}{2} hh W^{+}_{\mu} W^{-}_{\mu} \\
-                                                                & + \frac{(g^{2}+{g^{\prime}}^{2}) \nu}{4} h Z_{\mu} Z^{\mu}
-                                                                  + \frac{g^{2}+{g^{\prime}}^{2}}{8} hh Z_{\mu} Z^{\mu}
-  \end{split}
-\end{equation} 
-in which the first line is the Higgs kinetic term, the second line is the mass terms for \PW and \PZ bosons,
-the third line is the hWW and hhWW interaction vertices, and the fourth line is the hZZ and hhZZ interaction vertices.
-From this Lagrangian, the \PW and \PZ boson have masses of 
-\begin{equation}\label{eq:gauge_mass}
-  \begin{split}
-    m_{W} & = \frac{g\nu}{2} \\
-    m_{Z} & = \frac{\nu}{2} \sqrt{g^{2}+{g^{\prime}}^{2}}
-  \end{split}
-\end{equation}
-
-%Higgs Yukawa
-The Higgs-fermion terms, also called the Yukawa term, can be expanded as:
-\begin{equation}\label{eq:Higgs_Yukawa}
-  \begin{split}
-    \mathcal{L}_{Yukawa} = & - (\frac{y_{e}\nu}{\sqrt{2}}) \bar{e}e - \frac{y_{e}}{\sqrt{2}} h \bar{e}e \\
-                           & - (\frac{y_{u}\nu}{\sqrt{2}}) \bar{u}u - \frac{y_{u}}{\sqrt{2}} h \bar{u}u \\
-                           & - (\frac{y_{d}\nu}{\sqrt{2}}) \bar{d}d - \frac{y_{d}}{\sqrt{2}} h \bar{d}d \\
-  \end{split}
-\end{equation}
-in which the each line has a fermion mass term and a Higgs-fermion vertex term,
-and the three lines are for leptons, up-type quarks, and down-type quarks, respectively.
-As a result, the masses of leptons and two types of quarks are
-\begin{equation}\label{eq:fermion_mass}
-    m_{e} = \frac{y_{e}\nu}{2}, ~~~~~~~  m_{u} = \frac{y_{u}\nu}{2}, ~~~~~~~  m_{d} = \frac{y_{d}\nu}{2}
-\end{equation}
-
-Overall, fermions, the \PW, \PZ bosons, and the Higgs boson itself are allowed to be massive through the Higgs mechanism (Equations~\ref{eq:Higgs_mass}, \ref{eq:gauge_mass}, and \ref{eq:fermion_mass}).
-The Higgs mechanism is experimentally confirmed by the observation of the Higgs boson by ATLAS and CMS Collaborations in 2012~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba},
-while the latest and most precise measurement of the Higgs mass is $125.38 \pm 0.14$ \GeV from the CMS Collaboration~\cite{2020135425}.  
-Furthermore, the Higgs boson couples to the \PW, \PZ bosons through gauge coupling, whose coupling strength is proportional to the mass of the gauge boson.
-Similarly, the Higgs boson couples to fermions through Yukawa coupling, whose coupling strength is also proportional to the mass of the fermion.
-Therefore, precise measurements of the Higgs coupling strength to different particles are keys to further validate the SM and search for new physics beyond the SM.
-
-
-\section{The measurements of Higgs couplings}
-
-The Higgs boson couples to all massive elementary particles, and can decay to most of them (except the top quark whose mass is greater than the Higgs boson).
-The branching fractions of the decays are directly related to the coupling strength.
-The Higgs boson can also decay to massless particles (gluons and photons) through top-quark-induced or \PW-boson-induced loop diagrams.
-Table~\ref{tab:higgs_BR} lists the branching fractions of the main decay modes of the Higgs boson.
-
-\begin{table}[!htb]
+\begin{figure*}[!htb]
   \centering
   \captionsetup{justification=justified}
-  \topcaption{The branching fractions of the main decay modes of the SM Higgs boson with a mass of 125 \GeV.}
-  \begin{tabular}{lc}
-    \hline
-    Decay mode                 &  Branching fraction \\
-    \hline
-    $\PH \to \Pqb\Paqb$        &  58.4\% \\
-    $\PH \to \PW^{+}\PW^{-}$   &  21.4\% \\
-    $\PH \to gg$               &  8.19\% \\
-    $\PH \to \tau\bar{\tau}$   &  6.26\% \\
-    $\PH \to c\bar{c}$         &  2.89\% \\
-    $\PH \to \PZ\PZ$           &  2.62\% \\
-    $\PH \to \gamma\gamma$     &  0.227\% \\
-    $\PH \to \PZ\gamma$        &  0.153\% \\
-    $\PH \to \mu\bar{\mu}$     &  0.022\% \\
-    \hline
-  \end{tabular}
-  \label{tab:higgs_BR}
-\end{table}
+  \includegraphics[width=0.6\textwidth]{pics/Intro/Higgs_field.pdf}
+  \caption{The shape of the Higgs potential with different $\mu^{2}$ parameter configurations.}
+  \label{fig:Higgs_potential}
+\end{figure*}
 
-The Higgs boson decay to electroweak gauge bosons and charged fermions of the third generation (except the top quark) had been observed, 
-with coupling strengths consistent with the SM prediction~\cite{Sirunyan:2312121, 201996, Sirunyan:2017exp, PhysRevLett.121.121801, 2018283, PhysRevD.99.072001, 201859, 2019508, Aaboud_2018}.
-In addition, the Higgs boson coupling to the top quark has also been measured through the Higgs production process in association with a top quark pair~\cite{PhysRevLett.120.231801, 2018173}.
-The measurements on the Higgs coupling strengths from CMS with the LHC proton-proton collision data collected in 2016 is summarized in Figure~\ref{fig:higgs_2016},
+The equation $\Phi^{\dagger}\Phi = \frac{\mu^{2}}{2\lambda}$ represents a circle in the complex plane of $\Phi$.
+As $\mu^{2}$ increase from below 0 to above 0, 
+the ground state of the field moves from $\Phi = 0$ in an arbitrary direction to a point on the circle $\Phi^{\dagger}\Phi = \frac{\mu^{2}}{2\lambda}$, 
+making an asymmetric solution.
+This phenomenon is known as the spontaneous symmetry breaking, 
+which is also widely observed in physics systems such as the 
+bending of a cylindrical rod under axial pressure,
+or the cooling of a ferromagnetic material cross its Curie temperature.
+
+Writing the Higgs field together with the simplest gauge field $A_{\mu}$, the Lagrangian is 
+\begin{equation}\label{eq:Higgs_gauge_Lag}
+  \mathcal{L} = |(\partial_{\mu}+ieA_{\mu})\Phi|^{2} -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \mu^{2} \Phi^{\dagger}\Phi - \lambda(\Phi^{\dagger}\Phi)^{2}
+\end{equation}
+This Lagrangian itself is invariant under the U(1) gauge symmetry
+\begin{equation}\label{eq:U1_trans}
+    \Phi \to \text{exp}[i\theta(x)]\Phi, ~~~ A_{\mu} \to A_{\mu} - \frac{1}{e} \partial_{\mu}\theta(x)  
+\end{equation}
+but the symmetry breaks as the Higgs field takes a nonzero ground state.
+The fields can be rewritten as
+\begin{equation}\label{eq:Higgs_perturb_form}
+    \Phi(x) \to \frac{1}{\sqrt{2}} (\rho(x)+v)\text{exp}[i\zeta(x)/v], ~~~~~
+    A_{\mu} \to A_{\mu} - \frac{1}{ev} \partial_{\mu}\zeta(x)
+\end{equation}
+where $v = \frac{\mu^{2}}{\lambda}$ is known as the vacuum expectation value,
+$\rho(x)$ and $\zeta(x)$ are scale and phase deviations from this ground state position.
+The Lagrangian now becomes 
+\begin{equation}\label{eq:local_Higgs_gauge_Lag}
+  \begin{split}
+    \mathcal{L} = & -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \frac{1}{2} e^{2}v^{2}A_{\mu}A^{\mu} 
+                    + e^{2}v \rho A_{\mu}A^{\mu} + \frac{1}{2} e^{2}\rho^{2}A_{\mu}A^{\mu} \\
+                  & + \frac{1}{2} |\partial_{\mu}\rho|^{2} + \lambda v^{2} \rho^{2} 
+                    - \lambda v \rho^{3} - \frac{1}{4} \lambda \rho^{4} + \frac{1}{4} \lambda v^{4}   
+  \end{split}
+\end{equation}
+In this Lagrangian, a massive gauge boson term $e^{2}v^{2}A_{\mu}A^{\mu}$ appears,
+and the $\rho$ becomes the apparent Higgs field.
+This is a simple example but it already shows rich physics content:
+it describes the coupling between the Higgs boson and the gauge boson $\rho A_{\mu}A^{\mu}$,
+and the 4-point coupling $\rho^{2}A_{\mu}A^{\mu}$,
+as well as the triple and quartic Higgs self-couplings, $\rho^{3}$ and $\rho^{4}$.
+In particular, the term $\lambda v^{2} \rho^{2}$ describes the mass of the Higgs boson
+\begin{equation}\label{eq:Higgs_mass}
+    m_{H} = \sqrt{2\lambda} v
+\end{equation}
+
+Now we look at the real SM Lagrangian.
+Putting the massless form of Equation~\ref{eq:SM_Lagrangian} together with the Higgs field, it becomes:
+\begin{equation}\label{eq:SM_Lagrangian_Higgs}
+  \begin{split}
+    \mathcal{L} = &  - \frac{1}{4} G^{a}_{\mu\nu}G^{a\mu\nu}
+                     - \frac{1}{4} W^{a}_{\mu\nu}W^{a\mu\nu}
+                     - \frac{1}{4} B_{\mu\nu}B^{\mu\nu} \\
+                  & + |D_{\mu}\Phi|^2 + \mu^{2} \Phi^{\dagger}\Phi - \lambda (\Phi^{\dagger}\Phi)^{2} \\
+                  & + \sum_{i} [\bar{\psi}^{i}_{R} (i\gamma^{\mu})(D_{\mu})\psi^{i}_{R} + \bar{\psi}^{i}_{L} (i\gamma^{\mu})(D_{\mu})\psi^{i}_{L}] \\
+                  & - \sum_{i} g_{i} [\bar{\psi}^{i}_{R}\Phi^{\dagger}\psi^{i}_{L} + \bar{\psi}^{i}_{L}\Phi\psi^{i}_{R}]
+  \end{split} 
+\end{equation}
+where the first and second lines are the gauge field and Higgs field similar to Equation~\ref{eq:Higgs_gauge_Lag},
+the third line is the fermion kinetics written in the chiral form,
+and the fourth line is the Yukawa coupling between fermions and the Higgs, also in the chiral form.
+The index $i$ in the third and fourth lines just sums all fermions, 
+with $g_{i}$ as the coupling strength for each fermion type.
+
+\textbf{Masses of gauge bosons} come from the $|D_{\mu}\Phi|^2$ term, which expands to
+\begin{equation}\label{eq:gauge_mass_term}
+    |D_{\mu}\Phi|^{2} = \frac{1}{2}|\partial_{\mu}\rho|^{2} 
+                       + \frac{1}{8}v^{2} [g^{2}(W^{1}_{\mu}W^{1\mu} + W^{2}_{\mu}W^{2\mu}) + (g^{\prime}B_{\mu}-gW^{3}_{\mu})^{2}]
+\end{equation}
+Defining the charged vector bosons as 
+\begin{equation}\label{eq:W_boson_def}
+    W^{\pm}_{\mu} = \frac{W^{1}_{\mu} \mp iW^{2}_{\mu}}{\sqrt{2}}
+\end{equation}
+the first term in Equation~\ref{eq:gauge_mass_term} becomes the mass term for the charged bosons with
+\begin{equation}\label{eq:W_mass}
+    m_{W} = \frac{vg}{2}
+\end{equation}
+Similarly, the cross terms in $(g^{\prime}B_{\mu}-gW^{3}_{\mu})^{2}$ can be eliminated by defining the neutral gauge bosons as
+\begin{equation}
+  \begin{split}
+    Z_{\mu} & = \text{cos}\theta_{W} B_{\mu} - \text{sin}\theta_{W} W^{3}_{\mu} \\
+    A_{\mu} & = \text{cos}\theta_{W} B_{\mu} + \text{sin}\theta_{W} W^{3}_{\mu}
+  \end{split}
+\end{equation}
+with tan$\theta_{W} = g^{\prime}/g$, and the mass eigenvalues being
+\begin{equation}
+  \begin{split}
+    m_{Z} & = \frac{v\sqrt{g^{2}+g^{\prime 2}}}{2} \\
+    m_{A} & = 0
+  \end{split}
+\end{equation}
+
+\textbf{Masses of fermions} come from the Yukawa coupling term.
+By plugging the perturbative form of of the Higgs field Equation~\ref{eq:Higgs_perturb_form} into the Yukawa term, it becomes
+\begin{equation}\label{eq:Lagrangian_yukawa}
+  \begin{split}
+    \mathcal{L}_{\text{Yukawa}} & = \sum_{i} \frac{1}{\sqrt{2}} g_{i} (v+\rho) (\bar{\psi}^{i}_{R}\psi^{i}_{L} + \bar{\psi}^{i}_{L}\psi^{i}_{R}) \\
+                                & = \sum_{i} \frac{1}{\sqrt{2}} g_{i} (v\bar{\psi}^{i}\psi^{i} + \rho \bar{\psi}^{i}\psi^{i})
+  \end{split}
+\end{equation}
+where the first part is the mass term for fermions, 
+and the second part is the interactions between the apparent Higgs field $\rho$ and the fermions.
+The fermion mass $m_{i}$ is proportional to its Yukawa coupling strength $g_{i}$
+\begin{equation}\label{eq:fermion_mass}
+    m_{i} = \frac{vg_{i}}{\sqrt{2}}
+\end{equation} 
+Note that the index $i$ does not run through neutrinos as they are assumed massless in the simplest form of SM.
+But they can be included as an easy extension to the SM.
+
+\textbf{The Higgs mass} comes from expanding the Higgs potential terms, 
+which is explained in Equation~\ref{eq:Higgs_mass} and not repeated here.
+
+
+
+\section{Parameters of the standard model}\label{sec:SM_parameters}
+
+In the Lagrangian we derived in the last Section, there are 18 unconstrained real parameters (assuming massless neutrinos):
+\begin{itemize}
+  \item 3 gauge coupling constants $g$, $g^{\prime}$, and $g_{s}$;
+  \item 2 Higgs potential shape parameters $\lambda$ and $\mu^{2}$;
+  \item 9 Yukawa coupling constants $g_{i}$ for 3 charged leptons and 6 quarks;
+  \item 4 parameters in the quark mixing matrix (CKM matrix) which is not elaborated here, including 3 angle parameters and 1 phase parameter.
+\end{itemize}
+These parameters determine the exact properties of SM particles and the measurements of them are a key topic of high energy experiments. 
+In practice, some other variable sets are frequently used. 
+For example, the parameter set $[g, g^{\prime}, \lambda, \mu^{2}, g_{i}]$ is interchangeable with 
+the set consisting of the vacuum expectation, and the masses of Higgs, \PW, \PZ, and fermions $[v, m_{H}, m_{W}, m_{Z}, m_{f}]$.
+
+
+The Higgs boson was first observed at the LHC by ATLAS and CMS Collaborations in 2012~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
+Various measurements on the Higgs properties have been conducted to verify their agreement with the SM prediction and to put constraints on the free SM parameters.
+The latest and most precise measurement of the Higgs mass is $125.38 \pm 0.14$ \GeV, provided by the CMS Collaboration~\cite{2020135425}. 
+The Higgs decays to gauge bosons and third-generation fermions (except the top quark) have been observed 
+and measured~\cite{Sirunyan:2312121, 201996, Sirunyan:2017exp, PhysRevLett.121.121801, 2018283, PhysRevD.99.072001, 201859, 2019508, Aaboud_2018}.
+The Higgs coupling to the top quark has has also been measured through the Higgs production process in association with a top quark pair~\cite{PhysRevLett.120.231801, 2018173}.
+The Higgs coupling measurements from CMS with the LHC proton-proton collision data collected in 2016 is summarized in Figure~\ref{fig:higgs_2016},
 in which, the gauge couplings and Yukawa couplings are expressed by the coupling modifiers 
 ($\kappa_{\PW}$, $\kappa_{\PZ}$, $\kappa_{t}$, $\kappa_{\tau}$, $\kappa_{b}$, and $\kappa_{\mu}$) in the \kappa-framework~\cite{Heinemeyer:2013tqa}.
-It shows a incredible agreement between the experimental measurements and the SM predictions for particles across a mass range of order $10^{4}$.
-However, the measurement on the Higgs to muon coupling, due to the small branching fraction, is not as precise as the other ones.
-This measurement, through the study of \hmm decay, is particularly important 
-as it is the only constraining point on the low-mass side in Figure~\ref{fig:higgs_2016}
-ans it is the most experimentally sensitive measurement of the Higgs boson couplings to second-generation fermions.
+This result confirms the proportionality between fermion masses and their coupling strengths to the Higgs boson,
+a behavior predicted by the SM in Equation~\ref{eq:fermion_mass}.
+
+The Higgs couplings to fermions of the first and second generations, 
+however, are expected to be small and hard to probe.
+The study of Higgs to muon decay is of particular importance 
+as it is the most experimentally sensitive way to probe Higgs couplings to second-generation fermions.
+ 
+
+%\begin{table}[!htb]
+%  \centering
+%  \captionsetup{justification=justified}
+%  \topcaption{The branching fractions of the main decay modes of the SM Higgs boson with a mass of 125 \GeV.}
+%  \begin{tabular}{lc}
+%    \hline
+%    Decay mode                 &  Branching fraction \\
+%    \hline
+%    $\PH \to \Pqb\Paqb$        &  58.4\% \\
+%    $\PH \to \PW^{+}\PW^{-}$   &  21.4\% \\
+%    $\PH \to gg$               &  8.19\% \\
+%    $\PH \to \tau\bar{\tau}$   &  6.26\% \\
+%    $\PH \to c\bar{c}$         &  2.89\% \\
+%    $\PH \to \PZ\PZ$           &  2.62\% \\
+%    $\PH \to \gamma\gamma$     &  0.227\% \\
+%    $\PH \to \PZ\gamma$        &  0.153\% \\
+%    $\PH \to \mu\bar{\mu}$     &  0.022\% \\
+%    \hline
+%  \end{tabular}
+%  \label{tab:higgs_BR}
+%\end{table}
 
 
 \begin{figure*}[!htb]
@@ -204,5 +417,14 @@ ans it is the most experimentally sensitive measurement of the Higgs boson coupl
 \end{figure*}
 
 
-
-%\section{Potential anomaly coupling of Higgs to muons}
+This thesis presents the recent analysis of the Higgs to muons decay from CMS 
+with a focus on the work in the vector boson associated Higgs production channel (VH).
+The following chapters are organized as follows:
+Chapter~\ref{chp:LHC_CMS} describes the LHC machine and the CMS detector,
+Chapter~\ref{chp:hmm_overview} gives an overview of the \hmm analysis 
+which is conducted in 4 exclusive event categories targeting different Higgs production modes,
+Chapter~\ref{chp:objects} lists the reconstruction of physics objects and the selections on them in the analysis,
+Chapter~\ref{chp:muon_corr} details the correction methods and calibration studies on the muon momentum which is crucial to the accuracy of this work,
+Chapter~\ref{chp:VH_analysis} reports the full procedures of the analysis in the VH channel,
+and Chapter~\ref{chp:hmm_results} summarizes the results from the VH analysis 
+as well as the combined results of all 4 analysis channels. 
