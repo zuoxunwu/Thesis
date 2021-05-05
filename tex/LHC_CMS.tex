@@ -95,8 +95,8 @@ while the total energy stored in the magnets is about 10 GJ during full operatio
 \subsection{Luminosity of collisions}\label{sec:lumi}
 
 At LHC, protons are clustered into bunches in each beam.
-The two beams circulate in opposite directions and collide at a very high rate.
-The occurrence of a given physics process is evaluated by the product of its cross section $\sigma$ and the luminosity $L$ of collisions.
+The two beams circulate in opposite directions and cross each other at a very high rate.
+The occurrence of a given physics process in the bunch crossings is evaluated by the product of its cross section $\sigma$ and the instantaneous luminosity $L$ of crossings.
 The cross section takes the unit of Barn (b$ = 10^{-24} \cm^{2}$) and represents the likelihood for a certain physics process to happen under a certain collision energy,
 while the instantaneous luminosity takes the unit of $\cm^{-2}\snd^{-1}$ and represents the intensity of proton crossing.
 The instantaneous luminosity is parametrized as 
@@ -104,7 +104,7 @@ The instantaneous luminosity is parametrized as
     L = \frac{fN^{2}}{4\pi\sigma_{x}\sigma_{y}} F
 \end{equation}
 where $f$ is the bunch crossing frequency with a nominal value of 40~MHz at the LHC,
-and $N$ is the number of protons in each bunch which is of order $1\times10^{11}$ for nominal bunches.
+and $N$ is the number of protons in each bunch, which is of order $1\times10^{11}$ for nominal bunches.
 The term $4\pi\sigma_{x}\sigma_{y}$ measures the effective area of the beam cross section, 
 in which $\sigma_{x}$ and $\sigma_{y}$ are the Gaussian widths of the beam with nominal values of order 10~\mum.
 The additional factor $F$ is close to 1. 
@@ -117,8 +117,8 @@ Figure~\ref{fig:lhc_lumi} shows the instantaneous and integrated luminosity deli
 \begin{figure*}[!htb]
     \centering
     \captionsetup{justification=justified}
-    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/peak_lumi_pp_run2.png}
-    \includegraphics[width=0.90\textwidth]{pics/LHC_CMS/int_lumi_cumulative_pp_1_run2.png}
+    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/peak_lumi_pp_run2.png}
+    \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/int_lumi_cumulative_pp_1_run2.png}
     \caption{The evolutions of the peak instantaneous luminosity (upper plot) and the cumulative integrated luminosity (lower plot)
              of the LHC Run 2 (2015-2018) $pp$ collisions.
              Plot taken from Ref.~\cite{lhc_lumi_pub}.}
@@ -130,17 +130,17 @@ A fraction of these data is not recorded by CMS or recorded but not good for phy
 The datasets good for physics analyses are 35.9~\invfb, 41.5~\invfb, and 59.7~\invfb for the three years, summing to about 137~\invfb in total.
 The 2015 dataset is much smaller compared to the other years.
 It adds little to the overall statistics but cost a lot to calibrate and analyze.
-It is usually not included in the Run 2 data due to this low cost efficiency.
+It is usually not included in the Run 2 data because of this low cost efficiency.
 The \hmm analysis described in the follow chapters of this work is based on this 137~\invfb of the Run 2 data.
 
 
-\subsection{Proton collision environment}
+\subsection{Proton collision environment}\label{sec:pp_env}
 
 Proton-proton ($pp$) collisions at the LHC initiate a diverse range of processes over a wide energy spectrum,
 making an ideal tool for general purpose studies and searches for new phenomena.
 Quarks and gluons, together called partons, in protons can initiate QCD processes, 
 in which a cascade of quarks and gluons are produced, which in turn hadronize and form various hadrons at high multiplicity.
-Quarks also participate in the electroweak interaction, producing gauge bosons, which may decay to leptons.
+Quarks also participate in the electroweak interaction, producing gauge bosons that may decay to leptons.
 The Higgs boson can also be produced from quarks and gauge bosons.
 Proton collision experiments are also a great way to reach for high energy and high luminosity.
 Compared to other experimental options with leptons or antiprotons, 
@@ -165,7 +165,7 @@ and the small red blobs are the decay vertices of the Higgs boson (red dashed li
 Additional QCD radiations are indicated by the loopy blue lines, which undergo hadronization (light green blobs) and form hadrons (dark green blobs). 
 The hard interaction in this example is accompanied with a softer secondary interaction (purple blob), 
 which produce a bunch of hadrons through QCD processes.
-Finally, photons (curvy yellow lines) can be emitted from the final state hadrons and leptons.
+Finally, photons (curvy yellow lines) can be emitted from the final-state hadrons and leptons.
 
 Furthermore, multiple $pp$ collisions occur in each proton bunch crossing at the LHC, known as pileup.
 In most cases, all of these simultaneous interactions are QCD interactions, 
@@ -192,7 +192,7 @@ a brass-scintillator hadron calorimeter (HCAL) (yellow blocks),
 a superconducting solenoid (white blocks), 
 and an iron return yoke (red blocks) interleaved with a multi-layer muon detector (white panels).
 These detector components are described individually in Section~\ref{sec:magnet} to~\ref{sec:muon_chambers}.
-In addition, the data acquisition of CMS relies on a trigger system which is described in Section~\ref{sec:trigger}.
+In addition, the data acquisition of CMS relies on a trigger system, which is described in Section~\ref{sec:trigger}.
 
 \begin{figure*}[!htb]
     \centering
@@ -251,7 +251,7 @@ The CMS inner tracker is designed to provide a precise and efficient measurement
 It is laid out in a cylindrical volume of 5.8-\meter length and 2.5-\meter diameter surrounding the beam pipe, shown in Figure~\ref{fig:cms_tracker}.
 It is composed of a pixel detector with four barrel layers at radii of 2.9~\cm, 6.8~\cm, 10.9~\cm, and 16.0~\cm~\cite{phase1_tracker},
 and a silicon strip detector with 4 + 6 barrel layers extending to a radius of 1.1~\meter~\cite{Collaboration_2008}.
-Each system is completed by endcaps which consist of three disks in the pixel detector and 3 + 9 disks in the strip detector.
+Each system is completed by endcaps, which consist of three disks in the pixel detector and 3 + 9 disks in the strip detector.
 The CMS tracker has about 124 million pixel channels and about 9.3 million strip channels in total,
 and provides its full tracking ability up to a pseudorapidity range of $|\eta| < $2.5.
 
@@ -342,17 +342,17 @@ so that the intermodule cracks are $2^{\circ} - 8^{\circ}$ tilted from the direc
 Each endcap is divided into 2 semicircles called $Dees$, each containing 138 standard $5 \times 5$ units and 18 partial units on the inner and outer circumferences.
 The two endcaps together weigh 24.0~t.
 
-$\text{PbWO}_{4}$ is an optically transparent material which scintillates at a wavelength of 420-430~\nm when excited by electrons and photons passing through it.
+$\text{PbWO}_{4}$ is an optically transparent material that scintillates at a wavelength of 420-430~\nm when excited by electrons and photons passing through it.
 The crystals have a refractive index of $n = 2.29$ around the scintillation wavelength, and are optically isolated from each other.
 Photons undergo total internal reflection in the crystal and are collected by the photodetector installed at the rear face of the crystal.  
 The number of scintillation photons emitted by the crystals and the amplification of the photodetectors are both temperature dependent.
 To maintain a stable ECAL performance, the operation temperature of the ECAL is kept precisely within $18 \pm 0.05^{\circ}C$
-by constant $18^{\circ}C$ water flows which thermally couple to the crystals and electronics via aluminum grids.
+by constant $18^{\circ}C$ water flows, which thermally couple to the crystals and electronics via aluminum grids.
 
 The ECAL resolution is affected by several factors: 
 the stochastic fluctuation in the shower containment, in photostatistics, and in the energy absorbed by preceding detector material along the particle trajectory; 
 the noises in electronics and from pileup interactions;
-and the constant error in the crystal non-uniformity and in detector calibration.
+and the constant error in the crystal nonuniformity and in detector calibration.
 Overall, the resolution response can be parametrized as:
 \begin{equation}\label{eq:ecal_reso}
     ( \frac{\sigma}{E} )^{2} = ( \frac{S}{\sqrt{E}} )^{2} + ( \frac{N}{E} )^{2} + C^{2}
@@ -413,7 +413,7 @@ Each slice is in turn divided into basic units called tiles along $\eta$, with 8
 The HF is overall a cylindrical structure with an outer radius of 130.0~\cm and an inner bore radius of 12.5~\cm to accommodate the beam pipe.
 The whole cylindrical structure is housed in a hermetic radiation shielding consisting of composite layers of steel, concrete and polyethylene. 
 Each HF calorimeter is divided into 18 equal wedges in $\phi$ and 13 units, known as towers, with roughly equal $\eta$ intervals. 
-Each tower is made of a bundle of quartz fibers which run parallel to the beam line.
+Each tower is made of a bundle of quartz fibers that run parallel to the beam line.
 Quartz is chosen because of its resilience to harsh radiation environment in the forward region:
 on average 760~\GeV of energy per $pp$ collision is deposited into the HF, while 100~\GeV is distributed in the rest of the detector.
 Signals are detected not as hadronic showers but as the Cherenkov radiation generated by charged particles in the quartz medium, 
@@ -454,7 +454,7 @@ while the DT layers in the third and fourth stations is only accompanied with an
 The muon endcaps cover $0.9 < |\eta| < 2.4$, forming an overlap with the barrel to make sure there is no acceptance gap.
 Each endcap is a disk with 4 stations of muon chambers.
 Each station is divided into 2 or 3 rings (3 for the first station and 2 for the others), and each ring consists of six $60^\circ$ sectors.
-In each sector, there are six $10^\circ$ CSC chambers except for the inner ring of stations 2-4 which have three $20^\circ$ degree chambers.
+In each sector, there are six $10^\circ$ CSC chambers except for the inner ring of stations 2-4, which have three $20^\circ$ degree chambers.
 The CSC chambers in the inner ring of the first station (ME1/1) are accompanied with GEM chambers whose boundaries are aligned with the CSC chambers.
 The CSC chambers in the outer rings of station 1-4 are accompanied with RPC chambers aligned with them.
 
@@ -488,12 +488,12 @@ meaning that it takes at maximum close to 400 \ns for the electric signal to dev
 (for incident muons at the farthest corners 21 \mm away from the anode wire).
 This drift time is measured from the signal timing differences between the 4 staggered layers in a superlayer~\cite{ARCE2004441}.
 The determination of this drift time is particularly important as the $pp$ bunch crossings are only 25 \ns apart from each other.
-Overall, the DT can achieve a time resolution of about 2 \ns, which, given the constant drift velocity, 
-can be translated into a spatial resolution of order 100 \mum.
+Overall, the DT can achieve a time resolution of about 2 \ns,
+which can be translated into a spatial resolution of order 100 \mum given the constant drift velocity.
 However, a caveat is accompanied with this great time and spatial resolution: 
 in a very unlikely case where two or more muons pass through the same drift cell in consecutive bunch crossings,
 the cell may not recover from the earlier avalanche and become inefficient to the later ones.
-This is mitigated by the fast-responding RPC detectors which are described later in this section.
+This is mitigated by the fast-responding RPC detectors, which are described later in this section.
 
 \begin{figure*}[!htb]
     \centering
@@ -555,14 +555,14 @@ At the moment only one GEM station has been installed for each endcap, as shown 
 The basic unit of GEM is a "Triple-GEM detector", shown in Figure~\ref{fig:cms_gem}.
 A triple-GEM chamber features a stack of three GEM foils placed with gaps of a few millimeter immersed in a gas mixture.
 Each GEM foil is a thin metal-clad polymer foil with arrays of holes on it distributed in a hexagonal patter. 
-GEM foils are encased by a drift board and a readout board which are connected to a nominal voltage difference of 3200~V.
+GEM foils are encased by a drift board and a readout board, which are connected to a nominal voltage difference of 3200~V.
 The total distance between the drift board and the readout board is about 7~\mm.
 The holes in GEM foils guides the electric field through them, providing a high avalanche amplification factor while preventing electrical breakdown problems.
 
 The readout board is fine grained with a 300~$\mu$rad (or 0.8~\mm) precision along the $\phi$ direction.
 As the GEM chamber has a short drift distance and a fast drift speed, it is fast-responding with a time resolution better than 10~\ns, 
 Two triple-GEM chambers are always stacked to form a superchamber, providing independent measurements.
-Combination of the two measurements improves the time and spatial resolution and also recover inefficiency which are expected to be 3\% for a single chamber.
+Combination of the two measurements improves the time and spatial resolution and also recover inefficiency, which are expected to be 3\% for a single chamber.
 
 \subsection{Trigger system}\label{sec:trigger}
 
@@ -573,7 +573,7 @@ To reduce the intense requirement on offline storage and processing, and to filt
 a trigger system is implemented in CMS selecting and recording only 0.0025\% of the collision events.
 
 The CMS trigger system has two levels. 
-The first level is called the Level-1 Trigger (L1T) which is built from custom electronics specialized in fast parallel processing.
+The first level is called the Level-1 Trigger (L1T), which is built from custom electronics specialized in fast parallel processing.
 It makes decisions based on signals from calorimeters and muon chambers and reduces the event rate from the collision rate of 40~MHz to below 100~kHz.
 The second level is the High Level Trigger (HLT), a software system operating on a commercial processor farm.
 It utilizes the readouts from all detectors and reduces the event rate to less than 1~kHz. 
@@ -622,7 +622,7 @@ The calorimeter trigger consists of two layers.
 The Layer-1 receives TPs from ECAL and HCAL and calibrates their energy deposits. 
 The Layer-2 combines the calibrated TPs and reconstructs trigger objects such as electrons, photons, tau leptons, jets, and energy sums.
 (Electrons and photons are indistinguishable at L1T level and are together referred to as $E/\gamma$ candidates.)
-The Layer-2 is a time multiplexed trigger~\cite{Frazier_2012} in which different bunch crossings are analyzed in parallel by multiple identical boards. 
+The Layer-2 is a time multiplexed trigger~\cite{Frazier_2012}, in which different bunch crossings are analyzed in parallel by multiple identical boards. 
 In this way each board has a more relaxed processing time and can access the full acceptance and granularity of the ECAL and HCAL.
 A demultiplexer (DeMux) board summarizes, reorders, and formats the output from multiplexers and transmits the results to the global trigger.
 
@@ -649,6 +649,6 @@ The HLT menu is similar to the L1T menu but is based on much better reconstructe
 In particular, the trigger paths taken by the analysis of \hmm decay are the single isolated muon triggers 
 with a \pt threshold of 24/27/24~\GeV for 2016/2017/2018 datasets.  
 These single muon triggers in general have an efficiency greater than 90\% for muons above the trigger threshold. 
-With two muons from the Higgs decay, the overall trigger efficiency for signal events is close to 100\% with regard to the offline analysis selection detailed in Section~\ref{sec:obj_sel}.
+With two muons from the Higgs boson decay, the overall trigger efficiency for signal events is close to 100\% with regard to the offline analysis selection detailed in Section~\ref{sec:obj_sel}.
 
 %\section{Level-1 Trigger}

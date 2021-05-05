@@ -4,17 +4,30 @@ PhD Thesis
 
 comments implemented
 
-##Type A format:
+## Type A format:
 
-1. Synchronized "nonzero", "nonprompt", "antiparticle" without hyphenation 
+1. Standardized "beamspot", "nonprompt", "antiparticle", "misreconstruction", "reweight", "subcategory" etc. without hyphenation 
 
-2. d0 -> d_0
+2. No hyphenation "b jet" (by itself).
 
-3. In as many as possible places, changed "MC samples" to "simulations"
+3. Hyphenated "b-jet ID" (attributive), "final-state", "long-lived", etc.
 
-4. In as many as possible places, changed "Run 2 data" to "2016-2018 dataset" or similar descriptions
+4. "Higgs mass" -> "Higgs boson mass", "Higgs decay" -> "Higgs boson decay", etc.
 
-##Type B physics:
+5. d0 -> d_0 (did not change plot labels)
+
+6. In as many as possible places, changed "MC samples" to "simulations"
+
+7. In as many as possible places, changed "Run 2 data" to "2016-2018 dataset" or similar descriptions
+
+8. Fixed some "the" vs no article, and "that" vs "which", but unsure about many places. 
+
+9. Reduced verbosity of text
+
+
+## Type B physics:
+
+All Chapters. Adjustments on descriptions following Darin's and Efe's comments
 
 C1. Moved description of antiparticle to the last of the block 
 
@@ -29,8 +42,10 @@ C1S3. Replaced the U(1) symmetry breaking example with the SU(2)XU(1) breaking
       Expanded derivations of Yukawa coupling
       
 
-C2. Small adjustment on descriptions in many places
 C2S1. Added a short section on luminosity
+
+
+C5S3. Added explanation on why ttH receive more improvements from GeoFit than ggH
 
 
 

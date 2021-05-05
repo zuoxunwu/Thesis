@@ -5,11 +5,11 @@ The Standard Model (SM) of particle physics summarizes the behavior of all obser
 There are 12 types of elementary fermions, 4 types of elementary gauge bosons, and 1 Higgs boson.
 Elementary fermions are matter particles and are further categorized into quarks and leptons.
 Both quarks and leptons have 3 generations.
-In each generation, there is a charge = $+\frac{2}{3}$ quark (u, c, and \Pqt quarks),
-a charge = $-\frac{1}{3}$ quark (d, s, and \Pqb quarks), 
-a charge = -1 lepton ($e$, \mu, and \tau ~leptons),
+In each generation, there is an electric charge = $+\frac{2}{3}e$ quark (u, c, and \Pqt quarks),
+a charge = $-\frac{1}{3}e$ quark (d, s, and \Pqb quarks), 
+a charge = $-1e$ lepton ($e$, \mu, and \tau ~leptons),
 and a neutral lepton ($\nu_{e}$, $\nu_{\mu}$, and $\nu_{\tau}$ neutrinos).
-Gauge bosons have spin~=~1 are carriers of fundamental interactions: 
+Gauge bosons have spin~=~1 and are carriers of fundamental interactions: 
 gluons for the strong interaction, photons for the electromagnetic interaction,
 and \PW and \PZ bosons for the weak interaction.
 Gravity is another fundamental interaction whose quantization has not been observed experimentally,
@@ -17,9 +17,9 @@ and is not included in the SM.
 The Higgs boson is the only scalar boson (spin~=~0) in the SM.
 It plays a special role in the SM as it interacts with all massive elementary particles 
 and introduces the mechanism for them to have nonzero masses.
-Each of the particles has a counterpart called an antiparticle which has the same mass and spin as the particle itself, 
+Each of the particles has a counterpart called an antiparticle, which has the same mass and spin as the particle itself, 
 but opposite charge and other quantum numbers.
-The antiparticles of neutral bosons (gluons, photons, \PZ, and Higgs bosons) are themselves.
+The neutral bosons (gluons, photons, \PZ, and Higgs bosons) are their own antiparticles.
 
 \begin{figure*}[!htb]
     \centering
@@ -34,14 +34,14 @@ The theory of the SM is formulated in quantum field theory and exhibits rich phy
 The mathematical construction of the SM is given in the following sections:
 Section~\ref{sec:gauge_symmetry} describes the basic formalism of quantum field theory and the idea of gauge symmetry;
 Section~\ref{sec:SM_Lagrangian} shows the mathematical description of the SM without the Higgs field and its drawback in describing particle masses;
-Section~\ref{sec:Higgs_mech} introduces the Higgs field and its interplay with the gauge fields and fermion fields which allows particles to retain masses;
+Section~\ref{sec:Higgs_mech} introduces the Higgs field and its interplay with the gauge fields and fermion fields to allow particles to retain masses;
 and Section~\ref{sec:SM_parameters} discusses the free parameters in the SM and the motivation to study the Higgs to muons decay.
 
 
 \section{Quantum field theory and gauge symmetry}\label{sec:gauge_symmetry}
 
 Symmetry is a key concept in physics. 
-A symmetry regarding a certain quantity means the equations of motion do not depend on this quantity
+A symmetry regarding a certain quantity means that the equations of motion do not depend on this quantity
 and implies the existence of a conservation law.
 For example the symmetries under translations in space and time correspond to the conservations of momenta and energy.
 
@@ -50,7 +50,7 @@ In quantum field theory, the Lagrangian for a free Dirac field is
     \mathcal{L} = \bar{\psi}(x)(i\gamma^{\mu}\partial_{\mu}-m)\psi(x)
 \end{equation}
 where $\psi(x)$ is the Dirac field,
-$\partial_{\mu}$ is the regular partial derivative with Lorentz index $\mu$,
+$\partial_{\mu}$ is the regular partial derivative with Lorentz vector index $\mu$,
 and $m$ is the mass of the Dirac spinor.
 $\gamma_{\mu}$ denotes the Dirac matrices
 \begin{equation}\label{eq:dirac_matrices}
@@ -133,7 +133,7 @@ The SU$(3)_{c}$ represents the strong interaction with the subscript $c$ standin
 The SU$(2)_{L} \times$U$(1)_{Y}$ is the electroweak interaction, 
 where the $L$ means it only acts on left-handed fermions
 and the $Y$ is the hypercharge associated with the U(1) group.\footnote{The hypercharge $Y$ is not the electric charge $e$ in Equation~\ref{eq:cov_de_phase}.
-In fact, for all fermions, the electric charge $Q = T_{3} + Y/2$.}
+In fact, for all fermions, the electric charge $Q = T_{3} + Y/2$, where $T_{3}$ is an SU(2) group generator.}
 Here the SU$(2)_{L} \times$U$(1)_{Y}$ cannot be disentangled and viewed separately as the weak interaction and electromagnetic interaction.
 
 The gauge transformations on the fermion field are:
@@ -215,9 +215,10 @@ The SU$(2)_{L}$ transformation only acts on the left chiral component,
 so its phase only appear in $\psi_{L}$ and is not canceled by $\psi_{R}$.
 The U$(1)_{Y}$ hypercharge is also different for the left and right components,
 leaving the U(1) phase uncanceled.
-Therefore the fermion mass terms are not gauge invariant.\footnote{The surviving terms of $\bar{\psi} (i\gamma^{\mu})(D_{\mu})\psi$
-are $\bar{\psi_{R}} (i\gamma^{\mu})(D_{\mu})\psi_{R}$ and $\bar{\psi_{L}} (i\gamma^{\mu})(D_{\mu})\psi_{L}$, 
-in which the SU$(2)_{L}$ "phase" term cancels properly, making them gauge invariant.}
+Therefore the fermion mass terms are not gauge invariant.
+This is different from the part $\bar{\psi} (i\gamma^{\mu})(D_{\mu})\psi$,
+whose surviving terms are $\bar{\psi_{R}} (i\gamma^{\mu})(D_{\mu})\psi_{R}$ and $\bar{\psi_{L}} (i\gamma^{\mu})(D_{\mu})\psi_{L}$, 
+in which the SU$(2)_{L}$ "phase" term cancels properly, making them gauge invariant.
 
 Therefore, Equation~\ref{eq:mass_Lagrangian} cannot be attached to Equation~\ref{eq:SM_Lagrangian} and all particles must be massless,
 which contradicts the experimental findings.
@@ -334,20 +335,20 @@ with $v = \sqrt{\frac{\mu^{2}}{\lambda}}$ known as the vacuum expectation value,
 and $\rho$ as the deviation from the ground state position.
 
 
-\textbf{Mass of the Higgs boson} comes from the potential term $\mu^{2} \Phi^{\dagger}\Phi - \lambda (\Phi^{\dagger}\Phi)^{2}$,
+\textbf{The mass of the Higgs boson} comes from the potential term $\mu^{2} \Phi^{\dagger}\Phi - \lambda (\Phi^{\dagger}\Phi)^{2}$,
 which expands to 
 \begin{equation}\label{eq:potential_expand}
   \mu^{2} \Phi^{\dagger}\Phi - \lambda (\Phi^{\dagger}\Phi)^{2}
   = \lambda v^{2} \rho^{2} - \lambda v \rho^{3} - \frac{1}{4} \lambda \rho^{4} + \frac{1}{4} \lambda v^{4}
 \end{equation}
 The perturbation $\rho$ acts as the apparent Higgs field.
-The term $\lambda v^{2} \rho^{2}$ describes the Higgs mass
+The term $\lambda v^{2} \rho^{2}$ describes the Higgs boson mass
 \begin{equation}\label{eq:Higgs_mass}
     m_{H} = \sqrt{2\lambda} v
 \end{equation}
 Furthermore, terms $\rho^{3}$ and $\rho^{4}$ describes important Higgs properties of the triple and quartic self-couplings.
 
-\textbf{Masses of gauge bosons} come from the $|D_{\mu}\Phi|^2$ term, which expands to
+\textbf{The masses of gauge bosons} come from the $|D_{\mu}\Phi|^2$ term, which expands to
 \begin{equation}\label{eq:gauge_mass_term}
   \begin{split}
     |D_{\mu}\Phi|^{2} = & \frac{1}{2}|\partial_{\mu}\rho|^{2} 
@@ -377,7 +378,7 @@ The first part in Equation~\ref{eq:gauge_mass_term} becomes the mass terms for t
 In addition, the second part of Equation~\ref{eq:gauge_mass_term} describes the 3-point couplings between a Higgs boson and a pair of gauge bosons,
 while the third part describes the 4-point couplings between a Higgs boson pair and a gauge boson pair.
 
-\textbf{Masses of fermions} come from the Yukawa coupling term in Equation~\ref{eq:SM_Lagrangian_Higgs}.
+\textbf{The masses of fermions} come from the Yukawa coupling term in Equation~\ref{eq:SM_Lagrangian_Higgs}.
 The term $\bar{\psi}^{f}_{R}\Phi^{\dagger}\psi^{f}_{L} + \bar{\psi}^{f}_{L}\Phi\psi^{f}_{R}$ gives the masses for charged leptons and down-type quarks.
 \begin{equation}\label{eq:yukawa_mass}
   \begin{split}
@@ -422,7 +423,7 @@ In the Lagrangian we derived in the last Section, there are 14 unconstrained rea
 \end{itemize}
 There are 5 other parameters not elaborated here
 \begin{itemize}
-  \item 4 parameters in the quark mixing matrix (CKM matrix) which is not elaborated here, including 3 angle parameters and 1 phase parameter;
+  \item 4 parameters in the quark mixing matrix (CKM matrix), which is not elaborated here, including 3 angle parameters and 1 phase parameter;
   \item A parameter for CP violation in the strong interaction.
 \end{itemize}
 These total 19 parameters determine the exact properties of SM particles and the measurements of them are a key topic of high energy experiments. 
@@ -433,10 +434,10 @@ the set consisting of the vacuum expectation, and the masses of Higgs, \PW, \PZ,
 
 The Higgs boson was first observed at the LHC by ATLAS and CMS Collaborations in 2012~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}.
 Various measurements on the Higgs properties have been conducted to verify their agreement with the SM prediction and to put constraints on the free SM parameters.
-The latest and most precise measurement of the Higgs mass is $125.38 \pm 0.14$ \GeV, provided by the CMS Collaboration~\cite{2020135425}. 
-The Higgs decays to gauge bosons and third-generation fermions (except the top quark) have been observed 
+The latest and most precise measurement of the Higgs boson mass is $125.38 \pm 0.14$ \GeV, provided by the CMS Collaboration~\cite{2020135425}. 
+The Higgs boson decays to gauge bosons and third-generation fermions (except the top quark) have been observed 
 and measured~\cite{Sirunyan:2312121, 201996, Sirunyan:2017exp, PhysRevLett.121.121801, 2018283, PhysRevD.99.072001, 201859, 2019508, Aaboud_2018}.
-The Higgs coupling to the top quark has also been measured through the Higgs production process in association with a top quark pair~\cite{PhysRevLett.120.231801, 2018173}.
+The Higgs coupling to the top quark has also been measured through the Higgs boson production process in association with a top quark pair~\cite{PhysRevLett.120.231801, 2018173}.
 The Higgs coupling measurements from CMS with the LHC proton-proton collision data collected in 2016 is summarized in Figure~\ref{fig:higgs_2016},
 in which, the gauge couplings and Yukawa couplings are expressed by the coupling modifiers 
 ($\kappa_{\PW}$, $\kappa_{\PZ}$, $\kappa_{t}$, $\kappa_{\tau}$, $\kappa_{b}$, and $\kappa_{\mu}$) in the \kappa-framework~\cite{Heinemeyer:2013tqa}.
@@ -483,13 +484,13 @@ as it is the most experimentally sensitive way to probe Higgs couplings to secon
 
 
 This thesis presents the recent analysis of the Higgs to muons decay from CMS 
-with a focus on the work in the vector boson associated Higgs production channel (VH).
+with a focus on the work in the vector boson associated Higgs boson production channel (VH).
 The following chapters are organized as follows:
 Chapter~\ref{chp:LHC_CMS} describes the LHC machine and the CMS detector,
-Chapter~\ref{chp:hmm_overview} gives an overview of the \hmm analysis 
-which is conducted in 4 exclusive event categories targeting different Higgs production modes,
+Chapter~\ref{chp:hmm_overview} gives an overview of the \hmm analysis, 
+which is conducted in 4 exclusive event categories targeting different Higgs boson production modes,
 Chapter~\ref{chp:objects} lists the reconstruction of physics objects and the selections on them in the analysis,
-Chapter~\ref{chp:muon_corr} details the correction methods and calibration studies on the muon momentum which is crucial to the accuracy of this work,
+Chapter~\ref{chp:muon_corr} details the correction methods and calibration studies on the muon momentum, which is crucial to the accuracy of this work,
 Chapter~\ref{chp:VH_analysis} reports the full procedures of the analysis in the VH channel,
 and Chapter~\ref{chp:hmm_results} summarizes the results from the VH analysis 
 as well as the combined results of all 4 analysis channels. 

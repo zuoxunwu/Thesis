@@ -1,35 +1,24 @@
 \chapter{Overview of the search of \texorpdfstring{\hmm}{H to muons} decay at CMS}\label{chp:hmm_overview}
 % Need to use \textorpdfstring{} so it also shows in pdf bookmarks 
 
-In 2012, a new boson at 125 \GeV was discovered by ATLAS and CMS at the LHC~\cite{Aad:2012tfa, Chatrchyan:2012xdj, Chatrchyan:2013lba}. 
-Various measurements have been performed to probe the properties of this boson ever since, 
-and the boson was later acknowledged as the Higgs boson predicted by the SM.
-Up to now, the couplings between the Higgs boson and the electroweak (EW) gauge bosons have been observed to be consistent with the SM prediction, 
-while the Yukawa couplings between the Higgs boson and the fermions have only been established for the third generation fermions. 
-The first and second generation fermions are less massive than their third generation counterparts and thus weaker coupling to the Higgs boson, 
-as the coupling strength is proportional to the mass of the fermion.
-This leads to significantly smaller branching fractions of the decay modes of the Higgs boson to the first or second generation fermions, 
-and poses a substantial challenge to the searches for such decays.  
-The \hmm decay in particular, has a branching ratio of ${\brhmm = 2.18 \times 10^{-4}}$, 
-which corresponds to an expectation of about 1000 event instances in all the data collected by CMS from 2016 to 2018 (called the LHC Run 2 data-taking period).
-In contrast, these 1000 so-called signal events are engulfed by millions of events produced through other processes (background events) that mimic their experimental signature.
+As described in Section~\ref{sec:SM_parameters}, the Yukawa couplings between the Higgs boson and the elementary fermions are essential parameters to the SM.
+The Higgs couplings to fermions of the first and second generations are hard to probe because the Higgs boson decay ratios to these light fermions are small.
+At the LHC, the most experimentally sensitive way to probe such light Yukawa couplings is the study of the \hmm decay.
+Prior to this work, searches for the \hmm decay has been conducted using $pp$ collision data collected at center-of-mass energies of 7, 8, and 13 \TeV
+by CMS~\cite{2015184, PhysRevLett.122.021801} and ATLAS~\cite{201468, PhysRevLett.119.051802, Aad:2020xfq},
+among which the most sensitive result~\cite{PhysRevLett.122.021801} is reported by CMS with an observed (expected in absence of \hmm decay) upper limit of 2.9 (2.2) times the 
+SM prediction of the Higgs boson production and \brhmm, at the 95\% confidence level (CL).
+This thesis reports the latest \hmm analysis based on 137~\invfb of data collected by CMS from 2016 to 2018~\cite{Sirunyan_2021}.
+
 The search for the \hmm decay, in a nutshell, is a struggle to make the signal events stand out from the vast backgrounds with statistical significance.
-
-The search for the \hmm decay has been conducted using proton-proton ($pp$) collision data collected at center-of-mass energies of 7, 8, and 13 \TeV
-by the CMS Collaboration~\cite{2015184, PhysRevLett.122.021801} and the ATLAS Collaboration~\cite{201468, PhysRevLett.119.051802, Aad:2020xfq}.
-The latest result~\cite{PhysRevLett.122.021801} from CMS prior to this work reported an observed (expected in absence of \hmm decay) upper limit of 2.9 (2.2) times the 
-SM prediction of the Higgs boson production and the \brhmm, at the 95\% confidence level (CL).
-
-Despite the challenging nature of the \hmm analysis, many efforts can be made to improve the separation of signal and background processes, 
-allowing for a sizable refinement of the result.
-First of all, the Higgs boson has a narrow natural width, and the muons are well identified objects in the CMS detector.
-This means that the two muons from the Higgs decay always compose an invariant mass near the nominal Higgs mass, 125 \GeV.
-While for the background processes, the muons are created either by the decay of a \PZ boson, 
-or by decays of multiple particles, for example a \Pqt and \Paqt quark pair, each resulting in a single muon.
-The \PZ boson has a mean mass at 91.2 \GeV and a natural width of 2.5 \GeV, making a slowly falling tail in the mass spectrum around 125 \GeV.
-For the muons that come from two different sources, their invariant mass follows a flat random distribution near the mass range of interest.
-Therefore, the signal can be strongly distinguished against the background in the dimuon invariant mass spectrum, 
-as a sharp peak against a smooth falling shape. Figure~\ref{fig:dimuon_mass_shapes} shows the conceptual shape of these mass spectra. 
+The \hmm decay has a branching ratio of ${\brhmm = 2.18 \times 10^{-4}}$, 
+which corresponds to an expectation of about 1000 event instances in the data collected by CMS from 2016 to 2018.
+In contrast, these 1000 signal events are accompanied by millions of events produced through other processes (background events) that mimic their experimental signature.
+The most important difference between the signal events and the background events lies in the dimuon invariant mass (\mmm) distribution, illustrated in Figure~\ref{fig:dimuon_mass_shapes}.
+The SM Higgs boson has a low production cross section and a narrow natural width, making a small sharp peak near 125~\GeV.
+The background events are dominated by the $\PZ/\gamma^{*} \to \mu\mu$ process (Drell-Yan process), 
+which peaks at 91.2~\GeV in the \mmm spectrum and leaves a smooth falling tail around 125~\GeV.
+The overall signal-to-background ratio (\SoB) between 120 and 130~\GeV is about 1/500 in the 2016-2018 CMS data.
 
 \begin{figure}[!htb]
     \centering
@@ -40,18 +29,18 @@ as a sharp peak against a smooth falling shape. Figure~\ref{fig:dimuon_mass_shap
     \label{fig:dimuon_mass_shapes}
 \end{figure}
 
-Furthermore, the Higgs boson is produced via several distinct production modes, each with some unique kinematic characteristics. 
-By applying selection criteria targeting a certain signal production mode, it is possible to select a specific part of the kinematic phase space that is enriched with that signal, 
-and reject many background processes that do not share the same kinematic features. 
-There are four main production modes considered in this analysis, ordered by their production cross sections: gluon fusion (\ggH), vector boson fusion (\qqH or qqH), 
+This \SoB can be enhanced based on further kinematic distinctions between various signal and background processes.
+The Higgs boson is produced via several production modes.
+The four main modes, ordered by their cross sections, are gluon fusion (\ggH), vector boson fusion (\qqH or qqH), 
 associated production with a weak vector boson (\VH), and associated production with a pair of top quarks (\ttH). 
 The Feynman diagrams for these main production modes are shown in Figure~\ref{fig:main_higgs_modes}.
-Some other minor production modes are also considered as signal contributions, including associated production with a pair of bottom quarks (\bbH),
-associated production with a \PZ boson through gluon fusion (\ggZH), associated production with a top quark and a \PW boson (\tHW), 
+The minor production modes include associated production with a pair of bottom quarks (\bbH),
+associated production with a \PZ boson through gluon fusion (\ggZH), 
+associated production with a top quark and a \PW boson (\tHW), 
 and associated production with a top quark and a light quark (\tHq). 
 The Feynman diagrams for these minor production modes are shown in Figure~\ref{fig:minor_higgs_modes}.
 Table~\ref{tab:signal_xsec} summarizes the cross sections for all these production modes, 
-along with the expected number of events in the Run 2 dataset (137 \invfb).
+along with the expected number of events in the 137~\invfb data.
 
 \begin{figure}[!htb]
     \centering 
@@ -197,7 +186,7 @@ along with the expected number of events in the Run 2 dataset (137 \invfb).
         };
         \caption*{\ggZH}
     \end{subfigure} 
-    \caption{Examples of minor Higgs production modes.}
+    \caption{Examples of minor Higgs boson production modes.}
     \label{fig:minor_higgs_modes}
 \end{figure*}
 
@@ -205,12 +194,12 @@ along with the expected number of events in the Run 2 dataset (137 \invfb).
     \centering
     \captionsetup{justification=justified}
     \topcaption{Production modes of the Higgs boson in $pp$ collisions at the LHC, their cross sections for $\mh = 125 \GeV$, 
-                and the corresponding expected number of events in the dataset for this analysis 
+                and the corresponding expected number of \hmm decays in the dataset for this analysis 
                 (the cross sections multiplying \brhmm and the integrated luminosity ($137 \invfb$). 
                 The leptons ($\ell$) in the table refer to electrons or muons.}
     \begin{tabular}{lccc}
         \hline
-        signal mode         & decay mode                & Cross section (\pb)   & Expected number of events \\
+        signal mode         & decay mode                & Cross section (\pb)   & Expected \hmm events \\
         \hline
         \ggH                & inclusive                 & 48.58                 & 1450 \\
         \qqH                & inclusive                 & 3.782                 & 113 \\
@@ -241,48 +230,46 @@ along with the expected number of events in the Run 2 dataset (137 \invfb).
     \label{tab:signal_xsec}
 \end{table}
 
-Four event categories are defined in this analysis targeting each of the four main Higgs production modes,
-all of them requiring two oppositely charged (OS) muons that form a candidate for the Higgs boson decay.
-The additional requirements for each category are:
-the \ttH category requires the presence of additional b-jets (from the decay of the top quarks) in the event,
-the \VH category targets events with additional leptons (\Pe or \mu, from the decay of the vector boson), 
-the \qqH category selects events with two energetic and forward jets,
-while the \ggH category does not specify additional objects, and collects all events that are not selected by the other three categories.
-No dedicated category is made for the minor signal modes, either because they have very similar features to one of the main modes, 
-or because their cross sections are much smaller than the main modes and do not make a difference.
+To fully exploit the kinematic profiles of different production modes, 
+the \hmm analysis is performed in four event categories targeting each of the four main modes,
+with the analysis procedures optimized separately in each category.
+No dedicated category is made for the minor signal modes, 
+either because they have very similar features to one of the main modes, 
+or because their cross sections are too small to be statistically significant.
+This chapter gives an overview of the full \hmm analysis, 
+with Section~\ref{sec:data_mc_samples} describing the data and simulation samples used in the analysis, 
+and Section~\ref{sec:hmm_cat_and_strategy} explaining the analysis strategies in the four exclusive categories.
 
-With such selections, naturally, each of the selected phase spaces presents a distinct event topology and contains a distinct background composition. 
-Therefore, the analysis is performed independently in each of the event categories, following different optimized strategies. 
-The detailed description of the analysis strategies in each event category is given in Section~\ref{sec:hmm_cat_and_strategy}.
 
 \bigskip
-\section{Data and simulation samples}
-This analysis uses the proton-proton collision data collected by the CMS detector during Run 2,
-which corresponds to a total integrated luminosity of 137.2\invfb.
+\section{Data and simulation samples}\label{sec:data_mc_samples}
 
-The triggers used in this analysis are the single muon triggers, which impose some loose isolation requirements and a \pt threshold on the HLT muon candidates.
-The \pt cut is 27 (24) \GeV for data collected in 2017 (2016, 2018). 
-For the muons selected in this analysis, as explained in Chapter~\ref{chp:objects}, the efficiencies of these triggers are above 95\%, 
-making the selection efficiency for the events with two muons close to 100\%.
+This analysis uses the $pp$ collision data collected by CMS from 2016 to 2018,
+corresponding to an integrated luminosity of 137\invfb.
+The triggers used in this analysis are the single muon HLT triggers, 
+which impose some loose isolation requirements and a \pt threshold on the HLT muon candidates.
+The \pt threshold is 24/27/24 \GeV for 2016/2017/2018 datasets.
+The efficiencies of these triggers are above 90\% for single muons above the trigger thresholds,
+and the overall efficiency for events with two muons is close to 100\%.
 
-Simulated events from the Monte Carlo (MC) event generators for the signal and the dominant background processes are used to 
-optimize the analysis strategy and assess the systematics uncertainties.
-The generated events are processed through a detailed simulation of the CMS detector based on \GEANTfour~\cite{AGOSTINELLI2003250}
+Simulations of signal and background processes are produced by Monte Carlo (MC) event generators.
+The generators are listed for different processes in the rest of this section.
+All simulated samples except the EW~$\PZ+jj$ samples use \PYTHIA 8.2~\cite{SJOSTRAND2015159} to model the parton showering (PS), 
+hadronization, and the underlying event (UE), while the EW~$\PZ+jj$ samples use \HERWIGpp and \HERWIGSeven~\cite{Bellm:2015jjp} for the same purpose.
+The effect of pileup is modeled by overlaying simulated inelastic $pp$ collisions on the hard-scattering event.
+The generated events are processed through a simulation of the CMS detector based on \GEANTfour~\cite{AGOSTINELLI2003250}
 and are reconstructed with the same algorithms that are used for data.
-All MC samples except the EW $\PZ+jj$ samples use \PYTHIA 8.2~\cite{SJOSTRAND2015159} to model the parton showering (PS), 
-hadronization, and the underlying event (UE), while the EW $\PZ+jj$ samples use \HERWIGpp and \HERWIGSeven~\cite{Bellm:2015jjp} for the same purpose.
-The effect of pileup interactions is modelled by overlaying simulated inelastic $pp$ collisions on the hard-scattering event.
 
 \bigskip
 \subsection{The simulation of the signal processes}
 The \ggH signal process is simulated at next-to-leading order (NLO) accuracy in perturbative QCD, using both the \MGvATNLO v2.4.2~\cite{Alwall:2014hca}
-and \POWHEG v2.0~\cite{Nason_2004, Frixione_2007, Alioli:2010xd, Bagnaschi:2011tu} MC event generators. 
+and \POWHEG v2.0~\cite{Nason_2004, Frixione_2007, Alioli:2010xd, Bagnaschi:2011tu} event generators. 
 The \pt distribution of the Higgs boson in \ggH process is then reweighted to match the \POWHEG~\textsc{nnlops} prediction~\cite{Hamilton:2013fea,Hamilton:2015nsa}. 
 The \qqH, \WH, \qqZH, and \ttH processes are simulated with \POWHEG~v2.0~\cite{Nason:2009ai,Luisoni:2013kna,Hartanto:2015uka} at NLO precision in QCD. 
 The \bbH process is simulated at NLO precision in QCD with \POWHEG.
 the \tHq, and \tHW processes are generated at leading order (LO) with the \MGvATNLO generator.
 The \ggZH process is simulated at LO with the \POWHEG generator.
-Simulated signal events are generated, for each production mode, at \mh values of 120, 125, 130 \GeV.
+Simulated signal events are generated, for each production mode, at \mh values of 120, 125, and 130 \GeV.
 A table summarizing the simulation for signals is shown in Table~\ref{tab:sig_samples}.
 
 \begin{table}[!htb]
@@ -327,7 +314,7 @@ The gluon-initiated loop-induced ZZ process (\ggZZ) is simulated with the \MCFM~
 and the corresponding production cross section is corrected to match higher-order QCD predictions, following the strategy detailed in Ref.~\cite{Sirunyan:2017exp}. 
 Minor contributions from triboson processes ($\PW\PW\PW$, $\PW\PW\PZ$, $\PW\PZ\PZ$, and $\PZ\PZ\PZ$) are also taken into account and are simulated at NLO in QCD using the \MGvATNLO generator. 
 The main backgrounds in the \ttH category involve the production of top quarks. 
-The $\Pqt\Paqt$ background is simulated with NLO precision in QCD using the \POWHEG generator, and its cross section is obtained from the \textsc{top++}~v2.0~\cite{Czakon:2011xx} prediction 
+The $\Pqt\Paqt$ background is simulated with NLO precision in QCD using the \POWHEG generator, and its cross section is obtained from the \TOPpp~v2.0~\cite{Czakon:2011xx} prediction 
 that includes NNLO corrections in QCD and resummation of next-to-next-to-leading logarithmic (NNLL) soft gluon terms. 
 The single top quark processes are simulated at NLO in QCD via either \POWHEG or \MGvATNLO and their cross sections are computed, 
 at the same order of precision, using \textsc{hathor}~\cite{Kant:2014oha}. 
@@ -361,26 +348,23 @@ For processes simulated at NLO (LO) in QCD with the \MGvATNLO generator, events 
 
 \bigskip
 \section{Exclusive analyses and their strategies}\label{sec:hmm_cat_and_strategy}
-In order to maximally harness the kinematic features in the different production modes of the Higgs boson,
-the analysis is conducted in four independent event categories: the \ggH, \qqH, \VH and \ttH categories.
-The workflow to divide events into different categories is shown in Figure~\ref{fig:event_categories}.
-As a common prerequisite in this analysis, all events should contain two opposite-charged (or opposite-sign, OS) muons that make the candidate for the Higgs boson decay. 
+
+The \hmm analysis is conducted independently in four event categories: the \ggH, \qqH, \VH and \ttH categories.
+The workflow to divide events into these categories is shown in Figure~\ref{fig:event_categories}.
+A prerequisite for all categories, after the trigger selection, 
+is that each events should contain two opposite-charged (or opposite-sign, OS) muons that make the candidate for the Higgs boson decay. 
 Then, as a first step, events containing b-tagged jets (either one medium tag or two loose tag of the DeepCSV~\cite{Sirunyan:2017ezt} working points) are classified into the \ttH category.
-The \ttH category is further divided into the \ttH leptonic category and the \ttH hadronic category depending on whether the event contains electrons or additional muons (leptonic category), 
-or whether it contains at least three jets (hadronic category).
-Some events containing b-tagged jets may not pass the secondary selections for either the leptonic or hadronic \ttH categories.
-They are most likely background events, and are therefore discarded.
-The events without b-tagged jets, fall into the \VH category if they contain additional leptons (electrons or muons).
+Events in the \ttH category are further divided into the \ttH leptonic subcategory if they contain electrons or additional muons,
+or divided into the \ttH hadronic subcategory if they contain at least three jets,
+or discarded if they contain neither of them.
+The events without b-tagged jets may fall into the \VH category if they contain additional leptons (electrons or muons).
 Inside the \VH category, events are further tagged as \WH events if there is one and only one extra lepton in the event, 
 or tagged as \ZH events if there are two same-flavor opposite-sign (SFOS) extra leptons.
-A small collection of events may pass the primary \VH selection but fail the secondary \WH or \ZH selections, 
-for example events that contain one extra electron and one extra muon.
-These events are most likely not from the signal processes, and are discarded.
-For the events with neither b-tagged jets nor additional leptons, if there are at least two energetic jets, 
-composing a jet pair with $\mjj>400\GeV$ and $\detajj>2.5$, the events are tagged as the \qqH events.
+For the events with neither b-tagged jets nor additional leptons, 
+if they have at least two energetic jets composing a jet pair with $\mjj>400\GeV$ and $\detajj>2.5$, 
+they are tagged as the \qqH events.
 Finally, the \ggH category collects all events that are not assigned to other categories. 
-Most events in the \ggH category are profiled to have either no additional objects or just one additional jet other than the Higgs candidate muons.
-The detailed definition of the different objects used in this categorization is given in Chapter~\ref{chp:objects}.
+The definitions of the different objects used in this categorization is detailed in Section~\ref{sec:obj_sel}.
 
 \begin{figure}[!htb]
     \centering
@@ -391,10 +375,9 @@ The detailed definition of the different objects used in this categorization is 
     \label{fig:event_categories}
 \end{figure}
 
-The analysis is performed independently in each event category. 
-Since these categories have distinct profiles in the expected signal yield, the signal purity, and the background composition, 
-the optimal approaches to perform the analyses are also different.
-As a result, two different strategies to perform the analysis are considered:
+These categories have distinct profiles in expected signal yield, signal purity, and background composition.
+Therefore the optimal analysis strategies are different.
+Two strategies are considered for these categories:
 
 \begin{itemize}
     \item \textbf{Data-driven parametric fit to the \mmm spectrum:} 
@@ -402,7 +385,7 @@ As a result, two different strategies to perform the analysis are considered:
           a multivariate analysis (MVA) method is used to profile the separation between the signal and the background processes. 
           The MVA can be either cut-based as in the Run 1 analysis~\cite{2015184}, or machine learning (ML) based as in the analysis on the 2016 data~\cite{PhysRevLett.122.021801}.
           The MVA considers the kinematic information that is uncorrelated with the \mmm, and is used to divide the events into several regions 
-          with different signal-to-background-ratios (\SoB), called the MVA-categories. 
+          with different \SoB, called the MVA-categories. 
           In each MVA-category, the signal strength is evaluated from fits to the \mmm spectrum in data, in what is called the \textit{signal fit region}, for example $110<\mmm<150 \GeV$.
           Both the signal and the background are modeled by parametric functions that are carefully studied to provide a truthful description of the distributions of physics processes. 
           The total yield of the background is unconstrained in the fit and is determined entirely by the data.
@@ -423,30 +406,25 @@ As a result, two different strategies to perform the analysis are considered:
 
 These two strategies should give comparable results in the ideal case, where there are abundant statistics in both data and simulation,
 and where the data are well described by simulation.
-However these conditions are usually not met in real analyses, and one strategy may become preferable over the other.
-The $pp$ collision is a very noisy environment, making it difficult to achieve an accurate modeling of many kinematic aspects,
-for example the pileup events, the parton shower, and the production of leptons through bottom or charm quarks (non-prompt leptons).
-The modeling of these features usually involves extensive work in the validation of simulated samples, and is generally associated with large systematic uncertainties.
-In the scenarios where the MC does not model the data very well, or where the uncertainties from MC modeling are not much smaller than the statistical uncertainty in the data,
+However these conditions are usually not met in real analyses, and one strategy becomes preferable.
+In scenarios where simulations do not model data very well, or where the uncertainties from simulations are not much smaller than the statistical uncertainty in data,
 it is more advantageous to follow the data-driven approach.
-On the other hand, if a phase space lacks enough statistics in data but can be well described by the MC, 
-it is more beneficial to perform a MC-based analysis there.
+In contrast, if an analysis lacks enough statistics in data but has abundant simulations that model data well, 
+it is more beneficial to perform a MC-based analysis.
 
-The \ggH category contains the majority of the events in the \hmm analysis, and has very low \SoB. 
-In all its MVA-based sub-categories, there are abundant data that the statistical uncertainty of data is smaller than the systematic uncertainties of the background prediction from simulation.
-Therefore the data-driven strategy is taken in the analysis in the \ggH category.
-The \qqH category is featured with a good amount of events, although much less than the \ggH category, and a good \SoB.
-This makes it possible to enhance the sensitivity of the analysis by picking very high \SoB regions with the help of MVA discriminators. 
-Naturally, the number of events in the high \SoB regions is very low. Therefore the MC-based strategy is used in the \qqH category.
-The \VH and the \ttH categories both have very few events, but high \SoB, which seems like a good playground for the MC-based approach.
-However, one of the main backgrounds in the \VH and \ttH categories involves extra lepton(s) from non-prompt sources, and lacks accurate MC modeling.
-Moreover, the expected signal yields in these categories are low. 
-It is impractical to make DNN templates with many bins, 
-otherwise only a small fraction of one data event is expected in each bin.
-Given the dataset used in this analysis, the data-driven method is the preferred choice in both the \VH and the \ttH categories.
+The \ggH category contains the majority of \hmm events with a very low \SoB. 
+The statistical uncertainty of data is smaller than the systematic uncertainties of the background prediction from simulations.
+Therefore it takes the data-driven strategy.
+The \qqH category has a good amount of events, although much less than the \ggH category, and a good \SoB.
+This makes it possible to pick very high \SoB regions with the help of MVA discriminators. 
+The \qqH analysis prefers the MC-based strategy as there may be too few events in the high \SoB regions for a data-driven analysis.
+The \VH and \ttH categories both have very few events, but high \SoB, which seem like good playgrounds for the MC-based approach.
+However, the main backgrounds in the \VH and \ttH categories involve extra lepton(s) from nonprompt sources, which lacks accurate simulation estimates.
+Moreover, the \VH and \ttH categories have less sensitivity than the \ggH and \qqH categories.
+Adopting the MC-based approach in the \VH and \ttH categories would take a lot of computation resources and lead to insignificant improvements to the overall result.
+The data-driven approach is much more cost-effective in the \VH and \ttH categories.
 Overall, the \ggH, \VH, and \ttH categories follow the data-driven strategy, while the \qqH category takes the MC-based approach.
 
-More details of the analysis strategy can be found in the paper describing this analysis~\cite{Sirunyan_2021}, recently submitted for publication by CMS. 
-The following chapters will cover the object definition and the muon corrections that are common to the whole analysis, 
-then the detailed steps of the analysis in the \VH category, 
-and finally the results of both the \VH category and of the combination of all four categories.
+This thesis is focused on the analysis in the \VH category, the procedures of which are detailed in Chapter~\ref{chp:VH_analysis}.
+The summary of all categories is reported in Ref.~\cite{Sirunyan_2021}.
+Chapter~\ref{chp:hmm_results} describes the results of the \VH analysis and the combined results of all four categories.
