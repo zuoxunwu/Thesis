@@ -550,7 +550,7 @@ In each iteration, a cut is scanned at a step of 0.01 of the BDT value and the s
 the significance of the resulting subcategories is calculated as the figure of merit. 
 The figure of merit is defined as the $\mathrm{S}/\sqrt{\mathrm{B}}$ in each subcategory 
 summed in quadrature, where $\mathrm{S}$ and $\mathrm{B}$ represent the expected 
-signal and background yields within the FWHM of the signal peak in each subcategory.
+signal and background yields within the full width at half maximum (FWHM) of the signal peak in each subcategory.
 In addition, to ensure that there are enough events in each subcategory to perform a shape analysis,
 all subcategories have to meet a minimal total event yield requirement during the BDT scanning process.
 The choice of this minimal requirement is somewhat arbitrary,
@@ -866,35 +866,35 @@ The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_syst
   \hline
   Uncertainty  & Category  & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
   \hline
-  pileup 2016  & WH cat0   & +0.8/-0.7   & +0.8/-0.7   & +0.6/-0.5   & +0.9/-0.7   & +1.0/-0.9   & +0.4/-0.4   \\
-  (\%)         & WH cat1   & +0.8/-0.7   & +0.6/-0.5   & +0.6/-0.5   & +0.6/-0.5   & +1.0/-0.9   & +0.7/-0.6    \\
-               & WH cat2   & +0.6/-0.5   & +0.4/-0.3   & +0.6/-0.4   & +0.7/-0.6   & +0.2/-0.3   & +0.5/-0.4   \\
-               & ZH cat0   & -           & +0.7/-0.7   & +0.8/-0.7   & -           & -           & -           \\
-               & ZH cat1   & -           & +0.8/-0.7   & +0.7/-0.6   & -           & -           & -           \\
+  pileup 2016  & WH cat1   & +0.8/-0.7   & +0.8/-0.7   & +0.6/-0.5   & +0.9/-0.7   & +1.0/-0.9   & +0.4/-0.4   \\
+  (\%)         & WH cat2   & +0.8/-0.7   & +0.6/-0.5   & +0.6/-0.5   & +0.6/-0.5   & +1.0/-0.9   & +0.7/-0.6    \\
+               & WH cat3   & +0.6/-0.5   & +0.4/-0.3   & +0.6/-0.4   & +0.7/-0.6   & +0.2/-0.3   & +0.5/-0.4   \\
+               & ZH cat1   & -           & +0.7/-0.7   & +0.8/-0.7   & -           & -           & -           \\
+               & ZH cat2   & -           & +0.8/-0.7   & +0.7/-0.6   & -           & -           & -           \\
   \hline
-  pileup 2017  & WH cat0   & +0.6/-0.5   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.2   & +0.3/-0.5   & +0.6/-0.7   \\
-  (\%)         & WH cat1   & +0.4/-0.4   & +0.4/-0.4   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.5   & +0.3/-0.4   \\
-               & WH cat2   & +0.5/-0.5   & +0.5/-0.3   & +0.3/-0.3   & +0.6/-0.6   & +0.5/-0.5   & +0.4/-0.2   \\
-               & ZH cat0   & -           & +0.4/-0.4   & +0.4/-0.5   & -           & -           & -           \\
-               & ZH cat1   & -           & +0.3/-0.4   & +0.4/-0.4   & -           & -           & -           \\
+  pileup 2017  & WH cat1   & +0.6/-0.5   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.2   & +0.3/-0.5   & +0.6/-0.7   \\
+  (\%)         & WH cat2   & +0.4/-0.4   & +0.4/-0.4   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.5   & +0.3/-0.4   \\
+               & WH cat3   & +0.5/-0.5   & +0.5/-0.3   & +0.3/-0.3   & +0.6/-0.6   & +0.5/-0.5   & +0.4/-0.2   \\
+               & ZH cat1   & -           & +0.4/-0.4   & +0.4/-0.5   & -           & -           & -           \\
+               & ZH cat2   & -           & +0.3/-0.4   & +0.4/-0.4   & -           & -           & -           \\
   \hline
-  pileup 2018  & WH cat0   & +0.6/-0.6   & +0.4/-0.4   & +0.5/-0.5   & +0.6/-0.6   & +0.5/-0.5   & +0.5/-0.5   \\
-  (\%)         & WH cat1   & +0.5/-0.5   & +0.3/-0.3   & +0.4/-0.4   & +0.5/-0.5   & +0.4/-0.4   & +0.8/-0.8   \\
-               & WH cat2   & +0.4/-0.4   & +0.2/-0.3   & +0.4/-0.4   & +0.4/-0.3   & +0.5/-0.5   & +0.8/-0.8   \\
-               & ZH cat0   & -           & +0.6/-0.6   & +0.5/-0.5   & -           & -           & -           \\
+  pileup 2018  & WH cat1   & +0.6/-0.6   & +0.4/-0.4   & +0.5/-0.5   & +0.6/-0.6   & +0.5/-0.5   & +0.5/-0.5   \\
+  (\%)         & WH cat2   & +0.5/-0.5   & +0.3/-0.3   & +0.4/-0.4   & +0.5/-0.5   & +0.4/-0.4   & +0.8/-0.8   \\
+               & WH cat3   & +0.4/-0.4   & +0.2/-0.3   & +0.4/-0.4   & +0.4/-0.3   & +0.5/-0.5   & +0.8/-0.8   \\
                & ZH cat1   & -           & +0.6/-0.6   & +0.5/-0.5   & -           & -           & -           \\
+               & ZH cat2   & -           & +0.6/-0.6   & +0.5/-0.5   & -           & -           & -           \\
   \hline
-  prefire 2016 & WH cat0   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   \\
-  (\%)         & WH cat1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
-               & WH cat2   & -           & +0.1/-0.1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.1/-0.1  \\
-               & ZH cat0   & -           & +0.1/-0.1   & +0.1/-0.1   & -           & -           & -           \\
+  prefire 2016 & WH cat1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   \\
+  (\%)         & WH cat2   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
+               & WH cat3   & -           & +0.1/-0.1   & +0.1/-0.1   & +0.1/-0.1   & +0.2/-0.2   & +0.1/-0.1  \\
                & ZH cat1   & -           & +0.1/-0.1   & +0.1/-0.1   & -           & -           & -           \\
+               & ZH cat2   & -           & +0.1/-0.1   & +0.1/-0.1   & -           & -           & -           \\
   \hline
-  prefire 2017 & WH cat0   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.4   & +0.3/-0.3   & +0.2/-0.3   \\
-  (\%)         & WH cat1   & +0.1/-0.1   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.4   & +0.2/-0.2   \\
-               & WH cat2   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
-               & ZH cat0   & -           & +0.2/-0.2   & +0.3/-0.3   & -           & -           & -           \\
-               & ZH cat1   & -           & +0.1/-0.1   & +0.2/-0.2   & -           & -           & -           \\
+  prefire 2017 & WH cat1   & +0.2/-0.2   & +0.3/-0.3   & +0.3/-0.3   & +0.4/-0.4   & +0.3/-0.3   & +0.2/-0.3   \\
+  (\%)         & WH cat2   & +0.1/-0.1   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.3   & +0.3/-0.4   & +0.2/-0.2   \\
+               & WH cat3   & +0.1/-0.1   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.2/-0.2   & +0.1/-0.1  \\
+               & ZH cat1   & -           & +0.2/-0.2   & +0.3/-0.3   & -           & -           & -           \\
+               & ZH cat2   & -           & +0.1/-0.1   & +0.2/-0.2   & -           & -           & -           \\
   \hline
   \end{tabular}}
   \label{tab:vh_systematics_pu_pf}
@@ -911,11 +911,11 @@ The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_syst
   \hline
   Uncertainty (\%) & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
   \hline
-  WH cat0     & -           & +0.0/+0.1   & -           & -0.1/+0.3   & +0.0/-0.1   & +0.0/+0.3   \\
-  WH cat1     & -           & -0.1/-0.0   & +0.1/-0.1   & +0.1/-0.0   & -0.1/+0.2   & -0.1/-0.2   \\
-  WH cat2     & +0.0/+0.1   & -0.2/-0.0   & -0.2/+0.1   & -0.2/-0.0   & +0.0/+0.4   & +0.1/-0.0   \\
-  ZH cat0     & -           & +0.0/+0.1   & +0.0/+0.1   & -           & -           & -           \\
-  ZH cat1     & -           & -0.1/-0     & -           & -           & -           & -           \\
+  WH cat1     & -           & +0.0/+0.1   & -           & -0.1/+0.3   & +0.0/-0.1   & +0.0/+0.3   \\
+  WH cat2     & -           & -0.1/-0.0   & +0.1/-0.1   & +0.1/-0.0   & -0.1/+0.2   & -0.1/-0.2   \\
+  WH cat3     & +0.0/+0.1   & -0.2/-0.0   & -0.2/+0.1   & -0.2/-0.0   & +0.0/+0.4   & +0.1/-0.0   \\
+  ZH cat1     & -           & +0.0/+0.1   & +0.0/+0.1   & -           & -           & -           \\
+  ZH cat2     & -           & -0.1/-0     & -           & -           & -           & -           \\
   \hline
   \end{tabular}}
   \label{tab:vh_systematics_muScale}
@@ -934,17 +934,17 @@ The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_syst
   \hline
   Uncertainty & Category    & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
   \hline
-  muon SF     & WH cat0     & -1.8/+1.8   & -1.7/+1.8   & -2.3/+2.3   & -2.3/+2.3   & -2.1/+2.1   & -2.5/+2.5   \\
-  (\%)        & WH cat1     & -1.7/+1.8   & -1.7/+1.7   & -2.4/+2.4   & -2.0/+2.0   & -1.9/+2.0   & -2.3/+2.3   \\
-              & WH cat2     & -2.3/+2.3   & -1.9/+2.0   & -2.5/+2.5   & -2.5/+2.5   & -2.3/+2.4   & -2.8/+2.9   \\
-              & ZH cat0     & -           & -1.9/+1.9   & -2.5/+2.6   & -           & -           & -           \\
-              & ZH cat1     & -           & -2.5/+2.6   & -3.3/+3.4   & -           & -           & -           \\
+  muon SF     & WH cat1     & -1.8/+1.8   & -1.7/+1.8   & -2.3/+2.3   & -2.3/+2.3   & -2.1/+2.1   & -2.5/+2.5   \\
+  (\%)        & WH cat2     & -1.7/+1.8   & -1.7/+1.7   & -2.4/+2.4   & -2.0/+2.0   & -1.9/+2.0   & -2.3/+2.3   \\
+              & WH cat3     & -2.3/+2.3   & -1.9/+2.0   & -2.5/+2.5   & -2.5/+2.5   & -2.3/+2.4   & -2.8/+2.9   \\
+              & ZH cat1     & -           & -1.9/+1.9   & -2.5/+2.6   & -           & -           & -           \\
+              & ZH cat2     & -           & -2.5/+2.6   & -3.3/+3.4   & -           & -           & -           \\
   \hline
-  electron SF & WH cat0     & -0.3/+0.3   & -0.4/+0.4   & -0.4/+0.4   & -0.3/+0.3   & -0.4/+0.4   & -0.2/+0.2   \\
-  (\%)        & WH cat1     & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
-              & WH cat2     & -0.5/+0.5   & -0.6/+0.6   & -0.6/+0.6   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
-              & ZH cat0     & -           & -0.6/+0.6   & -0.6/+0.6   & -           & -           & -           \\
-              & ZH cat1     & -           & -0.8/+0.8   & -0.6/+0.6   & -           & -           & -           \\
+  electron SF & WH cat1     & -0.3/+0.3   & -0.4/+0.4   & -0.4/+0.4   & -0.3/+0.3   & -0.4/+0.4   & -0.2/+0.2   \\
+  (\%)        & WH cat2     & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
+              & WH cat3     & -0.5/+0.5   & -0.6/+0.6   & -0.6/+0.6   & -0.5/+0.5   & -0.6/+0.6   & -0.5/+0.5   \\
+              & ZH cat1     & -           & -0.6/+0.6   & -0.6/+0.6   & -           & -           & -           \\
+              & ZH cat2     & -           & -0.8/+0.8   & -0.6/+0.6   & -           & -           & -           \\
   \hline
   \end{tabular}}
   \label{tab:vh_systematics_lepMVA}
@@ -961,11 +961,11 @@ The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_syst
   \hline
   Uncertainty (\%)  & WH          & qqZH        & ggZH        & ttH         & THQ         & THW         \\
   \hline
-  WH cat0     & +0.1/-0.1   & +0.1/-0.1   & -0.8/+0.8   & +5.5/-5.3   & -0.9/+0.9   & -1.4/+1.4   \\
-  WH cat1     & +0.1/-0.1   & +0.1/-0.1   & -0.9/+0.9   & +5.7/-5.5   & -0.8/+0.8   & -1.3/+1.3   \\
-  WH cat2     & +0.1/-0.1   & +0.0/-0.1   & -1.0/+1.0   & +5.3/-5.1   & -0.9/+0.9   & -1.4/+1.4   \\
-  ZH cat0     & -           & +0.1/-0.1   & -0.6/+0.6   & -           & -           & -           \\
-  ZH cat1     & -           & +0.2/-0.2   & -0.5/+0.5   & -           & -           & -           \\
+  WH cat1     & +0.1/-0.1   & +0.1/-0.1   & -0.8/+0.8   & +5.5/-5.3   & -0.9/+0.9   & -1.4/+1.4   \\
+  WH cat2     & +0.1/-0.1   & +0.1/-0.1   & -0.9/+0.9   & +5.7/-5.5   & -0.8/+0.8   & -1.3/+1.3   \\
+  WH cat3     & +0.1/-0.1   & +0.0/-0.1   & -1.0/+1.0   & +5.3/-5.1   & -0.9/+0.9   & -1.4/+1.4   \\
+  ZH cat1     & -           & +0.1/-0.1   & -0.6/+0.6   & -           & -           & -           \\
+  ZH cat2     & -           & +0.2/-0.2   & -0.5/+0.5   & -           & -           & -           \\
   \hline
   \end{tabular}}
   \label{tab:vh_systematics_bveto}
@@ -975,9 +975,9 @@ The impacts from the jet energy calibrations are shown in Table~\ref{tab:vh_syst
 \begin{table*}[!htb]
   \centering
   \captionsetup{justification=justified}
-  \topcaption{Uncertainties on different signal components in the WH Cat0 related to jet energy calibration. 
+  \topcaption{Uncertainties on different signal components in the WH Cat1 related to jet energy calibration. 
               JEC uncertainties are in general small for the main signals in the WH and ZH channels. 
-              WH Cat0 is shown as an example. Numbers in other categories are similar. 
+              WH Cat1 is shown as an example. Numbers in other categories are similar. 
               Numbers before/after are the affects from shifting the uncertainty source up/down.
               Uncertainties smaller than $0.1\%$ are neglected.}
   \resizebox{\textwidth}{!}{\begin{tabular}{l|c|c|c|c|c|c}
@@ -1116,7 +1116,7 @@ and the BWZ function (1 shape DOF) is chosen in all other categories.
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_n10_n01_signal_strength_1_table.pdf}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_n01_p03_signal_strength_1_table.pdf}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_WH_BDT_p03_p10_signal_strength_1_table.pdf}
-  \caption{Bias in different BDT-based WH subcategories. The subcategories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 0.3] (middle), Cat2 BDT [0.3, 1.0] (right). In the tables, the Power stands for a single "Power" function and the "PowerInt" stands for a single power function plus a constant.}
+  \caption{Bias in different BDT-based WH subcategories. The subcategories are: Cat1 BDT [-1.0, -0.1] (left), Cat2 BDT [-0.1, 0.3] (middle), Cat3 BDT [0.3, 1.0] (right). In the tables, the Power stands for a single "Power" function and the "PowerInt" stands for a single power function plus a constant.}
   \label{fig:wh_bias_study}
 \end{figure*}
 
@@ -1125,7 +1125,7 @@ and the BWZ function (1 shape DOF) is chosen in all other categories.
   \captionsetup{justification=justified}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_ZH_BDT_n10_n01_signal_strength_1_table.pdf}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/Bias_study/pulls_ZH_BDT_n01_p10_signal_strength_1_table.pdf}
-  \caption{Bias in different BDT-based ZH subcategories. The subcategories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 1.0] (right). In the tables, the "Power" stands for a single power function and the "PowerInt" stands for a single power function plus a constant.}
+  \caption{Bias in different BDT-based ZH subcategories. The subcategories are: Cat1 BDT [-1.0, -0.1] (left), Cat2 BDT [-0.1, 1.0] (right). In the tables, the "Power" stands for a single power function and the "PowerInt" stands for a single power function plus a constant.}
   \label{fig:zh_bias_study}
 \end{figure*}
 
@@ -1135,9 +1135,12 @@ and the BWZ function (1 shape DOF) is chosen in all other categories.
 \section{Results of the VH analysis}\label{sec:vh_results}
 
 The final results are extracted by performing a binned maximum-likelihood fit in each \VH subcategory.
-The fit is performed on the observed \mmm distribution in the range of 110 $<$ \mmm $<$ 150 \GeV.
-All the different signal modes in different subcategories share a common signal strength modifier $\mu$.
-Figure~\ref{fig:wh_postfit} and ~\ref{fig:zh_postfit} show the post-fit results of the signal-plus-background fits in the \WH and \ZH subcategories.
+The fit is performed on the observed \mmm distribution in the mass range of 110 $<$ \mmm $<$ 150 \GeV.
+The SM Higgs mass is assumed at $\mh = 125~\GeV$.
+The parameter of interest (POI) of this fit is the signal strength modifier, 
+which is defined as the ratio between the observed signal rate to the SM expectation,
+$\mu = (\sigma\brhmm)_{\text{obs}} / (\sigma\brhmm)_{\text{SM}}$.
+All the different signal modes in different subcategories share a common signal strength modifier.
 
 \begin{figure*}[!htb]
   \centering
@@ -1145,11 +1148,10 @@ Figure~\ref{fig:wh_postfit} and ~\ref{fig:zh_postfit} show the post-fit results 
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat1.png}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat2.png}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_WH_cat3.png}
-  \caption{Post-fit \mmm distribution of the WH subcategories. The subcategories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 0.3] (middle), Cat2 BDT [0.3, 1.0] (right). 
+  \caption{Post-fit \mmm distribution of the WH subcategories. The subcategories are: Cat1 BDT [-1.0, -0.1] (left), Cat2 BDT [-0.1, 0.3] (middle), Cat3 BDT [0.3, 1.0] (right). 
            The upper panel in the plots shows the distribution of observed data and the shape of the signal-plus-background fit.
            The lower panel in the plots shows the residual distribution after subtracting the background component in the fits.
-           The green and yellow bands show the one and two standard deviation of the background component uncertainty.
-           Plots taken from Ref. ~\cite{Sirunyan_2021}.}
+           The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
   \label{fig:wh_postfit}
 \end{figure*}
 
@@ -1158,44 +1160,97 @@ Figure~\ref{fig:wh_postfit} and ~\ref{fig:zh_postfit} show the post-fit results 
   \captionsetup{justification=justified}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_ZH_cat1.png}
   \includegraphics[width=0.32\textwidth]{pics/VH_sec/VH_results/postfit_ZH_cat2.png}
-  \caption{Post-fit \mmm distribution of the ZH subcategories. The subcategories are: Cat0 BDT [-1.0, -0.1] (left), Cat1 BDT [-0.1, 1.0] (right). 
+  \caption{Post-fit \mmm distribution of the ZH subcategories. The subcategories are: Cat1 BDT [-1.0, -0.1] (left), Cat2 BDT [-0.1, 1.0] (right). 
            The upper panel in the plots shows the distribution of observed data and the shape of the signal-plus-background fit.
            The lower panel in the plots shows the residual distribution after subtracting the background component in the fits.
-           The green and yellow bands show the one and two standard deviation of the background component uncertainty.
-           Plots taken from Ref. ~\cite{Sirunyan_2021}.}
+           The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
   \label{fig:zh_postfit}
 \end{figure*}
 
-As described in Section~\ref{chp:hmm_overview}, 
-the \VH analysis is combined with other categories (\ggH, \qqH, and \ttH) to make the inclusive \hmm analysis.
-More studies in the statistical analysis are covered in more details in Chapter~\ref{chp:hmm_results}.
-The expected and observed limits and significance for the \VH subcategories are summarized in Table~\ref{tab:vh_results}.
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.45\textwidth]{pics/VH_sec/VH_results/postfit_weighted_VH.png}
+  \caption{Post-fit \mmm distribution of the weighted combination of all \WH and \ZH subcategories.
+           Subcategories are weighted proportionally to $S/(S+B)$ ratio. 
+           The upper panel in the plots shows the distribution of observed data and the shape of the signal-plus-background fit.
+           The lower panel in the plots shows the residual distribution after subtracting the background component in the fits.
+           The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
+  \label{fig:vh_postfit}
+\end{figure*}
+
+Figure~\ref{fig:wh_postfit} and ~\ref{fig:zh_postfit} show the post-fit results of the signal-plus-background fits in individual \WH and \ZH subcategories,
+while Figure~\ref{fig:vh_postfit} shows the summary of all subcategories weighted by $S/(S+B)$, 
+where $S$ and $B$ are number of expected signal and background events within the FWHM range of the expected signal peak.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.95\textwidth]{pics/VH_sec/VH_results/VH_impacts.pdf}
+  \caption{Impacts of the nuisance parameters $\theta$ on the signal strength $\hat{r}$. 
+           Parameter names in black are systematic uncertainties, which are Gaussian-constrained to their pre-fit uncertainties.
+           Parameter names in gray are shape and normalization parameters, which do not have pre-fit constraints.
+           $(\hat{\theta} -\theta_{0})/\Delta{}\theta$ shows the pull of each nuisance parameter, 
+           while $\Delta{}\hat{r}$ is its impact on signal strength.
+           Unconstrained parameters do not have pre-fit assumptions and therefore no pulls.
+           The best-fit values of them are shown in the place of pulls.}
+  \label{fig:vh_impact}
+\end{figure*}
+
+The estimate of POI can be affected by many other parameters, such as the systematic uncertainties and the free background shape parameters.
+These parameters are called nuisance parameters and are allowed to float freely in the fit mentioned above. 
+The fit also returns the best fit value of all nuisance parameters and their post-fit uncertainties.
+To evaluate the impact of each nuisance parameter, a set of variation fits are performed by 
+independently shifting each nuisance parameter by its post-fit uncertainty (up and down). 
+The difference in POI between the initial fit and each variation fit measures the impact of the corresponding nuisance parameter.
+Figure~\ref{fig:vh_impact} summarizes the results of the impact study, showing 25 nuisance parameters of the highest ranked impacts.
+In the plot, the pull between the pre-fit and post-fit values of each parameter is defined as the 
+difference between the pre-fit and post-fit values $\hat{\theta}-\theta$ divided by the pre-fit uncertainty $\Delta\theta$.
+Pulls of most parameters are centered near 0 and have uncertainties close to 1, meaning their post-fit values change very little from pre-fit values.
+The best fit signal strength is denoted as $\hat{r}$ in the plot, with the impact defined as the variation $\Delta{}\hat{r}$ induced by the shifting one nuisance parameter.
+The largest impacts come from background normalization parameters.
+The largest impact among systematic uncertainties is around 0.5, while the overall uncertainty of the signal strength is about 3.
+The sensitivity of this analysis is mainly limited by statistical uncertainty.
+
+\begin{figure*}[!htb]
+  \centering
+  \captionsetup{justification=justified}
+  \includegraphics[width=0.80\textwidth]{pics/VH_sec/VH_results/limit_plot.pdf}
+  \caption{The 95\% CL upper limits on the signal strength in subcategories and combinations. 
+           Observed (expected) values are marked in the plot.}
+  \label{fig:vh_limit}
+\end{figure*}
+
+Figure~\ref{fig:vh_limit} shows the 95\% confidence level (CL) upper limits on the signal strength in each VH subcategory as well as the combinations.
+The limits are calculated with an asymptotic approximation~\cite{Cowan:2010js} of the $\text{CL}_{\text{s}}$ method~\cite{Read_2002}.
+The expected limits and uncertainties are based on the background-only hypothesis.
+The expected and observed significance for the \VH subcategories and combinations are summarized in Table~\ref{tab:vh_results}.
+The expected significance is based on the SM signal strength hypothesis.
+
 
 \begin{table*}[!htb]
   \captionsetup{justification=justified}
   \topcaption{Summary of the expect and observed limits and significance in each individual subcategory and the combination.}
   \centering
-  \begin{tabular}{|l|cc|cc|}
+  \begin{tabular}{|l|cc|}
   \hline
-   Category                 & Expected UL & Observed UL & Expected Signif.  & Observed Signif. \\
+   Category                  & Expected Signif.  & Observed Signif. \\
   \hline
-  WH $\to 3\ell$  Cat0      & 27          & 37.4        & 0.08              & 0.89  \\
-  WH $\to 3\ell$  Cat1      & 9.8         & 12.8        & 0.22              & 0.79  \\
-  WH $\to 3\ell$  Cat2      & 7.3         & 10.4        & 0.33              & 0.64  \\
+  ZH $\to 4\ell$  Cat1       & 0.05              & 0.65  \\
+  ZH $\to 4\ell$  Cat2       & 0.14              & 1.81  \\
   \hline
-  ZH $\to 4\ell$  Cat0      & 58          & 68.2        & 0.05              & 0.65  \\
-  ZH $\to 4\ell$  Cat1      & 19          & 34.0        & 0.14              & 1.81  \\
+  WH $\to 3\ell$  Cat1       & 0.08              & 0.89  \\
+  WH $\to 3\ell$  Cat2       & 0.22              & 0.79  \\
+  WH $\to 3\ell$  Cat3       & 0.33              & 0.64  \\
   \hline
-  WH combine                & 5.5         & 8.9         & 0.40              & 1.15 \\
-  ZH combine                & 17          & 31.7        & 0.15              & 1.92 \\
-  WH and ZH combine         & 5.1         & 10.2        & 0.43              & 1.86 \\
+  ZH combine                 & 0.15              & 1.92 \\
+  WH combine                 & 0.40              & 1.15 \\
+  WH and ZH combine          & 0.43              & 1.86 \\
   \hline
   \end{tabular}
   \label{tab:vh_results}
 \end{table*}
   
+These results from the \VH analysis are combined with other categories (\ggH, \qqH, and \ttH) to make the inclusive \hmm analysis.
+Studies and results of the combination are covered in Chapter~\ref{chp:hmm_results}.
 
-
-%\textcolor{red}{put likelihood scan,
-%goodness of fit,
-%and brazilian plots here or in the next chapter?}
