@@ -39,7 +39,7 @@ Muons then bend and leave hits in the muon detectors outside of the magnet,
 while neutrinos escape all detector layers without leaving any electronic signal.
 A graphical summary of these interactions is given in Figure~\ref{fig:cms_interact}.
 
-The PF algorithm combines all detector signals described above and attains a global description of final-state particles, 
+The PF algorithm~\cite{Sirunyan_2017} combines all detector signals described above and attains a global description of final-state particles, 
 along with the measurements of their properties.
 Particles are identified and reconstructed in a sequential manner in PF and are described accordingly in the following sections:
 tracks of charged particles are first built based on the tracker hits (Section~\ref{sec:reco_track}); 
@@ -135,7 +135,7 @@ and is therefore sometimes referred to as the single primary vertex.
 
 
 \subsection{Beamspot}\label{sec:reco_bs}
-The beamspot refers to the 3D-region where $pp$ collisions happen, 
+The beamspot~\cite{Collaboration_2014} refers to the 3D-region where $pp$ collisions happen, 
 and is determined from the distribution of primary vertices from many events.
 The position and size of the beamspot are evaluated as the x, y, z coordinates 
 of the beamspot center and their corresponding standard deviations.
@@ -347,7 +347,7 @@ As a result, their detector signals, especially in calorimeters, always overlap 
 As the detectors only provide information on the trajectory (for charged hadrons only) and energy of the hadrons,
 CMS reconstruct hadrons as charged and neutral ones without further distinguishment of their exact composition.
 
-Energy deposits in HCAL are grouped into clusters in a similar fashion as that in the ECAL seeding.
+Energy deposits in HCAL are grouped into clusters~\cite{Sirunyan_2017} in a similar fashion as that in the ECAL seeding.
 Cluster seeds are first identified as HCAL cells that have an energy over a threshold and larger than their neighboring cells.
 Seeds are grown into topological clusters by iteratively including adjacent cells with an energy above another threshold.
 A topological cluster may cover many seeds if they are connected by cells with significant energy deposits.
@@ -507,7 +507,7 @@ The compatibility between the track and the primary vertex is evaluated with the
 along with a variable (called the SIP) reflecting the significance of the impact parameters relative to its uncertainty.
 
 The official muon identification is provided for different types of muons~\cite{Sirunyan_2018}: 
-ID for generic muons, dedicated ID for low-\pt muons ($\pt < 20$ \GeV), and dedicated ID for high-\pt muons ($\pt > 200 \GeV$).
+ID for generic muons, dedicated ID for low-\pt muons ($\pt < 20$~\GeV), and dedicated ID for high-\pt muons ($\pt > 200~\GeV$).
 The muons of moderate-\pt are used in most studies on electroweak and Higgs physics, 
 and can be selected with three levels (known as working points) of generic identifications:
 \begin{itemize}
@@ -524,7 +524,7 @@ and can be selected with three levels (known as working points) of generic ident
           suppresses muons from decay in flight and from hadronic punch-through.
           The muon must be a loose muon, as well as a global muon with its track fit $\chi^{2} < 10$.
           The muon track must include at least one hit in the muon chamber and at least six layers of the inner tracker, at least one of them been pixel hits.
-          It must also be compatible with the primary vertex, with $d^{PV}_{xy} < 0.2 \cm$, $d^{PV}_{z} < 0.5 \cm$.
+          It must also be compatible with the primary vertex, with $d^{PV}_{xy} < 0.2~\cm$, $d^{PV}_{z} < 0.5~\cm$.
 \end{itemize}
 
 Several levels of selection criteria on the PF isolation is also centrally provided, 
@@ -532,9 +532,9 @@ in which the Loose Isolation requires the PF isolation of the muon in a cone of 
 It cleans muons from hadronic activities and keeps a selection efficiency of about 99\% regarding the Medium ID selection.
 
 The \hmm analysis adopts the Medium muon ID and Loose Isolation as a baseline selection.
-In addition, muons are required to have $\pt > 20 \GeV$ and $|\eta| < 2.4$,
+In addition, muons are required to have $\pt > 20~\GeV$ and $|\eta| < 2.4$,
 and should be compatible with the primary vertex with impact parameters
-$d^{PV}_{xy} < 0.05 \cm$, $d^{PV}_{z} < 0.1 \cm$ and the SIP $< 8.0$. 
+$d^{PV}_{xy} < 0.05~\cm$, $d^{PV}_{z} < 0.1~\cm$ and the SIP $< 8.0$. 
 
 Finally, to further reject nonprompt muons, a multivariate identification method, called the LeptonMVA, is applied.
 Several analyses in CMS have used the LeptonMVA approach, and the version adopted by the \hmm analysis is developed in 
@@ -562,9 +562,9 @@ and a variable evaluating the track-cluster match.
 Two working points are provided for the MVA-based ID, corresponds to 80\% and 90\% efficiencies.
 
 The \hmm analysis adopts the 90\%-efficiency working point of the MVA-based ID as a baseline selection.
-It also requires electrons to have $\pt > 20 \GeV$ and $|\eta| < 2.5$, 
+It also requires electrons to have $\pt > 20~\GeV$ and $|\eta| < 2.5$, 
 and to be compatible with the primary vertex with impact parameters
-$d^{PV}_{xy} < 0.05 \cm$, $d^{PV}_{z} < 0.1 \cm$ and the SIP $< 8.0$. 
+$d^{PV}_{xy} < 0.05~\cm$, $d^{PV}_{z} < 0.1~\cm$ and the SIP $< 8.0$. 
 The electron must also have less than two missing hits in its track, and must not be linked to a photon conversion,
 these two requirements being used in the cut-based ID but not included in the MVA-ID.
 The ECAL is less efficient in the region of $1.444 < \eta < 1.566$, where there are gaps between ECAL modules.
@@ -584,11 +584,11 @@ as well as the fractions of jet energy carried by them.
 There is only one working point for the jet ID, corresponding to an efficiency of 98-99\%, referred to as the standard jet ID, or historically as the tight jet ID.
 The pileup jet ID is an MVA-based discriminator summarizing the jet properties such as the number of objects in the jet, 
 the vertexing of tracks in the jet (if inside the tracker coverage), and the shape of the jet cluster.
-The pileup ID is only trained with (and applied to) jets with $\pt < 50 \GeV$, where it is most likely for pileup jets to appear.
+The pileup ID is only trained with (and applied to) jets with $\pt < 50~\GeV$, where it is most likely for pileup jets to appear.
 Three working points are offered for the pileup ID, loose, medium, and tight, 
 which correspond to 99(95)\%, 90(90)\%, and 80(80)\% efficiencies in $|\eta| < 2.5$ ($|\eta| > 2.5$) regions, respectively.
 
-The \hmm analysis considers PF+CHS jets with $\pt > 25 \GeV$ and $|\eta| < 4.7$ after the JEC. 
+The \hmm analysis considers PF+CHS jets with $\pt > 25~\GeV$ and $|\eta| < 4.7$ after the JEC. 
 Jets are required to pass the jet ID and the loose pileup ID in general.
 To mitigate the exceptional ECAL endcap noise in 2017,
 jets in 2017 datasets are specifically required to pass the tight pileup ID if they lie in $2.6 < |\eta| < 3.0$ region.

@@ -22,9 +22,9 @@ each hosting a major LHC experiments: Point 1 for ATLAS, Point 2 for ALICE, Poin
     \centering
     \captionsetup{justification=justified}
     \includegraphics[width=0.95\textwidth]{pics/LHC_CMS/LHC_landscape.png}
-    \caption{Photo taken from ... (original source unknown). 
-             An aerial view of the LHC landscape. The French-Swiss border is indicated by the yellow line and the LHC tunnels are outlined in white.
-             The triangular building complex just below ATLAS in the picture is the main campus of CERN.}
+    \caption{An aerial view of the LHC landscape. The French-Swiss border is indicated by the yellow line and the LHC tunnels are outlined in white.
+             The triangular building complex just below ATLAS in the picture is the main campus of CERN.
+             Picture taken from Ref.~\cite{aerial_lhc}.}
     \label{fig:lhc_landscape}
 \end{figure*}
 
@@ -32,7 +32,7 @@ each hosting a major LHC experiments: Point 1 for ATLAS, Point 2 for ALICE, Poin
 \subsection{The LHC machine}
 The LHC tunnel consists of eight arcs and eight straight sections.
 The arcs make the majority of the LHC circumference, accommodating thousands of the magnet units to bend and tighten the particles' trajectory.
-The straight sections are approximately 528 \meter long each, serving as insertions for experiments or utility. 
+The straight sections are approximately 528~\meter long each, serving as insertions for experiments or utility. 
 The arcs and straight sections are grouped into eight octants, each covering a straight section and two halves of its neighboring arcs,
 whose geometrical layout is shown in Figure~\ref{fig:lhc_scheme}. 
 
@@ -42,7 +42,7 @@ whose geometrical layout is shown in Figure~\ref{fig:lhc_scheme}.
     \includegraphics[width=0.85\textwidth]{pics/LHC_CMS/LHC_scheme.jpg}
     \caption{The schematic layout of the LHC. Each octant contains a insertion point.
              Points 1, 2, 5, and 8 are the locations of collision experiments. Points 3 and 7 are for beam collimation. 
-             Hadrons are injected at Points 1 and 8, accelerated at Point 4, and eventually discarded at Point 6.
+             Hadrons are injected at Points 1 and 8, accelerated at Point~4, and eventually discarded at Point 6.
              Plot taken from Ref.~\cite{Evans_2008}. }
     \label{fig:lhc_scheme}
 \end{figure*}
@@ -57,12 +57,12 @@ whose geometrical layout is shown in Figure~\ref{fig:lhc_scheme}.
 \end{figure*}
 
 Strong magnets are what guide the high energy hadrons to circulate and collide in the LHC. 
-The LHC magnet system is based on Nb-Ti cables, cooled by superfluid helium to a temperature of 1.9 K,
+The LHC magnet system is based on Nb-Ti cables, cooled by superfluid helium to a temperature of 1.9~K,
 where the cables stay superconductive and generate a magnetic field up to their critical field strength.
-The maximum operable magnetic field of the LHC magnets is 8.33 T, which corresponds to a proton beam energy of 7 \TeV,
-or a heavy ion beam energy of 2.76 \TeV per nucleon.
+The maximum operable magnetic field of the LHC magnets is 8.33~T, which corresponds to a proton beam energy of 7~\TeV,
+or a heavy ion beam energy of 2.76~\TeV per nucleon.
 
-The LHC magnet system consists of 1232 main dipole magnets, about 450 quadrupole magnets,
+The LHC magnet system~\cite{Evans_2008} consists of 1232 main dipole magnets, about 450 quadrupole magnets,
 a few thousands multipole corrector magnets, and several types of specialized magnets at the eight insertion points.
 The dipoles 
 bend the beams so they circulate in the LHC tunnel.
@@ -71,15 +71,15 @@ the magnetic fields for the two beams need to be opposite as well.
 Given the space limitation in the tunnel and the need to keep the budget down, a "twin-bore" design is adopted, 
 in which the two beam pipes and two sets of magnet coils are installed next to each other in the same piece of mechanical housing, called the cold mass.
 The cold mass is a cylindrical solid iron structure bored at its center and surrounded by a superfluid helium vessel.
-Each cold mass has a length of about 15 \meter, a diameter of about 570 \mm, and a mass of about 27.5 t.
-It provides a stable 1.9 K environment for the magnet coils, and in the meantime serves as their magnetic yoke.
+Each cold mass has a length of about 15~\meter, a diameter of about 570~\mm, and a mass of about 27.5~t.
+It provides a stable 1.9~K environment for the magnet coils, and in the meantime serves as their magnetic yoke.
 The dipoles of LHC are manufactured identically up to a high precision.
 The relative variation in the magnetic field strength and the field inhomogeneity must not exceed $10^{-4}$.
 The quadrupoles 
 provide gradient fields (shown in Figure~\ref{fig:quad_field}) that squeeze the beam in one direction and disperse it in the other.
 A few quadrupoles in series, with certain field geometry, can focus or defocus the beams.
 They keep the beams from dispersing in the beam pipes, focus the beams to high intensity before collisions, and defocus them after collisions.
-Quadrupoles are also in stationed in twin-bored cold masses, each about 3.1 \meter long.
+Quadrupoles are also in stationed in twin-bored cold masses, each about 3.1~\meter long.
 Several types 
 of small-scale multipole correctors are installed as components of the main dipoles and quadrupoles, 
 which help to fine-tune the beam parameters. 
@@ -88,8 +88,8 @@ serves various purposes: to adjust the beam parameters to the needs of each dedi
 or to abruptly change the direction of the beam for injection or abortion.
 Most insertion magnets are based on Nb-Ti superconductors, 
 while some, in radiation areas, are built of normal conducting material.
-The electric currents in these various magnets range from 60 A (for small correctors) to 12 kA (for main dipoles and quadrupoles),
-while the total energy stored in the magnets is about 10 GJ during full operations of the LHC.
+The electric currents in these various magnets range from 60~A (for small correctors) to 12~kA (for main dipoles and quadrupoles),
+while the total energy stored in the magnets is about 10~GJ during full operations of the LHC.
 
 
 \subsection{Luminosity of collisions}\label{sec:lumi}
@@ -167,14 +167,15 @@ The hard interaction in this example is accompanied with a softer secondary inte
 which produce a bunch of hadrons through QCD processes.
 Finally, photons (curvy yellow lines) can be emitted from the final-state hadrons and leptons.
 
-Furthermore, multiple $pp$ collisions occur in each proton bunch crossing at the LHC, known as pileup.
-In most cases, all of these simultaneous interactions are QCD interactions, 
+Furthermore, multiple $pp$ collisions occur in each proton bunch crossing at the LHC.
+Detectors receive signals from several collisions at the same time, known as pileup, 
+which comes from simultaneous collisions in the same bunch crossing as well as collisions in other bunch crossings due to instrumental errors in timing. 
+In most cases, all of these collisions are QCD interactions, 
 while occasionally one of the collisions is a hard scatter that leads to processes interesting to physicists.
 In those occasions, the collision containing the hard scatter is considered as the primary interaction, 
 and the other collisions are called pileup interactions.
 Within the primary interaction, the process of interest, for example the \ttH process in Figure~\ref{fig:sherpa_pp},
 is called the prompt interaction, while the other QCD-induced byproducts are called the underlying event.
-
 
 
 
@@ -184,7 +185,7 @@ is called the prompt interaction, while the other QCD-induced byproducts are cal
 The Compact Muon Solenoid (CMS)~\cite{Collaboration_2008} is a general purpose detector operating at one of the collision sites of the LHC.
 It is named after its large-bore superconducting solenoid magnet, 
 which provides a 4 T field at its core and enables precise measurements of the various collision products.
-The CMS detector has an overall length of 28.7 \meter, a diameter of 15.0 \meter and a mass of 14000 t.
+The CMS detector has an overall length of 28.7~\meter, a diameter of 15.0~\meter and a mass of 14000~t.
 A cutaway diagram of CMS is shown in Figure~\ref{fig:cms_detector}.
 It consists, from inside to outside, of a silicon-based tracking system (blue slices in the figure), 
 a lead tungstate crystal electromagnetic calorimeter (ECAL) (cyan blocks),
@@ -205,9 +206,9 @@ In addition, the data acquisition of CMS relies on a trigger system, which is de
 \end{figure*}
 
 CMS adopts a cylindrical coordinates convention: the origin is positioned at the geometrical center of CMS expected for collisions to happen;
-the $z$ axis is along the beam pipe with its positive direction pointing toward the Jura mountain;
-the $\phi = 0$ direction (or the $x$ axis of the Cartesian coordinates) points horizontally toward the LHC ring center;
-this leaves the $y$ axis of the Cartesian coordinates pointing upward to the sky.
+the $z$~axis is along the beam pipe with its positive direction pointing toward the Jura mountains;
+the $\phi = 0$ direction (or the $x$~axis of the Cartesian coordinates) points horizontally toward the LHC ring center;
+this leaves the $y$~axis of the Cartesian coordinates pointing upward to the sky.
 In addition, the polar angle $\theta$ is in most cases replaced by a variable called pseudorapidity $\eta$, 
 defined as $\eta = -\text{ln}[\text{tan}(\frac{\theta}{2})]$.
 The pseudorapidity is a good approximation of the longitudinal rapidity $y_{L}$ of particles in the CMS frame in the limit of $|\textbf{p}| \gg m$.
@@ -225,9 +226,9 @@ The CMS coordinates, along with the $\eta - \theta$ correspondence, are shown in
 
 \subsection{Solenoid magnet}\label{sec:magnet}
 
-The solenoid magnet of CMS is based on the same material as the LHC magnets, operating also at 1.9 K.
-During its full operation, the superconducting coil carries an electric current of 18500 A and stores an energy of 2.6 GJ.
-It generates a homogeneous 3.8 T field inside its bore of 6-\meter diameter and 12.5-\meter length,
+The solenoid magnet~\cite{Collaboration_2008} of CMS is based on the same material as the LHC magnets, operating also at 1.9~K.
+During its full operation, the superconducting coil carries an electric current of 18500~A and stores an energy of 2.6~GJ.
+It generates a homogeneous 3.8~T field inside its bore of 6-\meter diameter and 12.5-\meter length,
 providing the functioning environment for the detector components installed inside of it.
 The superconducting coil is enclosed by its iron yoke, which is the heaviest part of the CMS detector, 
 weighing about 12000~t, almost twice as in the Eiffel Tower.
@@ -247,11 +248,11 @@ Figure~\ref{fig:cms_field} shows the operating magnetic field of CMS.
 
 \subsection{Silicon tracker}\label{sec:tracker}
 
-The CMS inner tracker is designed to provide a precise and efficient measurement of the trajectories of charged particles emerging from the LHC collisions.
+The CMS inner tracker~\cite{Collaboration_2008, phase1_tracker} is designed to provide a precise and efficient measurement of the trajectories of charged particles emerging from the LHC collisions.
 It is laid out in a cylindrical volume of 5.8-\meter length and 2.5-\meter diameter surrounding the beam pipe, shown in Figure~\ref{fig:cms_tracker}.
 It is composed of a pixel detector with four barrel layers at radii of 2.9~\cm, 6.8~\cm, 10.9~\cm, and 16.0~\cm~\cite{phase1_tracker},
-and a silicon strip detector with 4 + 6 barrel layers extending to a radius of 1.1~\meter~\cite{Collaboration_2008}.
-Each system is completed by endcaps, which consist of three disks in the pixel detector and 3 + 9 disks in the strip detector.
+and a silicon strip detector with 4~+~6 barrel layers extending to a radius of 1.1~\meter~\cite{Collaboration_2008}.
+Each system is completed by endcaps, which consist of three disks in the pixel detector and 3~+~9 disks in the strip detector.
 The CMS tracker has about 124 million pixel channels and about 9.3 million strip channels in total,
 and provides its full tracking ability up to a pseudorapidity range of $|\eta| < $2.5.
 
@@ -266,7 +267,7 @@ and provides its full tracking ability up to a pseudorapidity range of $|\eta| <
     \label{fig:cms_tracker}
 \end{figure*}
 
-In the pixel detector, the standard pixel size is 100 $\times$ 150 $\mum^{2}$ in $r\phi \times z$ plane, with a thickness of 285~\mum.
+In the pixel detector, the standard pixel size is 100 $\times$ 150 $\mum^{2}$ in $\phi \times z$ plane, with a thickness of 285~\mum.
 At the nominal LHC luminosity, about 1000 charged particles are produced in each bunch crossing, 
 corresponding to a hit occupancy of the order $10^{-4}$ per pixel per bunch crossing.
 
@@ -274,12 +275,12 @@ At its operation, a charged particle usually generate signals in a few neighbori
 The pixel system reads with analog pulse height readout, which enables an interpolation between the neighboring pixels
 and achieves a spatial resolution in the range of 15-20~\mum.
 
-The strip detector is made up of two subsystems in two regions, the inner region ($20 \cm < r < 55 \cm$) 
-and the outer region ($55 \cm < r < 110 \cm$), both composed of silicon micro-strip detectors. 
-A typical micro-strip cell in the inner region has a thickness of 320 \mum and size of 10~\cm~$\times$~80~\mum,
+The strip detector is made up of two subsystems in two regions, the inner region ($20~\cm < r < 55~\cm$) 
+and the outer region ($55~\cm < r < 110~\cm$), both composed of silicon micro-strip detectors. 
+A typical micro-strip cell in the inner region has a thickness of 320~\mum and size of 10~\cm~$\times$~80~\mum,
 leading to an occupancy of of up to 2-3\% per strip per LHC bunch crossing.
 Micro-strip cells in the outer region, given the larger radii and reduced particle density, are larger in size:
-500 \mum in thickness and up to about $25 \cm \times 180 \mum$ in size,
+500~\mum in thickness and up to about $25~\cm \times 180~\mum$ in size,
 and corresponding to an occupancy of about 1\%.
 The spatial resolution of the strip cells, after the interpolation of charge-sharing, 
 ranges from 23-35~\mum in the inner barrel layers, and from 35-53~\mum in the outer barrel layers.  
@@ -309,7 +310,7 @@ As a result, a photon or electron incident to thick material turns into a cascad
 Similarly, hadrons interact primarily with nuclei in matter through the strong interaction,
 where multiple secondary hadrons are produced, which in case of dense material form a cascade of hadrons called a hadronic shower.
 The spatial developments of the electromagnetic showers and hadronic showers are characterized by the radiation length ($X_{0}$) and the nuclear interaction length ($\lambda_{I}$), respectively.
-CMS contains an electromagnetic calorimeter (ECAL) and a hadronic calorimeter (HCAL) to initiate and measure these two types of showers,
+CMS contains an electromagnetic calorimeter (ECAL)~\cite{Collaboration_2008} and a hadronic calorimeter (HCAL)~\cite{Collaboration_2008, Mans:1481837} to initiate and measure these two types of showers,
 and in turn measure the energies of the corresponding particle types.
 $X_{0}$ is in general much smaller than $\lambda_{I}$, therefore the ECAL in placed on the inside of the HCAL.
 
@@ -331,11 +332,11 @@ with a granularity of 360-fold in $\phi$ and $2 \times 85$-fold in $\eta$.
 They are mounted not exactly toward the collision region but with a small angle of $3^{\circ}$ in both the $\phi$ and $\eta$ projections.
 This avoids the intermodule cracks aligning with potential particle trajectories and creating blind regions.
 The front faces of the crystals are at a radius of 1.29~\meter.
-Each barrel crystal has a cross section of $22 \times 22 \mm^{2}$ at the front face and $26 \times 26 \mm^{2}$ at the rear face, and a length of 230~\mm ($25.8 X_{0}$). 
-$\text{PbWO}_{4}$ has a density of $8.28 g/\cm^{3}$, and overall the barrel crystals weigh 67.4~t.
+Each barrel crystal has a cross section of $22 \times 22~\mm^{2}$ at the front face and $26 \times 26~\mm^{2}$ at the rear face, and a length of 230~\mm ($25.8 X_{0}$). 
+$\text{PbWO}_{4}$ has a density of $8.28~g/\cm^{3}$, and overall the barrel crystals weigh 67.4~t.
 The endcap ECAL~(EE) covers the pseudorapidity range of $1.479 < |\eta| < 3.0$,
 with the front faces of crystals 315.4~\cm away from the collision region in the longitudinal direction. 
-The endcap crystals have an identical shape, with a cross section of $28.62 \times 28.62 \mm^{2}$ at the front face and $30 \times 30 \mm^{2}$ at the rear face, and a length of 220~\mm ($24.7 X_{0}$).
+The endcap crystals have an identical shape, with a cross section of $28.62 \times 28.62 \mm^{2}$ at the front face and $30 \times 30~\mm^{2}$ at the rear face, and a length of 220~\mm ($24.7 X_{0}$).
 The crystals are grouped in mechanical units of $5 \times 5$ crystals arranged in a rectangular $x-y$ grid.
 All crystals point at a focus 1300~\mm beyond the collision region, 
 so that the intermodule cracks are $2^{\circ} - 8^{\circ}$ tilted from the directions to the collision region.
@@ -383,10 +384,10 @@ identification of single photons from collinear photon pairs produced by the dec
 \end{figure*}
 
 The HCAL is designed to absorb and measure hadrons produced in $pp$ collisions.
-It consists of four main parts: a barrel calorimeter (HB) placed in between the outer extent of the EB (at $R = 1.77 \meter$) and the inner extent of the magnet coil (at $R = 2.95 \meter$),
-two endcap calorimeters (HE) located in between the rear of the EE (at $z = \pm 3.9 \meter$) and the front of the first endcap muon station (at $z = \pm 5.6 \meter$),
+It consists of four main parts: a barrel calorimeter (HB) placed in between the outer extent of the EB (at $R = 1.77~\meter$) and the inner extent of the magnet coil (at $R = 2.95~\meter$),
+two endcap calorimeters (HE) located in between the rear of the EE (at $z = \pm 3.9~\meter$) and the front of the first endcap muon station (at $z = \pm 5.6~\meter$),
 an outer calorimeter (HO) installed outside of the solenoid complementing the HB,
-and two forward forward calorimeters (HF) outside of the last endcap muon station at $z = \pm 11.2 \meter$ around the beam pipe.
+and two forward forward calorimeters (HF) outside of the last endcap muon station at $z = \pm 11.2~\meter$ around the beam pipe.
 The layout of these HCAL components are shown in Figure~\ref{fig:cms_hcal}.
 The HB and HO covers the pseudorapidity range of $|\eta| < 1.3$, the HE covers $1.3 < |\eta| < 3.0$,
 and the HF covers $3.0 < |\eta| < 5.2$.
@@ -402,11 +403,11 @@ The HE is built with a similar design with 17 interposing 79-\mm brass plates an
 It consists of 36 azimuthal wedges, each has 5 divisions between $1.3 < |\eta| < 1.6$ and 9 divisions between $1.6 < |\eta| < 3.0$.
 
 As a complement to the limited thickness of HB, 
-the HO sits outside of the solenoid coil, which adds about $1.4 / sin\theta$ interaction lengths before HO.
-The HO is geometrically aligned with the muon system and has 5 2.536-\meter-wide rings along $z$-axis.
-Each ring has a single-layer scintillator at $r = 4.07 \meter$.
+the HO sits outside of the solenoid coil, which adds about $1.4 / \text{sin}\theta$ interaction lengths before HO.
+The HO is geometrically aligned with the muon system and has five 2.536-\meter-wide rings along $z$~axis.
+Each ring has a single-layer scintillator at $r = 4.07~\meter$.
 In particular, the HB has the minimal absorber depth near $\eta = 0$ therefore the central ring has 
-two layers of scintillators at $r = 3.82 \meter$ and $4.07 \meter$, sandwiching an additional 19.5~\cm thick piece of iron.
+two layers of scintillators at $r = 3.82~\meter$ and $4.07~\meter$, sandwiching an additional 19.5~\cm thick piece of iron.
 HO rings are divided into 12 identical $\phi$ sectors and each sector is further divided into 6 slices.
 Each slice is in turn divided into basic units called tiles along $\eta$, with 8 divisions in ring 0, 6 divisions in rings $\pm 1$, and 5 divisions in rings $\pm 2$. 
 
@@ -426,9 +427,9 @@ $0.17 \times 0.17$ for $1.6 < |\eta| < 3.0$ (HE), and $0.175 \times 0.175$ for $
 \subsection{Muon detectors}\label{sec:muon_chambers}
 
 Muon detection at CMS, as implied by its name, is of central importance in its design.
-CMS uses three types of gaseous particle detectors for muon detection in its original design:
+CMS uses three types of gaseous particle detectors for muon detection in its original design~\cite{Collaboration_2008, collaboration_2013}:
 drift tubes (DT), cathode strip chambers (CSC), and resistive plate chambers (RPC).
-Additional gas electron multipliers (GEM) were installed after the LHC Run 2 as a part of the phase-2 upgrade plan of CMS.
+Additional gas electron multipliers (GEM)~\cite{Colaleo:2021453} were installed after the LHC Run 2 as a part of the phase-2 upgrade plan of CMS.
 \footnote{The physics analysis in this thesis is based on the LHC Run 2 dataset, which does not involve GEM signals.} 
 The locations of different muon detectors are shown in Figure~\ref{fig:cms_muons}.
 
@@ -469,8 +470,8 @@ The CSC chambers in the outer rings of station 1-4 are accompanied with RPC cham
     \label{fig:cms_dt}
 \end{figure*}
 
-The DT chambers are arrays of rectangular drift cell, whose design is illustrated in the left plot of Figure~\ref{fig:cms_dt}.
-Each cell has a transverse size of $42 \times 13 \mm^{2}$ with a 50-\mum-diameter 
+The DT chambers~\cite{Collaboration_2008, collaboration_2013} are arrays of rectangular drift cell, whose design is illustrated in the left plot of Figure~\ref{fig:cms_dt}.
+Each cell has a transverse size of $42 \times 13~\mm^{2}$ with a 50-\mum-diameter 
 gold-plated stainless steel wire positioned in the center through its full length.
 A DT chamber is made of 3 (or 2 for the fourth station) superlayers, each made of 4 stacked layers of drift cells, staggered by half a cell.
 The superlayers are aligned alternately along the $z$ and $\phi$ directions, shown in the right plot of Figure~\ref{fig:cms_dt}.
@@ -483,13 +484,13 @@ and the aluminum walls on the 42-\mm sides are at $+1800$~V to help guide the gr
 When a muon passes through DT cells, it ionizes the $\text{Ar-CO}_{2}$ mixture. 
 The resulting free electrons are attracted to the anodes and accelerated in the field, ionizing more gas molecules along their path.
 This avalanche makes a gain about $10^5$ and leads to a detectable current as the signal.
-The electron avalanche drifts at a roughly constant velocity about 50 $\mum/\ns$, 
-meaning that it takes at maximum close to 400 \ns for the electric signal to develop 
-(for incident muons at the farthest corners 21 \mm away from the anode wire).
+The electron avalanche drifts at a roughly constant velocity about 50~$\mum/\ns$, 
+meaning that it takes at maximum close to 400~\ns for the electric signal to develop 
+(for incident muons at the farthest corners 21~\mm away from the anode wire).
 This drift time is measured from the signal timing differences between the 4 staggered layers in a superlayer~\cite{ARCE2004441}.
-The determination of this drift time is particularly important as the $pp$ bunch crossings are only 25 \ns apart from each other.
-Overall, the DT can achieve a time resolution of about 2 \ns,
-which can be translated into a spatial resolution of order 100 \mum given the constant drift velocity.
+The determination of this drift time is particularly important as the $pp$ bunch crossings are only 25~\ns apart from each other.
+Overall, the DT can achieve a time resolution of about 2~\ns,
+which can be translated into a spatial resolution of order 100~\mum given the constant drift velocity.
 However, a caveat is accompanied with this great time and spatial resolution: 
 in a very unlikely case where two or more muons pass through the same drift cell in consecutive bunch crossings,
 the cell may not recover from the earlier avalanche and become inefficient to the later ones.
@@ -505,11 +506,11 @@ This is mitigated by the fast-responding RPC detectors, which are described late
     \label{fig:cms_csc}
 \end{figure*}
 
-The CSCs, shown as the left plot of Figure~\ref{fig:cms_csc}, are multiwire chambers comprised of 6 anode wire planes interleaved among 7 cathode strip panels.
+The CSC chambers~\cite{Collaboration_2008, collaboration_2013}, shown as the left plot of Figure~\ref{fig:cms_csc}, are multiwire chambers comprised of 6 anode wire planes interleaved among 7 cathode strip panels.
 The wires are equally spaced of about 3~\mm and run along the $\phi$ direction.  
 Each cathode strip panel contains 80 strips running along the $r$ direction, each covering a constant $\phi$ interval and corresponding to a width between 3~\mm to 16~\mm. 
-The gap between adjacent cathode panels (with wires in between) is about 1 \cm.  
-The overall dimension of CSCs vary for different stations and rings, the largest of which is about $3.4 \times 1.5 \meter^{2}$.
+The gap between adjacent cathode panels (with wires in between) is about 1~\cm.  
+The overall dimension of CSCs vary for different stations and rings, the largest of which is about $3.4 \times 1.5~\meter^{2}$.
 
 A gas mixture of 40\%Ar+50\%CO$_{2}$+10\%CF$_{4}$ is filled in the CSC chambers and 
 a 3.6~kV voltage difference is applied between the anodes and cathodes.
@@ -529,7 +530,7 @@ as good as about 2~\mm at the trigger level and around 100~\mum in off-line reco
     \label{fig:cms_rpc}
 \end{figure*}
 
-The RPC chambers are used in both the barrel and endcaps, with their dimensions aligned with the corresponding DT or CSC chambers.
+The RPC chambers~\cite{Collaboration_2008, collaboration_2013} are used in both the barrel and endcaps, with their dimensions aligned with the corresponding DT or CSC chambers.
 A basic double-gap RPC module is shown in Figure~\ref{fig:cms_rpc}. 
 Each gas gap consists of resistive plates made of graphite-coated 2-\mm bakelite plates, 
 which are separated by 2-\mm spacers and a composite gas mixture.
@@ -550,7 +551,7 @@ Its spatial resolution, on the contrary, is worse than the DT and CSC, ranging b
     \label{fig:cms_gem}
 \end{figure*}
 
-The GEM detectors are a new component installed in the muon endcaps in front of the CSC inner ring in 2019.
+The GEM detectors~\cite{Colaleo:2021453} are a new component installed in the muon endcaps in front of the CSC inner ring in 2019.
 At the moment only one GEM station has been installed for each endcap, as shown in Figure~\ref{fig:cms_muons}.
 The basic unit of GEM is a "Triple-GEM detector", shown in Figure~\ref{fig:cms_gem}.
 A triple-GEM chamber features a stack of three GEM foils placed with gaps of a few millimeter immersed in a gas mixture.
@@ -572,7 +573,7 @@ Meanwhile, most $pp$ collisions are soft scatters and do not contain physics pro
 To reduce the intense requirement on offline storage and processing, and to filter out uninteresting collisions,
 a trigger system is implemented in CMS selecting and recording only 0.0025\% of the collision events.
 
-The CMS trigger system has two levels. 
+The CMS trigger system~\cite{Collaboration_2008, l1t_perform} has two levels. 
 The first level is called the Level-1 Trigger (L1T), which is built from custom electronics specialized in fast parallel processing.
 It makes decisions based on signals from calorimeters and muon chambers and reduces the event rate from the collision rate of 40~MHz to below 100~kHz.
 The second level is the High Level Trigger (HLT), a software system operating on a commercial processor farm.
@@ -587,7 +588,7 @@ The full-precision data of L1T accepted events are transmitted to the above-grou
 The HLT processes these events among more than 20000 CPU cores with the per-event processing time relaxed to O(100~\ms).
 The HLT runs a full reconstruction algorithm similar to the offline reconstruction described in Section~\ref{sec:obj_reco}
 and selects events based on their physics signatures. 
-Events passing the HLT selection, corresponding to a data flow of a few GB/s, 
+Events passing the HLT selection, corresponding to a data flow of a few~GB/s, 
 are distributed in the CERN computing grid for storage and further processing,
 composing the collision dataset recorded by the CMS experiment. 
 

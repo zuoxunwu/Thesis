@@ -37,10 +37,33 @@ while for the \qqH category the considered mass range is $115~\GeV < \mmm < 135~
     \label{fig:sum_sig_strength}
 \end{figure*}
 
+Maximum-likelihood fits are performed in each category following the strategies explained in Chapter~\ref{chp:hmm_overview}:
+analytic \mmm shape fits for \ggH, \ttH, and \VH categories, and template DNN shape fit for the \qqH category.
 The individual signal strength modifier from each category is summarized in Figure~\ref{fig:sum_sig_strength},
 with the Higgs signal expected at \mh = 125.38~\GeV.
 A combined fit is performed across all categories with one common signal strength modifier, 
 whose best fit value is $\hat{\mu} = 1.19^{+0.41}_{-0.40} \text{(stat)}^{+0.17}_{-0.16} \text{(syst)}$.
+Figure~\ref{fig:sum_mass_shape} shows the \mmm distribution for the weighted combination of all categories.
+Please note that this plot is only for illustration, as the \qqH result is obtained by fitting DNN shapes not the \mmm shape.
+In Figure~\ref{fig:sum_mass_shape}, \ggH, \ttH, and \VH subcategories are weighted by their $S/(S+B)$ ratios.
+For the \qqH category, a mass-decorrelated DNN is obtained by setting the \mmm value for all events to 125~\GeV,
+and a per-event $S/(S+B)$ weight is calculated based on this mass-decorrelated DNN output. 
+This weight is applied to the \qqH \mmm distribution, 
+in which all nuisance parameters and the signal strength are set to their post-fit values from the actual DNN fit.
+A clear excess of events is seen around 125~\GeV in the background-subtracted distribution in the lower panel.
+
+\begin{figure*}[!htb]
+    \centering
+    \captionsetup{justification=justified}
+    \includegraphics[width=0.60\textwidth]{pics/results/sum_mass_dist.png}
+    \caption{Post-fit \mmm distribution of the weighted combination of all categories.
+             Subcategories are weighted proportionally to $S/(S+B)$ ratio. 
+             The lower panel in the plots shows the residual distribution after background subtraction.
+             The green and yellow bands show the one and two standard deviation of the background component uncertainty.}
+    \label{fig:sum_mass_shape}
+\end{figure*}
+
+
 The statistical uncertainty is determined by performing a likelihood scan of $\mu$ with all nuisance parameters fixed at their best fit values.
 And the systematic uncertainty is calculated as the difference in quadrature between the total uncertainty and the statistical component.
 This result makes the most precise measurement of the \hmm decay rate up to date.

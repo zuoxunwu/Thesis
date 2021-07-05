@@ -98,14 +98,14 @@ The selection steps are devised to suppress different background processes
 and optimize the \SoB in the \WH and \ZH categories respectively. 
 The event selection in the $\WH \to \ell\nu+\mu\mu$ category is described as follows:
 \begin{itemize}
-	\item At least one muon must have \pt $>$ 26\GeV /29\GeV /26\GeV 
+	\item At least one muon must have \pt $>$ 26/29/26~\GeV 
 	      for years 2016/2017/2018 respectively, which is matched to a
               single-muon trigger object
 	\item All SFOS lepton pairs must have an invariant mass $> 12$~\GeV
 	\item The charge of the three leptons must add up to $\pm 1$
 	\item At least one $\mu^{+}\mu^{-}$ pair must have an invariant mass between 110
 	      and 150~GeV
-	\item If two $\mu^{+}\mu^{-}$ pairs fall in the 110 - 150~GeV mass window, the pair
+	\item If two $\mu^{+}\mu^{-}$ pairs fall in the 110 to 150~\GeV mass window, the pair
 	      with the higher \pt is chosen as the Higgs candidate (denoted $\mu\mu_{\PH}$)
 	\item The event must contain exactly 0 medium b-tagged jet and less than 2 loose b-tagged jets
 	\item In 3$\mu$ events, the non-Higgs-candidate $\mu^{+}\mu^{-}$ pair ($\mu\mu_{OS}$) must
@@ -113,16 +113,16 @@ The event selection in the $\WH \to \ell\nu+\mu\mu$ category is described as fol
 \end{itemize}
 The event selection in the $\ZH \to \ell\ell + \mu\mu$ category is described as follows:
 \begin{itemize}
-	\item At least one muon must have \pt $>$ 26\GeV /29\GeV /26\GeV 
+	\item At least one muon must have \pt $>$ 26/29/26~\GeV 
 	      for years 2016/2017/2018 respectively, and the event must
 	      contain an unprescaled single-muon trigger object
 	\item The charge of the four leptons must add up to 0.
 	\item All SFOS lepton pairs must have an invariant mass $> 12$~\GeV.
-	\item In $\mu\mu ee$ events, the $e^{+}e^{-}$ pair must have invariant mass between 70 and 110 GeV, and the $\mu^{+}\mu^{-}$ pair must have invariant mass between 110 and 150 GeV.
+	\item In $\mu\mu ee$ events, the $e^{+}e^{-}$ pair must have invariant mass between 70 and 110~\GeV, and the $\mu^{+}\mu^{-}$ pair must have invariant mass between 110 and 150~\GeV.
 	\item In 4$\mu$ events, if it is possible to form two distinct $\mu^{+}\mu^{-}$ pairs
-          each with a mass between 81 and 101~GeV, the event is discarded.
-	\item In 4$\mu$ events, one muon pair must have mass between 110 and 150 GeV, and the other muon pair must have mass between 81 and 101 GeV.
-	\item In 4$\mu$ events, if both combinations have a muon pair in the Z-mass window and a muon pair in the signal-mass window, the combination in which the mass of the Z candidate is closer to 91 GeV is chosen. 
+          each with a mass between 81 and 101~\GeV, the event is discarded.
+	\item In 4$\mu$ events, one muon pair must have mass between 110 and 150~\GeV, and the other muon pair must have mass between 81 and 101~\GeV.
+	\item In 4$\mu$ events, if both combinations have a muon pair in the Z-mass window and a muon pair in the signal-mass window, the combination in which the mass of the Z candidate is closer to 91~\GeV is chosen. 
 	\item The event must contain exactly 0 medium b-tagged jet and less than 2 loose b-tagged jets.    
 \end{itemize}
 These selection criteria are also summarized in Table~\ref{tab:vh_evt_sel}.
@@ -171,7 +171,7 @@ which is measured as a difference in the helicity angle $\theta^{*}$ between the
 The helicity angle is defined in a decay system in the frame in which the parent particle is at rest,
 as the angle between the direction of the decay and the boost direction of the parent particle.
 The distribution of this angle is determined by the spins of the parent particle and the decay products.
-In the case of $\PW \to \WZ$ ($\PZ \to \ZZ$) vs $\PW \to \WH$ ($\PZ \to \ZH$), the helicity angle between the \PW ($\PZ_{1}$) and the $\PZ_{2}$ follows the distribution $1 + cos^{2}\theta^{*}$ %\textcolor{red}{a illustrative figure},
+In the case of $\PW \to \WZ$ ($\PZ \to \ZZ$) vs $\PW \to \WH$ ($\PZ \to \ZH$), the helicity angle between the \PW ($\PZ_{1}$) and the $\PZ_{2}$ follows the distribution $1 + \text{cos}^{2}\theta^{*}$ %\textcolor{red}{a illustrative figure},
 while the the helicity angle between the \PW (\PZ) and the \PH follows a flat distribution.
 Similarly, for \zmm vs \hmm, the muons from a \PZ decay tend to align with the polarization of the \PZ boson, 
 while the muons from a \PH decay do not have a preference in direction.
@@ -419,7 +419,8 @@ Distributions of the BDT input variables are shown in Figure~\ref{fig:zh_bdt_var
 As discussed in~\ref{sec:hmm_cat_and_strategy}, the strategy of this analysis is to divide events into subcategories with different \SoB,
 and consequently maximize the overall sensitivity.
 The signal extraction is performed by fitting the \mmm spectrum, therefore it is crucial that 
-any selection cut applied to the BDT score should not sculpt the \mmm shape.
+the BDTs are insensitive to \mmm values and
+any selection applied to the BDT scores should not produce a signal-like shape in backgrounds.
 Two checks are performed for this purpose:
 \begin{itemize}
 	\item The \mmm shape of the background is compared between events in different BDT quantiles, shown as the left plots of Figures~\ref{fig:wh_bdt_mass} and~\ref{fig:zh_bdt_mass}. 
