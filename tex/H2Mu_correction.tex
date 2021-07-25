@@ -1,4 +1,4 @@
-\chapter{Muon momentum correction and calibration} \label{chp:muon_corr}
+\chapter{Muon Momentum Correction and Calibration} \label{chp:muon_corr}
 
 This analysis aims to find a sharp signal peak on top of a smooth background in the \mmm distribution.
 It is of crucial importance to correct any mismeasurement in the muon momentum scale 
@@ -29,7 +29,7 @@ which is listed in details in Section~\ref{sec:muon_cal}.
 These corrections fix all the known biases in muon measurement, 
 and ensure a per-mille-level agreement between data and simulation. 
 
-\section{Rochester correction} \label{sec:Roch_corr}
+\section{Rochester Correction} \label{sec:Roch_corr}
 
 In reality, the CMS detector can have various imperfections, 
 such as the misalignment of the detector components, and the uncertainties in the magnetic field.
@@ -59,7 +59,7 @@ as well as the \mmm resolution differences between data and the simulation.
 Details of the performance of the \RochCorr can be found in Section~\ref{sec:muon_cal}.
 
 
-\section{FSR recovery} \label{sec:fsr}
+\section{FSR Recovery} \label{sec:fsr}
 
 In CMS, muons produced in $pp$ collisions may radiate photons and lose energy, which is referred to as the final-state radiation (FSR).
 The radiation may carry substantial energy and lead to an underestimation of the original muon momentum.
@@ -97,7 +97,7 @@ and no bias is introduced by the application of the \FSR.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_FSRtagged.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_FullSignal.pdf}
       \caption{Performance of the \FSR in the simulated \hmm events. 
@@ -109,7 +109,7 @@ and no bias is introduced by the application of the \FSR.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/FSR/FSRrecovery_Validation.pdf}
       \caption{Performance of the \FSR in the \zmm events that contain FSR photons, in both data and simulation. 
                A good agreement between simulation and data is observed, both before and after the correction.
@@ -118,7 +118,7 @@ and no bias is introduced by the application of the \FSR.
 \end{figure*}
 
 
-\section{GeoFit correction} \label{sec:GeoFit}
+\section{GeoFit Correction} \label{sec:GeoFit}
 
 As described in Section~\ref{sec:reco_track},
 tracks are built from hits in silicon trackers and extrapolated to the collision region
@@ -147,7 +147,7 @@ A preliminary study comparing the \GeoFit with the track refit shows the two met
 detailed in Section~\ref{sec:track_refit}.
 
 
-\subsection{Geometry of the track displacement}\label{sec:d0_geometry}
+\subsection{Geometry of the Track Displacement}\label{sec:d0_geometry}
 
 The displacement of a track from a vertex is usually measured as the impact parameters, $d_{xy}$ and $d_{z}$,
 which are the signed distances between the vertex and its point of closest approach (PCA) to the track, in the transverse and longitudinal directions.
@@ -167,7 +167,7 @@ A scheme for this definition is shown in Figure~\ref{fig:d0_def}.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.70\textwidth]{pics/muon_corr/GeoFit/d0_def.pdf}
       \caption{Scheme of the $d_0$ definition in CMS. The $(x_{0}, y_{0})$ is the coordinate of 
                a point near the vertex in the frame where the vertex is at $(0,0)$, 
@@ -177,7 +177,7 @@ A scheme for this definition is shown in Figure~\ref{fig:d0_def}.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=\textwidth]{pics/muon_corr/GeoFit/d0_pt_geometry.pdf}
       \caption{Scheme of the track geometry in the transverse plane. 
                The blue lines show the geometry of the reconstructed track, 
@@ -283,7 +283,7 @@ Therefore the BS is considered as the position of the true vertex in the rest of
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/fit_results/d0_pt_PV_eg.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/fit_results/d0_pt_BS_eg.pdf}
       \caption{Example plots showing the correlation between $(\pt^{reco}-\pt^{gen})/ (\pt^{gen})^{2}$ and $d_0 \times$ charge.
@@ -303,7 +303,7 @@ Each of the plots is fit with a linear function, whose best fit parameters are a
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2016_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
@@ -316,7 +316,7 @@ Each of the plots is fit with a linear function, whose best fit parameters are a
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2017_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
@@ -329,7 +329,7 @@ Each of the plots is fit with a linear function, whose best fit parameters are a
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_0_0p9_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_0p9_1p7_dRelPt2p0_Roch.png}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/GeoFit/fit_results/2018_DY_eta_1p7_inf_dRelPt2p0_Roch.png}
@@ -346,7 +346,7 @@ The correction is applied to all muons in data and simulation in all categories 
 unless the muon is tagged for \FSR.
 The performance of this correction is detailed in Section~\ref{sec:perf_geofit}.
 
-\subsection{Performance and validation}\label{sec:perf_geofit}
+\subsection{Performance and Validation}\label{sec:perf_geofit}
 
 The \GeoFit removes the \pt dependence on $d_0$, 
 whose overall effect on the \zmm peak is illustrated in Figure~\ref{fig:mucal_d0_run2}.
@@ -358,7 +358,7 @@ So most of the events are near the center of the plots, and the size of the corr
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/muP_d0_summary_mean.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/muN_d0_summary_mean.pdf}
       \caption{Plots showing the \pt dependence on the $d_0$ value with different stages of muon correction.
@@ -372,7 +372,7 @@ So most of the events are near the center of the plots, and the size of the corr
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/ggHVBF.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/VHttH.pdf}
       \caption{Plots showing the \GeoFit improvement on the four main \hmm signal modes, 
@@ -405,7 +405,7 @@ and their improvements from the \GeoFit are about the same.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/samp_d0.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/performance/samp_pt_BOE.pdf}
       \caption{Plots showing $d_0$ and \pt distributions of the four main \hmm signal modes. 
@@ -418,7 +418,7 @@ and their improvements from the \GeoFit are about the same.
 
 
 
-\subsection{GeoFit vs track refit}\label{sec:track_refit}
+\subsection{GeoFit vs Track Refit}\label{sec:track_refit}
 
 The \GeoFit provides a simple method to correct the \pt dependence on d0 based on high level physics variables.
 Since the origin of this \pt dependence is well-understood, it is also possible to derive a more fundamental correction
@@ -433,7 +433,7 @@ The \GeoFit is therefore chosen in the \hmm analysis to speed up the workflow.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_pf_2018.pdf}
       \includegraphics[width=0.45\textwidth]{pics/muon_corr/GeoFit/track_refit/ggH_mass_muon_fit_bs_geofit_2018.pdf}
       \caption{Plots of the \mmm shape of the 2018 \ggH simulation sample, comparing different muon correction methods.
@@ -446,7 +446,7 @@ The \GeoFit is therefore chosen in the \hmm analysis to speed up the workflow.
       \label{fig:refit_vs_geofit}
 \end{figure*}
 
-\section{Muon calibration results} \label{sec:muon_cal}
+\section{Muon Calibration Results} \label{sec:muon_cal}
 
 The \zmm is a well-understood process with a mass scale not far from the Higgs boson and with a much larger number of events at the LHC.
 It is therefore used as a candle to monitor the performance of the \RochCorr and the \GeoFit, 
@@ -477,7 +477,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_eta_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_eta_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_eta_summary_mean.pdf}
@@ -493,7 +493,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_phi_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_phi_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_phi_summary_mean.pdf}
@@ -509,7 +509,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muN_phi_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muN_phi_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muN_phi_summary_mean.pdf}
@@ -525,7 +525,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_pt_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_pt_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_pt_summary_mean.pdf}
@@ -542,7 +542,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/dimu_pt_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/dimu_pt_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/dimu_pt_summary_mean.pdf}
@@ -558,7 +558,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/dimu_eta_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/dimu_eta_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/dimu_eta_summary_mean.pdf}
@@ -574,7 +574,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muP_d0_rebin_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muP_d0_rebin_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muP_d0_rebin_summary_mean.pdf}
@@ -590,7 +590,7 @@ while the agreement in \mmm resolution is about a few percent.
 
 \begin{figure*}[!htb]
       \centering
-      \captionsetup{justification=justified}
+%      \captionsetup{justification=justified}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2016/muN_d0_rebin_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2017/muN_d0_rebin_summary_mean.pdf}
       \includegraphics[width=0.32\textwidth]{pics/muon_corr/muon_cal/2018/muN_d0_rebin_summary_mean.pdf}

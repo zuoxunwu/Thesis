@@ -1,4 +1,4 @@
-\chapter{Object reconstruction and identification}\label{chp:objects}
+\chapter{Object Reconstruction and Identification}\label{chp:objects}
 
 In CMS, many particles decay very shortly after their production before they reach the detectors.
 Some particles interact very weakly with detector material and do not leave electronic signals.
@@ -15,7 +15,7 @@ The selection of each type of physics object is optimized by the analyzers based
 
 \begin{figure*}[!htb]
     \centering
-    \captionsetup{justification=justified}
+%    \captionsetup{justification=justified}
     \includegraphics[width=0.98\textwidth]{pics/object_reco/CMS Slice.pdf}
     \caption{A transverse view of the CMS detector layout in the barrel region,
              with illustrations of the interactions between different particles and different detector components.
@@ -27,7 +27,7 @@ Section~\ref{sec:obj_reco} gives a brief description of the reconstruction seque
 Section~\ref{sec:obj_sel} lists the selection criteria for different objects adopted in the \hmm analysis.
 
 
-\section{CMS object reconstruction}\label{sec:obj_reco}
+\section{CMS Object Reconstruction}\label{sec:obj_reco}
 
 In $pp$ collisions in CMS, final-state particles are produced at the beam interaction region. 
 As they travel outward, they first enter the tracker system, in which the trajectories of charged particles 
@@ -101,7 +101,7 @@ The track is extrapolated to the interaction region and to the calorimeters and 
 which are especially important for vertex reconstruction and for track matching to signals in other detectors, respectively.
 
 
-\subsection{Primary vertices}\label{sec:reco_pv}
+\subsection{Primary Vertices}\label{sec:reco_pv}
 
 In $pp$ collisions at the LHC, multiple $pp$ interactions can happen in the same bunch crossing,
 most of them producing tracks.
@@ -411,7 +411,7 @@ Jets are particularly important in the \qqH category, which is tagged with two e
 In the \VH category, on the other hand, jets are not used explicitly but only considered for the calculation of the missing transverse energy. 
 The selection criteria of jets are detailed in Section~\ref{sec:sel_jet}.
 
-\subsection{B jets}\label{sec:reco_btag}
+\subsection{B Jets}\label{sec:reco_btag}
 
 Jets originating from bottom or charm quarks contain heavy-flavor hadrons, and are called heavy-flavor jets.
 These heavy-flavor hadrons have lifetimes of the order of 1~ps, and their decays give rise to secondary vertices (SV) a few \mm away from the corresponding primary vertex. 
@@ -434,7 +434,7 @@ B tagging are used in the \hmm analysis to identify the b jets from the top quar
 or to veto such decays in other event categories.
 The exact criteria for b-tagged jet selection in the \hmm analysis is detailed in Section~\ref{sec:sel_jet}.
 
-\subsection{Hadronic tau decays}\label{sec:reco_tau}
+\subsection{Hadronic Tau Decays}\label{sec:reco_tau}
 
 The \tau{} lepton has a mean lifetime of 0.3~ps and decays to either an electron or a muon plus two neutrinos, or a few hadrons plus one neutrino.
 The reconstruction of leptonic \tau{} decays is unrealistic because they are only received by the detector as single electrons or muons, 
@@ -463,7 +463,7 @@ In particular, the hadronic $tau$ leptons can be used to tag \PW and \PZ decays 
 But it adds negligible statistical significance to the analysis and is therefore not included.
 More explanation are given in Chapter~\ref{chp:VH_analysis}.
 
-\subsection{Missing transverse momentum}\label{sec:reco_met}
+\subsection{Missing Transverse Momentum}\label{sec:reco_met}
 
 Neutral particles produced in $pp$ collisions that interact weakly with regular material can traverse the CMS detector undetected.
 There is no way to determine their number, type, or exact direction.
@@ -492,9 +492,9 @@ and in general experimental resolution in all detector components.
 Particular to the \hmm analysis, \MET can potentially be used to tag the $\PZ \to \nu\nu$ decay in \ZH signal events.
 This selection is very inefficient because of the \MET resolution and is not considered in the \hmm analysis.
 
-\section{Object selection in the H to dimuon analysis}\label{sec:obj_sel}
+\section{Object Selection in the \texorpdfstring{\hmm}{H to Muons} Analysis}\label{sec:obj_sel}
 
-\subsection{Muon selection}\label{sec:sel_muon}
+\subsection{Muon Selection}\label{sec:sel_muon}
 
 CMS provides official muon identification (ID) criteria based on several kinematic variables:
 the number of hits in the muon track; the fit quality of the muon track; 
@@ -543,7 +543,7 @@ This LeptonMVA combines the information of the muon isolation, the vertex compat
 The selection requirement on the LeptonMVA is chosen to be LeptonMVA $> 0.4$, 
 which corresponds to an efficiency of about 95\% and a fake rate of about 3-4\%. 
 
-\subsection{Electron selection}\label{sec:sel_ele}
+\subsection{Electron Selection}\label{sec:sel_ele}
 
 As described in Section~\ref{sec:reco_ele}, 
 the electron identification in CMS is based on the electron track quality and the properties of the ECAL supercluster:
@@ -574,7 +574,7 @@ Finally, the LeptonMVA discriminator, similar to that for muons, is also develop
 The selection requirement of LeptonMVA $> 0.4$ is also applied to electrons, 
 corresponding to an efficiency of about 93\% and a fake rate of about 4\%.
 
-\subsection{Jet selection}\label{sec:sel_jet}
+\subsection{Jet Selection}\label{sec:sel_jet}
 
 CMS provides two types of identification criteria on jets~\cite{Sirunyan_2020}: the jet ID, which distinguishes real jets from fake ones originating from detector noise,
 and the pileup jet ID, which tells jets originating from the primary interaction apart from jets produced in pileup interactions.
